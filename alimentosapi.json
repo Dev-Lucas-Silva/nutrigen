@@ -1,0 +1,20 @@
+{
+  "Arroz":{  
+    "energia": 128,
+    "carboidrato": 28.1,
+    "proteina": 2.50,
+    "gordura": 0.2
+},
+"PeitoDeFrangoGrelhado":{
+    "energia": 159,
+    "carboidrato": 0,
+    "proteina": 32,
+    "gordura": 2.5
+  },
+  "AmedoimTorrado":{
+    "energia": 605.8,
+    "carboidrato": 18.7,
+    "proteina": 22.5,
+    "gordura": 53
+  }
+}

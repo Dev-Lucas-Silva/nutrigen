@@ -1,0 +1,50 @@
+header {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);}
+
+.header {
+  max-width: 1400px;
+  padding: 20px 20px;
+  margin: 0 auto;
+}
+
+.header-logo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+}
+
+.logo a h1 {
+  color: #0069c0;
+}
+
+.logo h1:nth-child(3) {
+  color: #20f26f;
+}
+
+header .menu {
+  padding: 0 20px;
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+}
+
+header .menu a {
+  display: inline;
+}
+
+header .menu a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  transition: 0.3s;
+  border-bottom: 2px solid;
+}
+header .menu a:hover::after {
+  width: 100%;
+}
