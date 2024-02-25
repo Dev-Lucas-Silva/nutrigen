@@ -57,18 +57,6 @@
           <input type="number" name="altura" id="altura" max="299" placeholder="apenas numeros" required>
         </li>
         <li>
-          <label for="pescoco">Pescoço (cm)*</label>
-          <input type="number" name="pescoco" id="pescoco" max="99" placeholder="apenas numeros" required>
-        </li>
-        <li>
-          <label for="cintura">Cintura (cm)*</label>
-          <input type="number" name="cintura" id="cintura" max="299" placeholder="apenas numeros" required>
-        </li>
-        <li>
-          <label for="quadril">Quadril (cm)*</label>
-          <input type="number" name="quadril" id="quadril" max="299" placeholder="apenas numeros" required>
-        </li>
-        <li>
           <label for="peso">Peso (Kg)*</label>
           <input type="number" name="peso" id="peso" max="499" placeholder="apenas numeros" required>
         </li>
@@ -76,6 +64,63 @@
           <label for="idade">Idade (anos)*</label>
           <input type="number" name="idade" id="idade" max="199" placeholder="apenas numeros" required>
         </li>
+        <li class="grid-bf-homem">
+          <div>
+            <input type="radio" name="bf-homem" id="bf-homem" value="4.5">
+            <label for="bf-homem"><img src="./image/bf-homem/bf-homem-4.5.png" alt="" width="180" height="180"></label>
+          </div>
+          <div>
+            <input type="radio" name="bf-homem" id="bf-homem2" value="6.5">
+            <label for="bf-homem2"><img src="./image/bf-homem/bf-homem-6.5.png" alt="" width="180" height="180"></label>
+          </div>
+          <div>
+            <input type="radio" name="bf-homem" id="bf-homem3" value="9">
+            <label for="bf-homem3"><img src="./image/bf-homem/bf-homem-9.png" alt="" width="180" height="180"></label>
+          </div>
+          <div>
+            <input type="radio" name="bf-homem" id="bf-homem4" value="11.5">
+            <label for="bf-homem4"><img src="./image/bf-homem/bf-homem-11.5.png" alt="" width="180" height="180"></label>
+          </div>
+          <div>
+            <input type="radio" name="bf-homem" id="bf-homem5" value="14">
+            <label for="bf-homem5"><img src="./image/bf-homem/bf-homem-14.png" alt="" width="180" height="180"></label>
+          </div>
+          <div>
+            <input type="radio" name="bf-homem" id="bf-homem6" value="17.5">
+            <label for="bf-homem6"><img src="./image/bf-homem/bf-homem-17.5.png" alt="" width="180" height="180"></label>
+          </div>
+          <div>
+            <input type="radio" name="bf-homem" id="bf-homem7" value="22">
+            <label for="bf-homem7"><img src="./image/bf-homem/bf-homem-22.png" alt="" width="180" height="180"></label>
+          </div>
+          <div>
+            <input type="radio" name="bf-homem" id="bf-homem8" value="27.5">
+            <label for="bf-homem8"><img src="./image/bf-homem/bf-homem-27.5.png" alt="" width="180" height="180"></label>
+          </div>
+        </li>
+        <li class="grid-bf-mulher">
+          <div>
+            <input type="radio" name="bf-mulher" id="bf-mulher" value="19">
+            <label for="bf-mulher"><img src="./image/bf-mulher/bf-mulher-19.png" alt="" width="110" height="360"></label>
+          </div>
+          <div>
+            <input type="radio" name="bf-mulher" id="bf-mulher2" value="25">
+            <label for="bf-mulher2"><img src="./image/bf-mulher/bf-mulher-25.png" alt="" width="126" height="360"></label>
+          </div>
+          <div>
+            <input type="radio" name="bf-mulher" id="bf-mulher3" value="30">
+            <label for="bf-mulher3"><img src="./image/bf-mulher/bf-mulher-30.png" alt="" width="128" height="360"></label>
+          </div>
+          <div>
+            <input type="radio" name="bf-mulher" id="bf-mulher4" value="35">
+            <label for="bf-mulher4"><img src="./image/bf-mulher/bf-mulher-35.png" alt="" width="136" height="360"></label>
+          </div>
+          <div>
+            <input type="radio" name="bf-mulher" id="bf-mulher5" value="40">
+            <label for="bf-mulher5"><img src="./image/bf-mulher/bf-mulher-40.png" alt="" width="169" height="360"></label>
+          </div>
+        </li>
+
       </ul>
       <hr>
     </div>
@@ -121,7 +166,7 @@
             <option value="intenso">intenso</option>
           </select>
           <h5>Gasto médio em Treino (kcal)</h5>
-          <span></span>        
+          <span></span>
         </li>
         <li>
           <label for="idade">Tempo de Cardio (min)</label>
@@ -131,9 +176,9 @@
             <option value="leve">Leve</option>
             <option value="medio" selected>Médio</option>
             <option value="intenso">intenso</option>
-          </select> 
+          </select>
           <h5>Gasto médio em Cardio (kcal)</h5>
-          <span></span>               
+          <span></span>
         </li>
       </ul>
       <hr>
@@ -162,7 +207,7 @@
     <div class="result-macros">
       <ul>
         <li>
-          <h5>Essa é a Quantidade de Proteína e Gordura ideal para voçê! Mas se desejar, pode modificar abaixo.</h5>
+          <h5>Essa é a taxa de proteína e gordura por Kg corporal ideal para voçê! Mas se desejar, pode modificar abaixo.</h5>
           <label for="proteinaporkg">Proteína por kg de massa magra</label>
           <input type="range" name="proteinaporkg" id="proteinaporkg" value="" min="0" max="5" step="0.1">
           <label for="gorduraporkg">Gordura por kg de massa magra</label>

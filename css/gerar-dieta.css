@@ -7,6 +7,18 @@
   padding-bottom: 10px;
 }
 
+.grid-bf-homem {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  max-width: 400px;
+}
+
+.grid-bf-mulher {
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  max-width: 400px;
+}
+
 .result-basal ul {
   display: grid;
 }
@@ -16,15 +28,15 @@
 }
 
 .calc-dieta ul {
- display: grid;
- gap: 20px;
+  display: grid;
+  gap: 20px;
 }
 
 .calc-dieta ul h5 {
-padding: 10px;
+  padding: 10px;
 }
 
-.result-dieta ul{
+.result-dieta ul {
   display: grid;
   gap: 20px;
 }
