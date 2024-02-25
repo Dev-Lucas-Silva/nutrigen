@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NutriGen</title>
-  <link rel="icon" href="./image/kisspng-dietary-supplement-sports-nutrition-dietitian-fruit-nutrition-lovely-simple-dumbbell-5a7ded1ec40759.0141578115182021428029.png" type="image/svg+xml">
+  <link rel="icon" href="./image/kisspng-mime-computer-file-spiced-powder-raw-materials-5a6bab83dce201.7896622315170056999047.png" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
@@ -32,6 +32,165 @@
       </nav>
     </div>
   </header>
+
+  <main id="gerar-dieta">
+    <div class="calc-basal">
+      <ul>
+        <li>
+          <h5>Sexo*</h5>
+          <input type="radio" name="sexo" id="masculino" value="masculino" checked>
+          <label for="masculino">Masculino</label>
+          <input type="radio" name="sexo" id="feminino" value="feminino">
+          <label for="feminino">Feminino</label>
+        </li>
+        <li>
+          <h5>Biotipo*</h5>
+          <input type="radio" name="biotipo" id="ectomorfo" value="ectomorfo" checked>
+          <label for="ectomorfo">Ectomorfo</label>
+          <input type="radio" name="biotipo" id="mesomorfo" value="mesomorfo">
+          <label for="mesomorfo">Mesomorfo</label>
+          <input type="radio" name="biotipo" id="mesomorfo" value="mesomorfo">
+          <label for="endomorfo">Endomorfo</label>
+        </li>
+        <li>
+          <label for="altura">Altura (cm)*</label>
+          <input type="number" name="altura" id="altura" max="299" placeholder="apenas numeros" required>
+        </li>
+        <li>
+          <label for="pescoco">Pescoço (cm)*</label>
+          <input type="number" name="pescoco" id="pescoco" max="99" placeholder="apenas numeros" required>
+        </li>
+        <li>
+          <label for="cintura">Cintura (cm)*</label>
+          <input type="number" name="cintura" id="cintura" max="299" placeholder="apenas numeros" required>
+        </li>
+        <li>
+          <label for="quadril">Quadril (cm)*</label>
+          <input type="number" name="quadril" id="quadril" max="299" placeholder="apenas numeros" required>
+        </li>
+        <li>
+          <label for="peso">Peso (Kg)*</label>
+          <input type="number" name="peso" id="peso" max="499" placeholder="apenas numeros" required>
+        </li>
+        <li>
+          <label for="idade">Idade (anos)*</label>
+          <input type="number" name="idade" id="idade" max="199" placeholder="apenas numeros" required>
+        </li>
+      </ul>
+    </div>
+    <div class="result-basal">
+      <ul>
+        <li>
+          <h5>Percentual de Gordura - BF (%)</h5>
+          <span></span>
+        </li>
+        <li>
+          <h5>Massa Magra</h5>
+          <span></span>
+        </li>
+        <li>
+          <h5>Massa Gorda</h5>
+          <span></span>
+        </li>
+        <li>
+          <h5>Taxa Metabólica Basal</h5>
+          <span></span>
+        </li>
+      </ul>
+    </div>
+    <div class="calc-dieta">
+      <ul>
+        <li>
+          <h5>Objetivo de Peso</h5>
+          <input type="radio" name="objetivo" id="perder" value="perder" checked>
+          <label for="perder">Perder</label>
+          <input type="radio" name="objetivo" id="manter" value="manter">
+          <label for="manter">Manter</label>
+          <input type="radio" name="objetivo" id="ganhar" value="ganhar">
+          <label for="ganhar">Ganhar</label>
+        </li>
+        <li>
+          <label for="idade">Tempo de Treino (min)</label>
+          <input type="number" name="treino" id="treino" max="999" placeholder="apenas numeros" required>
+          <h5>Intensidade do Treino</h5>
+          <select name="intesidade-treino">
+            <option value="leve">Leve</option>
+            <option value="medio" selected>Médio</option>
+            <option value="intenso">intenso</option>
+          </select>
+          <h5>Gasto médio em Treino (kcal)</h5>
+          <span></span>        
+        </li>
+        <li>
+          <label for="idade">Tempo de Cardio (min)</label>
+          <input type="number" name="cardio" id="cardio" max="999" placeholder="apenas numeros" required>
+          <h5>Intensidade do Cardio</h5>
+          <select name="intesidade-cardio">
+            <option value="leve">Leve</option>
+            <option value="medio" selected>Médio</option>
+            <option value="intenso">intenso</option>
+          </select> 
+          <h5>Gasto médio em Cardio (kcal)</h5>
+          <span></span>               
+        </li>
+      </ul>
+    </div>
+    <div class="result-dieta">
+      <ul>
+        <li>
+          <h5>Você deve consumir em dias de descanso (kcal)</h5>
+          <span></span>
+        </li>
+        <li>
+          <h5>Você deve consumir em dias de treino (kcal)</h5>
+          <span></span>
+        </li>
+        <li>
+          <h5>Você deve consumir em dias de cardio</h5>
+          <span></span>
+        </li>
+        <li>
+          <h5>Você deve consumir em dias de treino + cardio (kcal)</h5>
+          <span></span>
+        </li>
+      </ul>
+    </div>
+    <div class="result-macros">
+      <ul>
+        <li>
+          <h5>Essa é a Quantidade de Proteína e Gordura ideal para voçê! Mas se desejar, pode modificar abaixo.</h5>
+          <label for="proteinaporkg">Proteína por kg de massa magra</label>
+          <input type="range" name="proteinaporkg" id="proteinaporkg" value="" min="0" max="5" step="0.1">
+          <label for="gorduraporkg">Gordura por kg de massa magra</label>
+          <input type="range" name="gorduraporkg" id="gorduraporkg" value="" min="0" max="5" step="0.1">
+        </li>
+        <li>
+          <h5>Quantidade de proteínas (g)</h5>
+          <span></span>
+        </li>
+        <li>
+          <h5>Quantidade de gorduras (g)</h5>
+          <span></span>
+        </li>
+        <li>
+          <h5>Quantidade de carboidratos em dias de descanso</h5>
+          <span></span>
+        </li>
+        <li>
+          <h5>Quantidade de carboidratos em dias de treino</h5>
+          <span></span>
+        </li>
+        <li>
+          <h5>Quantidade de carboidratos em dias de cardio</h5>
+          <span></span>
+        </li>
+        <li>
+          <h5>Quantidade de carboidratos em dias de treino + cardio</h5>
+          <span></span>
+        </li>
+      </ul>
+    </div>
+  </main>
 
   <script type="module" src="./js/script.js"></script>
 </body>
