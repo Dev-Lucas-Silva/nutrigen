@@ -1,0 +1,35 @@
+.calc-basal ul {
+  display: grid;
+  gap: 20px;
+}
+
+.calc-basal h5 {
+  padding-bottom: 10px;
+}
+
+.result-basal ul {
+  display: grid;
+}
+
+.result-basal h5 {
+  padding: 10px;
+}
+
+.calc-dieta ul {
+ display: grid;
+ gap: 20px;
+}
+
+.calc-dieta ul h5 {
+padding: 10px;
+}
+
+.result-dieta ul{
+  display: grid;
+  gap: 20px;
+}
+
+.result-macros ul {
+  display: grid;
+  gap: 20px;
+}
