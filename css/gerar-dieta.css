@@ -11,12 +11,14 @@
   display: grid;
   grid-template-columns: repeat(4,1fr);
   max-width: 400px;
+  display: none;
 }
 
 .grid-bf-mulher {
   display: grid;
   grid-template-columns: repeat(5,1fr);
   max-width: 400px;
+  display: none;
 }
 
 .result-basal ul {
@@ -44,4 +46,15 @@
 .result-macros ul {
   display: grid;
   gap: 20px;
+}
+
+.invalido {
+  border-color: darkred;
+}
+.erro {
+  display: none;
+}
+
+.erro.invalido {
+  display: block;
 }

@@ -35,143 +35,147 @@
 
   <main id="gerar-dieta">
     <div class="calc-basal">
-      <ul>
-        <li>
+      <form name="form-basal" id="form-basal">
+        <div>
           <h5>Sexo*</h5>
-          <input type="radio" name="sexo" id="masculino" value="masculino" checked>
+          <input type="radio" name="sexo" id="masculino" value="masculino" required>
           <label for="masculino">Masculino</label>
-          <input type="radio" name="sexo" id="feminino" value="feminino">
+          <input type="radio" name="sexo" id="feminino" value="feminino" required>
           <label for="feminino">Feminino</label>
-        </li>
-        <li>
-          <h5>Biotipo*</h5>
-          <input type="radio" name="biotipo" id="ectomorfo" value="ectomorfo" checked>
-          <label for="ectomorfo">Ectomorfo</label>
-          <input type="radio" name="biotipo" id="mesomorfo" value="mesomorfo">
-          <label for="mesomorfo">Mesomorfo</label>
-          <input type="radio" name="biotipo" id="mesomorfo" value="mesomorfo">
-          <label for="endomorfo">Endomorfo</label>
-        </li>
-        <li>
+        </div>
+        <div>
           <label for="altura">Altura (cm)*</label>
-          <input type="number" name="altura" id="altura" max="299" placeholder="apenas numeros" required>
-        </li>
-        <li>
+          <input type="number" name="altura" id="altura" min="1" max="299" placeholder="apenas numeros" required>
+        </div>
+        <div>
           <label for="peso">Peso (Kg)*</label>
-          <input type="number" name="peso" id="peso" max="499" placeholder="apenas numeros" required>
-        </li>
-        <li>
+          <input type="number" name="peso" id="peso" min="1" max="499" placeholder="apenas numeros" required>
+        </div>
+        <div>
           <label for="idade">Idade (anos)*</label>
-          <input type="number" name="idade" id="idade" max="199" placeholder="apenas numeros" required>
-        </li>
-        <li class="grid-bf-homem">
+          <input type="number" name="idade" id="idade" min="1" max="199" placeholder="apenas numeros" required>
+        </div>
+        <div class="grid-bf-homem">
           <div>
-            <input type="radio" name="bf-homem" id="bf-homem" value="4.5">
+            <input type="radio" name="bf" id="bf-homem" value="0.045">
             <label for="bf-homem"><img src="./image/bf-homem/bf-homem-4.5.png" alt="" width="180" height="180"></label>
           </div>
-          <div>
-            <input type="radio" name="bf-homem" id="bf-homem2" value="6.5">
+<!--          <div>
+            <input type="radio" name="bf" id="bf-homem2" value="0.065">
             <label for="bf-homem2"><img src="./image/bf-homem/bf-homem-6.5.png" alt="" width="180" height="180"></label>
           </div>
           <div>
-            <input type="radio" name="bf-homem" id="bf-homem3" value="9">
+            <input type="radio" name="bf" id="bf-homem3" value="0.09">
             <label for="bf-homem3"><img src="./image/bf-homem/bf-homem-9.png" alt="" width="180" height="180"></label>
           </div>
           <div>
-            <input type="radio" name="bf-homem" id="bf-homem4" value="11.5">
+            <input type="radio" name="bf" id="bf-homem4" value="0.115">
             <label for="bf-homem4"><img src="./image/bf-homem/bf-homem-11.5.png" alt="" width="180" height="180"></label>
           </div>
           <div>
-            <input type="radio" name="bf-homem" id="bf-homem5" value="14">
+            <input type="radio" name="bf" id="bf-homem5" value="0.14">
             <label for="bf-homem5"><img src="./image/bf-homem/bf-homem-14.png" alt="" width="180" height="180"></label>
           </div>
           <div>
-            <input type="radio" name="bf-homem" id="bf-homem6" value="17.5">
+            <input type="radio" name="bf" id="bf-homem6" value="0.175">
             <label for="bf-homem6"><img src="./image/bf-homem/bf-homem-17.5.png" alt="" width="180" height="180"></label>
           </div>
           <div>
-            <input type="radio" name="bf-homem" id="bf-homem7" value="22">
+            <input type="radio" name="bf" id="bf-homem7" value="0.22">
             <label for="bf-homem7"><img src="./image/bf-homem/bf-homem-22.png" alt="" width="180" height="180"></label>
           </div>
           <div>
-            <input type="radio" name="bf-homem" id="bf-homem8" value="27.5">
+            <input type="radio" name="bf" id="bf-homem8" value="0.275">
             <label for="bf-homem8"><img src="./image/bf-homem/bf-homem-27.5.png" alt="" width="180" height="180"></label>
-          </div>
-        </li>
-        <li class="grid-bf-mulher">
+          </div>-->
+        </div>
+        <div class="grid-bf-mulher">
           <div>
-            <input type="radio" name="bf-mulher" id="bf-mulher" value="19">
+            <input type="radio" name="bf" id="bf-mulher" value="0.19" required>
             <label for="bf-mulher"><img src="./image/bf-mulher/bf-mulher-19.png" alt="" width="110" height="360"></label>
           </div>
           <div>
-            <input type="radio" name="bf-mulher" id="bf-mulher2" value="25">
+            <input type="radio" name="bf" id="bf-mulher2" value="0.25" required>
             <label for="bf-mulher2"><img src="./image/bf-mulher/bf-mulher-25.png" alt="" width="126" height="360"></label>
           </div>
           <div>
-            <input type="radio" name="bf-mulher" id="bf-mulher3" value="30">
+            <input type="radio" name="bf" id="bf-mulher3" value="0.30" required>
             <label for="bf-mulher3"><img src="./image/bf-mulher/bf-mulher-30.png" alt="" width="128" height="360"></label>
           </div>
           <div>
-            <input type="radio" name="bf-mulher" id="bf-mulher4" value="35">
+            <input type="radio" name="bf" id="bf-mulher4" value="0.35" required>
             <label for="bf-mulher4"><img src="./image/bf-mulher/bf-mulher-35.png" alt="" width="136" height="360"></label>
           </div>
           <div>
-            <input type="radio" name="bf-mulher" id="bf-mulher5" value="40">
+            <input type="radio" name="bf" id="bf-mulher5" value="0.40" required>
             <label for="bf-mulher5"><img src="./image/bf-mulher/bf-mulher-40.png" alt="" width="169" height="360"></label>
           </div>
-        </li>
-
-      </ul>
+        </div>
+        <div>
+          <input type="button" value="Calcular" name="submit">
+          <span class="erro">*Preencha todos os campos acima para vizualizar os resultados!</span>
+        </div>
+      </form>
       <hr>
     </div>
     <div class="result-basal">
+
       <ul>
         <li>
-          <h5>Percentual de Gordura - BF (%)</h5>
-          <span></span>
+          <h5>Percentual de Gordura Corporal Estimado (BF)</h5>
+          <span class="result-bf"></span>
         </li>
         <li>
           <h5>Massa Magra</h5>
-          <span></span>
+          <span class="result-mm"></span>
         </li>
         <li>
           <h5>Massa Gorda</h5>
-          <span></span>
+          <span class="result-mg"></span>
         </li>
         <li>
           <h5>Taxa Metabólica Basal</h5>
-          <span></span>
+          <span class="result-tmb"></span>
         </li>
       </ul>
       <hr>
     </div>
     <div class="calc-dieta">
-      <ul>
-        <li>
-          <h5>Objetivo de Peso</h5>
+      <form id="form-dieta">
+        <div>
+          <h5>Biotipo*</h5>
+          <input type="radio" name="biotipo" id="ectomorfo" value="ectomorfo" required>
+          <label for="ectomorfo">Ectomorfo</label>
+          <input type="radio" name="biotipo" id="mesomorfo" value="mesomorfo" required>
+          <label for="mesomorfo">Mesomorfo</label>
+          <input type="radio" name="biotipo" id="endomorfo" value="endomorfo" required>
+          <label for="endomorfo">Endomorfo</label>
+        </div>
+        <div>
+          <h5>Objetivo de Peso*</h5>
           <input type="radio" name="objetivo" id="perder" value="perder" checked>
           <label for="perder">Perder</label>
           <input type="radio" name="objetivo" id="manter" value="manter">
           <label for="manter">Manter</label>
           <input type="radio" name="objetivo" id="ganhar" value="ganhar">
           <label for="ganhar">Ganhar</label>
-        </li>
-        <li>
-          <label for="idade">Tempo de Treino (min)</label>
-          <input type="number" name="treino" id="treino" max="999" placeholder="apenas numeros" required>
-          <h5>Intensidade do Treino</h5>
+        </div>
+        <div>
+          <label for="idade">Tempo de Treino (min)*</label>
+          <input type="number" name="treino" id="treino" min="0" max="999" placeholder="apenas numeros" required>
+          <h5>Intensidade do Treino*</h5>
           <select name="intesidade-treino">
             <option value="leve">Leve</option>
             <option value="medio" selected>Médio</option>
             <option value="intenso">intenso</option>
           </select>
-          <h5>Gasto médio em Treino (kcal)</h5>
+          <h5>Gasto médio em Treino (kcal)*</h5>
           <span></span>
-        </li>
-        <li>
-          <label for="idade">Tempo de Cardio (min)</label>
-          <input type="number" name="cardio" id="cardio" max="999" placeholder="apenas numeros" required>
-          <h5>Intensidade do Cardio</h5>
+        </div>
+        <div>
+          <label for="idade">Tempo de Cardio (min)*</label>
+          <input type="number" name="cardio" id="cardio" min="0" max="999" placeholder="apenas numeros" required>
+          <h5>Intensidade do Cardio*</h5>
           <select name="intesidade-cardio">
             <option value="leve">Leve</option>
             <option value="medio" selected>Médio</option>
@@ -179,8 +183,8 @@
           </select>
           <h5>Gasto médio em Cardio (kcal)</h5>
           <span></span>
-        </li>
-      </ul>
+        </div>
+      </form>
       <hr>
     </div>
     <div class="result-dieta">
@@ -205,39 +209,39 @@
       <hr>
     </div>
     <div class="result-macros">
-      <ul>
-        <li>
+      <form id="form-macros">
+        <div>
           <h5>Essa é a taxa de proteína e gordura por Kg corporal ideal para voçê! Mas se desejar, pode modificar abaixo.</h5>
           <label for="proteinaporkg">Proteína por kg de massa magra</label>
           <input type="range" name="proteinaporkg" id="proteinaporkg" value="" min="0" max="5" step="0.1">
           <label for="gorduraporkg">Gordura por kg de massa magra</label>
           <input type="range" name="gorduraporkg" id="gorduraporkg" value="" min="0" max="5" step="0.1">
-        </li>
-        <li>
+        </div>
+        <div>
           <h5>Quantidade de proteínas (g)</h5>
           <span></span>
-        </li>
-        <li>
+        </div>
+        <div>
           <h5>Quantidade de gorduras (g)</h5>
           <span></span>
-        </li>
-        <li>
+        </div>
+        <div>
           <h5>Quantidade de carboidratos em dias de descanso</h5>
           <span></span>
-        </li>
-        <li>
+        </div>
+        <div>
           <h5>Quantidade de carboidratos em dias de treino</h5>
           <span></span>
-        </li>
-        <li>
+        </div>
+        <div>
           <h5>Quantidade de carboidratos em dias de cardio</h5>
           <span></span>
-        </li>
-        <li>
+        </div>
+        <div>
           <h5>Quantidade de carboidratos em dias de treino + cardio</h5>
           <span></span>
-        </li>
-      </ul>
+        </div>
+      </form>
     </div>
   </main>
 
