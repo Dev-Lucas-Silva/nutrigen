@@ -11,7 +11,6 @@
   display: grid;
   grid-template-columns: repeat(4,1fr);
   max-width: 400px;
-  display: none;
 }
 
 .grid-bf-mulher {
@@ -29,16 +28,16 @@
   padding: 10px;
 }
 
-.calc-dieta ul {
+.calc-kcal ul {
   display: grid;
   gap: 20px;
 }
 
-.calc-dieta ul h5 {
+.calc-kcal ul h5 {
   padding: 10px;
 }
 
-.result-dieta ul {
+.result-kcal ul {
   display: grid;
   gap: 20px;
 }

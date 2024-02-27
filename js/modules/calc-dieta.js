@@ -61,10 +61,10 @@ export default function initCalcDieta() {
     dados[event.target.name] = event.target.value;
     if (dados.sexo === "masculino") {
       gridBfMulher.style.display = "none";
-      gridBfHomem.style.display = "block";
+      gridBfHomem.style.display = "grid";
     } else if (dados.sexo === "feminino") {
       gridBfHomem.style.display = "none";
-      gridBfMulher.style.display = "block";
+      gridBfMulher.style.display = "grid";
     }
     handleValidity(event);
   };
