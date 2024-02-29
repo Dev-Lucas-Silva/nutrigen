@@ -1,15 +1,17 @@
-export default function initCalcDieta() {
+export default function initCalcTmb() {
   const formBasal = document.getElementById("form-basal");
   const gridBfHomem = document.querySelector(".grid-bf-homem");
   const gridBfMulher = document.querySelector(".grid-bf-mulher");
   const resultBasal = document.querySelector(".result-basal");
-
-  const eventos = ["click", "touchstart", "change", "keyup"];
+  const erroTmb = formBasal.querySelector(".tmb-erro");
 
   const dados = {};
+  dados.length = 6;
 
-  const calcularTmb = () => {
-    resultBasal.querySelector(".result-bf").innerHTML = dados.bf * 100 + "%";
+  const calcTmb = () => {
+    const resultadoBf = dados.bf * 100;
+    resultBasal.querySelector(".result-bf").innerHTML =
+      resultadoBf.toFixed(1) + "%";
 
     const resultadoMm = dados.peso - dados.peso * dados.bf;
     resultBasal.querySelector(".result-mm").innerHTML =
@@ -32,33 +34,28 @@ export default function initCalcDieta() {
     }
   };
 
-  const handleValidity = (event) => {
+  const handleValidity = (form, event, erro) => {
     const target = event.target;
-    const erro = formBasal.querySelector(".erro");
 
-    if (!dados[target.name]) {
+    if (target.value === "" && target.name != "submit") {
       target.classList.add("invalido");
     } else {
       target.classList.remove("invalido");
     }
-    formBasal.submit.addEventListener("click", () => {
-      if (
-        dados.altura &&
-        dados.idade &&
-        dados.peso &&
-        dados.sexo &&
-        dados.bf
-      ) {
+
+    form.submit.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      if (Object.values(dados).length === dados.length) {
         erro.classList.remove("invalido");
-        calcularTmb();
+        calcTmb();
       } else {
         erro.classList.add("invalido");
       }
     });
   };
 
-  const handleEvents = (event) => {
-    dados[event.target.name] = event.target.value;
+  const mostarFotosBf = () => {
     if (dados.sexo === "masculino") {
       gridBfMulher.style.display = "none";
       gridBfHomem.style.display = "grid";
@@ -66,8 +63,17 @@ export default function initCalcDieta() {
       gridBfHomem.style.display = "none";
       gridBfMulher.style.display = "grid";
     }
-    handleValidity(event);
   };
+
+  const handleEvents = (event) => {
+    if (event.target.value) {
+      dados[event.target.name] = event.target.value;
+    }
+    mostarFotosBf();
+    handleValidity(formBasal, event, erroTmb);
+  };
+
+  const eventos = ["click", "touchstart", "change", "keyup"];
 
   eventos.forEach((evento) => formBasal.addEventListener(evento, handleEvents));
 }

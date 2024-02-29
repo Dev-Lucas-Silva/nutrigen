@@ -50,10 +50,10 @@
 .invalido {
   border-color: darkred;
 }
-.erro {
+.tmb-erro {
   display: none;
 }
 
-.erro.invalido {
+.tmb-erro.invalido {
   display: block;
 }

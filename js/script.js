@@ -1,3 +1,8 @@
-import initCalcDieta from "./modules/calc-dieta.js";
+import initCalcTmb from "./modules/calc-tmb.js";
+//import initCalcKcal from "./modules/calc-kcal.js";
+//import initCalcMacros from "./modules/calc-macros.js";
 
-initCalcDieta();
+
+initCalcTmb();
+//initCalcKcal();
+//initCalcMacros();
