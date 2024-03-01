@@ -1,37 +1,40 @@
+import initCalcKcal from "./calc-kcal.js";
+
 export default function initCalcTmb() {
   const formBasal = document.getElementById("form-basal");
   const gridBfHomem = document.querySelector(".grid-bf-homem");
   const gridBfMulher = document.querySelector(".grid-bf-mulher");
   const resultBasal = document.querySelector(".result-basal");
+  const resultKcal = document.querySelector(".result-kcal");
   const erroTmb = formBasal.querySelector(".tmb-erro");
 
-  const dados = {};
-  dados.length = 6;
+  const dadosTmb = {};
+  dadosTmb.length = 12;
 
   const calcTmb = () => {
-    const resultadoBf = dados.bf * 100;
+    const resultadoBf = dadosTmb.bf * 100;
+    const resultadoMm = dadosTmb.peso - dadosTmb.peso * dadosTmb.bf;
+    const resultadoMg = dadosTmb.peso * dadosTmb.bf;
+    const resultadoTmbh =
+    66 + 13.7 * dadosTmb.peso + 5 * dadosTmb.altura - 6.8 * dadosTmb.idade;
+    const resultadoTmbm =
+    655 + 9.6 * dadosTmb.peso + 1.8 * dadosTmb.altura - 4.7 * dadosTmb.idade;
+
     resultBasal.querySelector(".result-bf").innerHTML =
       resultadoBf.toFixed(1) + "%";
-
-    const resultadoMm = dados.peso - dados.peso * dados.bf;
     resultBasal.querySelector(".result-mm").innerHTML =
       resultadoMm.toFixed(2) + " Kg";
-
-    const resultadoMg = dados.peso * dados.bf;
     resultBasal.querySelector(".result-mg").innerHTML =
       resultadoMg.toFixed(2) + " Kg";
 
-    if (dados.sexo === "masculino") {
-      const resultadoTmbh =
-        66 + 13.7 * dados.peso + 5 * dados.altura - 6.8 * dados.idade;
-      resultBasal.querySelector(".result-tmb").innerHTML =
+    if (dadosTmb.sexo === "masculino") {
+      resultKcal.querySelector(".result-tmb").innerHTML =
         resultadoTmbh.toFixed(0) + " Kcal";
-    } else if (dados.sexo === "feminino") {
-      const resultadoTmbm =
-        655 + 9.6 * dados.peso + 1.8 * dados.altura - 4.7 * dados.idade;
-      resultBasal.querySelector(".result-tmb").innerHTML =
+    } else if (dadosTmb.sexo === "feminino") {
+      resultKcal.querySelector(".result-tmb").innerHTML =
         resultadoTmbm.toFixed(0) + " Kcal";
     }
+    initCalcKcal(dadosTmb);
   };
 
   const handleValidity = (form, event, erro) => {
@@ -46,7 +49,7 @@ export default function initCalcTmb() {
     form.submit.addEventListener("click", (event) => {
       event.preventDefault();
 
-      if (Object.values(dados).length === dados.length) {
+      if (Object.values(dadosTmb).length === dadosTmb.length) {
         erro.classList.remove("invalido");
         calcTmb();
       } else {
@@ -56,10 +59,10 @@ export default function initCalcTmb() {
   };
 
   const mostarFotosBf = () => {
-    if (dados.sexo === "masculino") {
+    if (dadosTmb.sexo === "masculino") {
       gridBfMulher.style.display = "none";
       gridBfHomem.style.display = "grid";
-    } else if (dados.sexo === "feminino") {
+    } else if (dadosTmb.sexo === "feminino") {
       gridBfHomem.style.display = "none";
       gridBfMulher.style.display = "grid";
     }
@@ -67,7 +70,7 @@ export default function initCalcTmb() {
 
   const handleEvents = (event) => {
     if (event.target.value) {
-      dados[event.target.name] = event.target.value;
+      dadosTmb[event.target.name] = event.target.value;
     }
     mostarFotosBf();
     handleValidity(formBasal, event, erroTmb);

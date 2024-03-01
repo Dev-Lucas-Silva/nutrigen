@@ -54,63 +54,116 @@
           <label for="idade">Idade (anos)*</label>
           <input type="number" name="idade" id="idade" min="1" max="199" placeholder="apenas numeros" required>
         </div>
-        <h4>Qual o seu nível de definição?</h4>
-        <div class="grid-bf-homem">
-          <div>
-            <input type="radio" name="bf" id="bf-homem" value="0.07">
-            <label for="bf-homem"><img src="./image/bf-homem/bf-homem-7.jpg" alt="" width="180" height="180"></label>
+        <div>
+          <h4>Qual é o seu objetivo de peso?*</h4>
+          <input type="radio" name="objetivo" id="perder" value="perder">
+          <label for="perder">Perder</label>
+          <input type="radio" name="objetivo" id="manter" value="manter">
+          <label for="manter">Manter</label>
+          <input type="radio" name="objetivo" id="ganhar" value="ganhar">
+          <label for="ganhar">Ganhar</label>
+          <input type="radio" name="objetivo" id="performace" value="performace">
+          <label for="performace">Performance*</label>
+          <p>*Performance: Luta, corrida, ciclismo e outros.</p>
+        </div>
+        <div>
+          <label for="treino">Tempo de Treino de musculação (min)*</label>
+          <input type="number" name="tempoTreino" id="treino" min="0" max="999" placeholder="apenas numeros" required>
+          <h4>Intensidade do Treino*</h4>
+          <select name="intesidadeTreino">
+            <option value="leve">Leve</option>
+            <option value="medio" selected>Médio</option>
+            <option value="intenso">intenso</option>
+          </select>
+          <h4>Gasto médio em Treino (kcal)*</h4>
+          <span></span>
+        </div>
+        <div>
+          <label for="cardio">Tempo de treino de cardio (min)*</label>
+          <input type="number" name="tempoCardio" id="cardio" min="0" max="999" placeholder="apenas numeros" required>
+          <h4>Intensidade do Cardio*</h4>
+          <select name="intesidadeCardio">
+            <option value="leve">Leve</option>
+            <option value="medio" selected>Médio</option>
+            <option value="intenso">intenso</option>
+          </select>
+          <h4>Gasto médio em Cardio (kcal)</h4>
+          <span></span>
+        </div>
+
+        <div>
+          <h4>Qual o seu nível de definição?</h4>
+          <div class="grid-bf-homem">
+            <div>
+              <input type="radio" name="bf" id="bf-homem" value="0.07">
+              <label for="bf-homem"><img src="./image/bf-homem/bf-homem-7.jpg" alt="" width="180" height="180"></label>
+            </div>
+            <div>
+              <input type="radio" name="bf" id="bf-homem2" value="0.12">
+              <label for="bf-homem2"><img src="./image/bf-homem/bf-homem-12.jpg" alt="" width="180" height="180"></label>
+            </div>
+            <div>
+              <input type="radio" name="bf" id="bf-homem3" value="0.17">
+              <label for="bf-homem3"><img src="./image/bf-homem/bf-homem-17.jpg" alt="" width="180" height="180"></label>
+            </div>
+            <div>
+              <input type="radio" name="bf" id="bf-homem4" value="0.22">
+              <label for="bf-homem4"><img src="./image/bf-homem/bf-homem-22.jpg" alt="" width="180" height="180"></label>
+            </div>
+            <div>
+              <input type="radio" name="bf" id="bf-homem5" value="0.27">
+              <label for="bf-homem5"><img src="./image/bf-homem/bf-homem-27.jpg" alt="" width="180" height="180"></label>
+            </div>
+            <div>
+              <input type="radio" name="bf" id="bf-homem6" value="0.32">
+              <label for="bf-homem6"><img src="./image/bf-homem/bf-homem-32.jpg" alt="" width="180" height="180"></label>
+            </div>
+            <div>
+              <input type="radio" name="bf" id="bf-homem7" value="0.37">
+              <label for="bf-homem7"><img src="./image/bf-homem/bf-homem-37.jpg" alt="" width="180" height="180"></label>
+            </div>
+            <div>
+              <input type="radio" name="bf" id="bf-homem8" value="0.40">
+              <label for="bf-homem8"><img src="./image/bf-homem/bf-homem-40+.jpg" alt="" width="180" height="180"></label>
+            </div>
           </div>
-          <div>
-            <input type="radio" name="bf" id="bf-homem2" value="0.12">
-            <label for="bf-homem2"><img src="./image/bf-homem/bf-homem-12.jpg" alt="" width="180" height="180"></label>
-          </div>
-          <div>
-            <input type="radio" name="bf" id="bf-homem3" value="0.17">
-            <label for="bf-homem3"><img src="./image/bf-homem/bf-homem-17.jpg" alt="" width="180" height="180"></label>
-          </div>
-          <div>
-            <input type="radio" name="bf" id="bf-homem4" value="0.22">
-            <label for="bf-homem4"><img src="./image/bf-homem/bf-homem-22.jpg" alt="" width="180" height="180"></label>
-          </div>
-          <div>
-            <input type="radio" name="bf" id="bf-homem5" value="0.27">
-            <label for="bf-homem5"><img src="./image/bf-homem/bf-homem-27.jpg" alt="" width="180" height="180"></label>
-          </div>
-          <div>
-            <input type="radio" name="bf" id="bf-homem6" value="0.32">
-            <label for="bf-homem6"><img src="./image/bf-homem/bf-homem-32.jpg" alt="" width="180" height="180"></label>
-          </div>
-          <div>
-            <input type="radio" name="bf" id="bf-homem7" value="0.37">
-            <label for="bf-homem7"><img src="./image/bf-homem/bf-homem-37.jpg" alt="" width="180" height="180"></label>
-          </div>
-          <div>
-            <input type="radio" name="bf" id="bf-homem8" value="0.40">
-            <label for="bf-homem8"><img src="./image/bf-homem/bf-homem-40+.jpg" alt="" width="180" height="180"></label>
+          <div class="grid-bf-mulher">
+            <div>
+              <input type="radio" name="bf" id="bf-mulher" value="0.19" required>
+              <label for="bf-mulher"><img src="./image/bf-mulher/bf-mulher-19.png" alt="" width="110" height="360"></label>
+            </div>
+            <div>
+              <input type="radio" name="bf" id="bf-mulher2" value="0.25" required>
+              <label for="bf-mulher2"><img src="./image/bf-mulher/bf-mulher-25.png" alt="" width="126" height="360"></label>
+            </div>
+            <div>
+              <input type="radio" name="bf" id="bf-mulher3" value="0.30" required>
+              <label for="bf-mulher3"><img src="./image/bf-mulher/bf-mulher-30.png" alt="" width="128" height="360"></label>
+            </div>
+            <div>
+              <input type="radio" name="bf" id="bf-mulher4" value="0.35" required>
+              <label for="bf-mulher4"><img src="./image/bf-mulher/bf-mulher-35.png" alt="" width="136" height="360"></label>
+            </div>
+            <div>
+              <input type="radio" name="bf" id="bf-mulher5" value="0.40" required>
+              <label for="bf-mulher5"><img src="./image/bf-mulher/bf-mulher-40.png" alt="" width="169" height="360"></label>
+            </div>
           </div>
         </div>
-        <div class="grid-bf-mulher">
+        <h4>Qual é o seu Biotipo?*</h4>
+        <div>
+          <input type="radio" name="biotipo" id="ectomorfo" value="ectomorfo" required>
+          <label for="ectomorfo">Ectomorfo</label>
+          <input type="radio" name="biotipo" id="mesomorfo" value="mesomorfo" required>
+          <label for="mesomorfo">Mesomorfo</label>
+          <input type="radio" name="biotipo" id="endomorfo" value="endomorfo" required>
+          <label for="endomorfo">Endomorfo</label>
           <div>
-            <input type="radio" name="bf" id="bf-mulher" value="0.19" required>
-            <label for="bf-mulher"><img src="./image/bf-mulher/bf-mulher-19.png" alt="" width="110" height="360"></label>
-          </div>
-          <div>
-            <input type="radio" name="bf" id="bf-mulher2" value="0.25" required>
-            <label for="bf-mulher2"><img src="./image/bf-mulher/bf-mulher-25.png" alt="" width="126" height="360"></label>
-          </div>
-          <div>
-            <input type="radio" name="bf" id="bf-mulher3" value="0.30" required>
-            <label for="bf-mulher3"><img src="./image/bf-mulher/bf-mulher-30.png" alt="" width="128" height="360"></label>
-          </div>
-          <div>
-            <input type="radio" name="bf" id="bf-mulher4" value="0.35" required>
-            <label for="bf-mulher4"><img src="./image/bf-mulher/bf-mulher-35.png" alt="" width="136" height="360"></label>
-          </div>
-          <div>
-            <input type="radio" name="bf" id="bf-mulher5" value="0.40" required>
-            <label for="bf-mulher5"><img src="./image/bf-mulher/bf-mulher-40.png" alt="" width="169" height="360"></label>
+            <span class="simbol-duvida">?</span>
+            <p>Descubra qual o seu Biotipo aqui.</p>
           </div>
         </div>
+
         <div>
           <input type="submit" name="submit">
           <span class="tmb-erro">*Preencha todos os campos acima para vizualizar os resultados!</span>
@@ -134,135 +187,75 @@
           <h4>Massa Gorda</h4>
           <span class="result-mg"></span>
         </li>
-        <li>
-          <h4>Taxa Metabólica Basal</h4>
-          <span class="result-tmb"></span>
-        </li>
       </ul>
-      <p>*com essa estimativa podemos calcular os macros nutrientes para sua dieta.</p>
-      <hr>
-    </div>
-
-    <div class="calc-kcal">
-      <form id="form-kcal">
-        <h3>Agora vamos gerar sua dieta</h3>
-        <div>
-          <h4>Qual é o seu objetivo de peso?*</h4>
-          <input type="radio" name="objetivo" id="perder" value="perder">
-          <label for="perder">Perder</label>
-          <input type="radio" name="objetivo" id="manter" value="manter">
-          <label for="manter">Manter</label>
-          <input type="radio" name="objetivo" id="ganhar" value="ganhar">
-          <label for="ganhar">Ganhar</label>
-          <input type="radio" name="objetivo" id="performace" value="performace">
-          <label for="performace">Performance*</label>
-          <p>*Performance: Luta, corrida, ciclismo e outros.</p>
-        </div>
-        <h4>Qual é o seu Biotipo?*</h4>
-        <div>
-          <input type="radio" name="biotipo" id="ectomorfo" value="ectomorfo" required>
-          <label for="ectomorfo">Ectomorfo</label>
-          <input type="radio" name="biotipo" id="mesomorfo" value="mesomorfo" required>
-          <label for="mesomorfo">Mesomorfo</label>
-          <input type="radio" name="biotipo" id="endomorfo" value="endomorfo" required>
-          <label for="endomorfo">Endomorfo</label>
-          <div>
-            <span class="simbol-duvida">?</span>
-            <p>Descubra qual o seu Biotipo aqui.</p>
-          </div>
-        </div>
-        <div>
-          <label for="idade">Tempo de Treino de musculação (min)*</label>
-          <input type="number" name="treino" id="treino" min="0" max="999" placeholder="apenas numeros" required>
-          <h4>Intensidade do Treino*</h4>
-          <select name="intesidade-treino">
-            <option value="leve">Leve</option>
-            <option value="medio" selected>Médio</option>
-            <option value="intenso">intenso</option>
-          </select>
-          <h4>Gasto médio em Treino (kcal)*</h4>
-          <span></span>
-        </div>
-        <div>
-          <label for="idade">Tempo de treino de cardio (min)*</label>
-          <input type="number" name="cardio" id="cardio" min="0" max="999" placeholder="apenas numeros" required>
-          <h4>Intensidade do Cardio*</h4>
-          <select name="intesidade-cardio">
-            <option value="leve">Leve</option>
-            <option value="medio" selected>Médio</option>
-            <option value="intenso">intenso</option>
-          </select>
-          <h4>Gasto médio em Cardio (kcal)</h4>
-          <span></span>
-        </div>
-      </form>
       <hr>
     </div>
 
     <div class="result-kcal">
-      <h3>Você pode consumir:</h3>
       <ul>
         <li>
-          <span></span>
-          <h4> (kcal) em dias de descanso</h4>
+          <h4>Taxa Metabólica Basal em dias de descanso:</h4>
+          <span class="result-tmb"></span>
         </li>
+        <p>*com essa estimativa podemos calcular os macros nutrientes para sua dieta.</p>
+
+        <h3>Você pode consumir:</h3>
+
         <li>
-          <span></span>
+          <span class="kcal-treino"></span>
           <h4> (kcal) em dias de treino</h4>
         </li>
         <li>
-          <span></span>
+          <span class="kcal-cardio"></span>
           <h4> (kcal) em dias de cardio</h4>
         </li>
         <li>
-          <span></span>
+          <span class="kcal-cardio+treino"></span>
           <h4> (kcal) em dias de treino + cardio</h4>
         </li>
       </ul>
       <hr>
     </div>
-    <div class="calc-macros">
-      <form id="form-macros">
-        <div>
-          <h4>Essa é a taxa de proteína e gordura por Kg corporal ideal para você! Mas se desejar, pode modificar abaixo.</h4>
-          <span class="simbol-duvida">?</span>
-          <p>Você pode modificar essa taxa conforme a sua evolução no seu objetivo. descubra como fazer aqui.</p>
-          <label for="proteinaporkg">Proteína</label>
-          <input type="range" name="proteinaporkg" id="proteinaporkg" value="" min="0" max="5" step="0.1">
-          <label for="gorduraporkg">Gordura</label>
-          <input type="range" name="gorduraporkg" id="gorduraporkg" value="" min="0" max="5" step="0.1">
-        </div>
-      </form>
-      <div class="result-macros">
-        <h3>Essa é a quantidade de macronutrientes que você deve consumir por dia em sua dieta:</h3>
-        <ul>
-          <li>
-            <span></span>
-            <h4> (g) de proteína</h4>
-          </li>
-          <li>
-            <span></span>
-            <h4> (g) de gordura</h4>
-          </li>
-          <li>
-            <span></span>
-            <h4> (g) de carboidratos em dias de descanso</h4>
-          </li>
-          <li>
-            <span></span>
-            <h4> (g) de carboidratos em dias de treino</h4>
-          </li>
-          <li>
-            <span></span>
-            <h4> (g) de carboidratos em dias de cardio</h4>
-          </li>
-          <li>
-            <span></span>
-            <h4> (g) de carboidratos em dias de treino + cardio</h4>
-          </li>
-        </ul>
-      </div>
+    <div class="result-macros">
+      <h3>Essa é a quantidade de macronutrientes que você deve consumir por dia em sua dieta:</h3>
+      <ul>
+        <li>
+          <span class="proteina"></span>
+          <h4> (g) de proteína</h4>
+        </li>
+        <li>
+          <span class="gordura"></span>
+          <h4> (g) de gordura</h4>
+        </li>
+        <li>
+          <span class="carbo-descanso"></span>
+          <h4> (g) de carboidratos em dias de descanso</h4>
+        </li>
+        <li>
+          <span class="carbo-treino"></span>
+          <h4> (g) de carboidratos em dias de treino</h4>
+        </li>
+        <li>
+          <span class="carbo-cardio"></span>
+          <h4> (g) de carboidratos em dias de cardio</h4>
+        </li>
+        <li>
+          <span class="carbo-treino-cardio"></span>
+          <h4> (g) de carboidratos em dias de treino + cardio</h4>
+        </li>
+      </ul>
     </div>
+    <form id="form-macros">
+      <div>
+        <h4>Essa é a taxa de proteína e gordura por Kg corporal ideal para você! Mas se desejar, pode modificar abaixo.</h4>
+        <span class="simbol-duvida">?</span>
+        <p>Você pode modificar essa taxa conforme a sua evolução no seu objetivo. descubra como fazer aqui.</p>
+        <label for="proteinaporkg">Proteína</label>
+        <input type="range" name="proteinaporkg" id="proteinaporkg" value="" min="0" max="5" step="0.1">
+        <label for="gorduraporkg">Gordura</label>
+        <input type="range" name="gorduraporkg" id="gorduraporkg" value="" min="0" max="5" step="0.1">
+      </div>
+    </form>
   </main>
 
   <script type="module" src="./js/script.js"></script>
