@@ -1,3 +1,3 @@
-import initCalcTmb from "./modules/calc-tmb.js";
+import * as initForm from "./modules/init-form.js";
 
-initCalcTmb();
+initForm.init();

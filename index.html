@@ -56,14 +56,14 @@
         </div>
         <div>
           <h4>Qual é o seu objetivo de peso?*</h4>
-          <input type="radio" name="objetivo" id="perder" value="perder">
+          <input type="radio" name="objetivo" id="perder" value="1.2">
           <label for="perder">Perder</label>
-          <input type="radio" name="objetivo" id="manter" value="manter">
+          <input type="radio" name="objetivo" id="manter" value="1.2">
           <label for="manter">Manter</label>
-          <input type="radio" name="objetivo" id="ganhar" value="ganhar">
+          <input type="radio" name="objetivo" id="ganhar" value="1.2">
           <label for="ganhar">Ganhar</label>
-          <input type="radio" name="objetivo" id="performace" value="performace">
-          <label for="performace">Performance*</label>
+          <input type="radio" name="objetivo" id="performace" value="1">
+          <label for="performace">Manter performance*</label>
           <p>*Performance: Luta, corrida, ciclismo e outros.</p>
         </div>
         <div>
@@ -71,9 +71,12 @@
           <input type="number" name="tempoTreino" id="treino" min="0" max="999" placeholder="apenas numeros" required>
           <h4>Intensidade do Treino*</h4>
           <select name="intesidadeTreino">
-            <option value="leve">Leve</option>
-            <option value="medio" selected>Médio</option>
-            <option value="intenso">intenso</option>
+            <option value="">escolha uma opção</option>
+            <option value="3">Leve</option>
+            <option value="5">Moderado</option>
+            <option value="7">intenso</option>
+            <option value="9">Alta performace</option>
+
           </select>
           <h4>Gasto médio em Treino (kcal)*</h4>
           <span></span>
@@ -83,9 +86,12 @@
           <input type="number" name="tempoCardio" id="cardio" min="0" max="999" placeholder="apenas numeros" required>
           <h4>Intensidade do Cardio*</h4>
           <select name="intesidadeCardio">
-            <option value="leve">Leve</option>
-            <option value="medio" selected>Médio</option>
-            <option value="intenso">intenso</option>
+            <option value="">escolha uma opção</option>
+            <option value="3">Leve</option>
+            <option value="6">Moderado</option>
+            <option value="9">intenso</option>
+            <option value="12">Alta performace</option>
+
           </select>
           <h4>Gasto médio em Cardio (kcal)</h4>
           <span></span>
@@ -203,14 +209,14 @@
 
         <li>
           <span class="kcal-treino"></span>
-          <h4> (kcal) em dias de treino</h4>
+          <h4>em dias de treino</h4>
         </li>
         <li>
           <span class="kcal-cardio"></span>
           <h4> (kcal) em dias de cardio</h4>
         </li>
         <li>
-          <span class="kcal-cardio+treino"></span>
+          <span class="kcal-cardio-treino"></span>
           <h4> (kcal) em dias de treino + cardio</h4>
         </li>
       </ul>
