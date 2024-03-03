@@ -43,32 +43,32 @@
           <label for="feminino">Feminino</label>
         </div>
         <div>
-          <label for="altura">Altura (cm)*</label>
-          <input type="number" name="altura" id="altura" min="1" max="299" placeholder="apenas numeros" required>
+          <label for="altura">Altura</label>
+          <input type="number" name="altura" id="altura" min="1" max="299" placeholder="(cm)*" required>
         </div>
         <div>
-          <label for="peso">Peso (Kg)*</label>
-          <input type="number" name="peso" id="peso" min="1" max="499" placeholder="apenas numeros" required>
+          <label for="peso">Peso</label>
+          <input type="number" name="peso" id="peso" min="1" max="499" placeholder="(Kg)*" required>
         </div>
         <div>
-          <label for="idade">Idade (anos)*</label>
-          <input type="number" name="idade" id="idade" min="1" max="199" placeholder="apenas numeros" required>
+          <label for="idade">Idade</label>
+          <input type="number" name="idade" id="idade" min="1" max="199" placeholder="(anos)*" required>
         </div>
         <div>
           <h4>Qual é o seu objetivo de peso?*</h4>
-          <input type="radio" name="objetivo" id="perder" value="1.2">
+          <input type="radio" name="objetivo" id="perder" value="0.8">
           <label for="perder">Perder</label>
-          <input type="radio" name="objetivo" id="manter" value="1.2">
+          <input type="radio" name="objetivo" id="manter" value="1">
           <label for="manter">Manter</label>
           <input type="radio" name="objetivo" id="ganhar" value="1.2">
           <label for="ganhar">Ganhar</label>
           <input type="radio" name="objetivo" id="performace" value="1">
           <label for="performace">Manter performance*</label>
-          <p>*Performance: Luta, corrida, ciclismo e outros.</p>
+          <p>*performance: Luta, corrida, ciclismo e outros.</p>
         </div>
         <div>
-          <label for="treino">Tempo de Treino de musculação (min)*</label>
-          <input type="number" name="tempoTreino" id="treino" min="0" max="999" placeholder="apenas numeros" required>
+          <label for="treino">Tempo de Treino de musculação</label>
+          <input type="number" name="tempoTreino" id="treino" min="0" max="999" placeholder="(min)*" required>
           <h4>Intensidade do Treino*</h4>
           <select name="intesidadeTreino">
             <option value="">escolha uma opção</option>
@@ -82,8 +82,8 @@
           <span></span>
         </div>
         <div>
-          <label for="cardio">Tempo de treino de cardio (min)*</label>
-          <input type="number" name="tempoCardio" id="cardio" min="0" max="999" placeholder="apenas numeros" required>
+          <label for="cardio">Tempo de treino de cardio</label>
+          <input type="number" name="tempoCardio" id="cardio" min="0" max="999" placeholder="(min)*" required>
           <h4>Intensidade do Cardio*</h4>
           <select name="intesidadeCardio">
             <option value="">escolha uma opção</option>
@@ -91,12 +91,15 @@
             <option value="6">Moderado</option>
             <option value="9">intenso</option>
             <option value="12">Alta performace</option>
-
           </select>
           <h4>Gasto médio em Cardio (kcal)</h4>
           <span></span>
         </div>
-
+        <div>
+          <label for="atvDiaDia">Tempo de atividades do dia a dia</label>
+          <input type="number" name="DiaDia" id="atvDiaDia" min="0" max="999" placeholder="(min)*" required>
+          <span>*trabalhar em pé, limpar a casa, brincar com crianças, subir e descer escadas, atividade sexual, etc.</span>
+        </div>
         <div>
           <h4>Qual o seu nível de definição?</h4>
           <div class="grid-bf-homem">
@@ -178,8 +181,9 @@
       <hr>
     </div>
 
-    <div class="result-basal">
-      <h3>Essa é a sua Taxa Metabólica Basal(TMB) e seu Percentual de Gordura Corporal(BF) estimado!</h3>
+
+    <div class="result-basal-kcal">
+      <h3>Essa é a sua Taxa Metabólica Basal(TMB) e seu Percentual de Gordura Corporal(BF) estimado:</h3>
       <ul>
         <li>
           <h4>Percentual de Gordura</h4>
@@ -194,36 +198,32 @@
           <span class="result-mg"></span>
         </li>
       </ul>
-      <hr>
-    </div>
-
-    <div class="result-kcal">
+      <h3>Taxa Metabólica Basal</h3>
       <ul>
         <li>
-          <h4>Taxa Metabólica Basal em dias de descanso:</h4>
           <span class="result-tmb"></span>
+          <h4>em dias de descanso</h4>
         </li>
-        <p>*com essa estimativa podemos calcular os macros nutrientes para sua dieta.</p>
-
-        <h3>Você pode consumir:</h3>
-
         <li>
           <span class="kcal-treino"></span>
           <h4>em dias de treino</h4>
         </li>
         <li>
           <span class="kcal-cardio"></span>
-          <h4> (kcal) em dias de cardio</h4>
+          <h4>em dias de cardio</h4>
         </li>
         <li>
           <span class="kcal-cardio-treino"></span>
-          <h4> (kcal) em dias de treino + cardio</h4>
+          <h4>em dias de treino + cardio</h4>
         </li>
       </ul>
+      <p>*com essa estimativa podemos calcular os macros nutrientes para sua dieta.</p>
+
       <hr>
     </div>
     <div class="result-macros">
       <h3>Essa é a quantidade de macronutrientes que você deve consumir por dia em sua dieta:</h3>
+  
       <ul>
         <li>
           <span class="proteina"></span>
@@ -233,35 +233,41 @@
           <span class="gordura"></span>
           <h4> (g) de gordura</h4>
         </li>
+        <h3>Quantidade de carboidratos:</h3>
         <li>
           <span class="carbo-descanso"></span>
-          <h4> (g) de carboidratos em dias de descanso</h4>
+          <h4> (g) em dias de descanso</h4>
+
         </li>
         <li>
           <span class="carbo-treino"></span>
-          <h4> (g) de carboidratos em dias de treino</h4>
+          <h4> (g) em dias de treino</h4>
         </li>
         <li>
           <span class="carbo-cardio"></span>
-          <h4> (g) de carboidratos em dias de cardio</h4>
+          <h4> (g) em dias de cardio</h4>
         </li>
         <li>
           <span class="carbo-treino-cardio"></span>
-          <h4> (g) de carboidratos em dias de treino + cardio</h4>
+          <h4> (g) em dias de treino + cardio</h4>
         </li>
       </ul>
+      <form id="form-macros">
+        <div>
+          <label for="proteinaporkg">Proteína (g/Kg)</label>
+          <input type="range" name="proteinaporkg" id="proteinaporkg" value="" min="0" max="5" step="0.1">
+          <label for="gorduraporkg">Gordura (g/Kg)</label>
+          <input type="range" name="gorduraporkg" id="gorduraporkg" value="" min="0" max="5" step="0.1">
+          <label for="carboidratoporkg">Carboidrato (g/Kg)</label>
+          <input type="range" name="carboidratoporkg" id="carboidratoporkg" value="" min="0" max="5" step="0.1">
+          
+        </div>
+      </form>
+
+      <span class="simbol-duvida">?</span>
+      <h4>*Essa é a taxa de proteína e gordura por Kg corporal ideal para você! Mas se desejar, Você pode modificar essa taxa conforme sua evolução em seu objetivo. descubra como aqui.</h4>
     </div>
-    <form id="form-macros">
-      <div>
-        <h4>Essa é a taxa de proteína e gordura por Kg corporal ideal para você! Mas se desejar, pode modificar abaixo.</h4>
-        <span class="simbol-duvida">?</span>
-        <p>Você pode modificar essa taxa conforme a sua evolução no seu objetivo. descubra como fazer aqui.</p>
-        <label for="proteinaporkg">Proteína</label>
-        <input type="range" name="proteinaporkg" id="proteinaporkg" value="" min="0" max="5" step="0.1">
-        <label for="gorduraporkg">Gordura</label>
-        <input type="range" name="gorduraporkg" id="gorduraporkg" value="" min="0" max="5" step="0.1">
-      </div>
-    </form>
+
   </main>
 
   <script type="module" src="./js/script.js"></script>

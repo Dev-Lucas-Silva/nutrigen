@@ -8,7 +8,7 @@ const erroTmb = formBasal.querySelector(".tmb-erro");
 export const dadosTmb = {};
 dadosTmb.length = 6;
 
-const handleValidity = (form, event, erro, callback) => {
+const handleValidity = (form, event, erro, calculadora) => {
   const target = event.target;
 
   if (target.value === "" && target.name != "submit") {
@@ -22,7 +22,7 @@ const handleValidity = (form, event, erro, callback) => {
 
     if ((Object.values(dadosTmb).length = dadosTmb.length)) {
       erro.classList.remove("invalido");
-      callback();
+      calculadora();
     } else {
       erro.classList.add("invalido");
     }
@@ -39,12 +39,12 @@ const mostarFotosBf = () => {
   }
 };
 
-const handleEvents = (event, callback) => {
+const handleEvents = (event, calculadora) => {
   if (event.target.value) {
     dadosTmb[event.target.name] = event.target.value;
   }
   mostarFotosBf();
-  handleValidity(formBasal, event, erroTmb, callback);
+  handleValidity(formBasal, event, erroTmb, calculadora);
 };
 
 const eventos = ["click", "touchstart", "change", "keyup"];
