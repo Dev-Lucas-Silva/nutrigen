@@ -47,13 +47,13 @@
   gap: 20px;
 }
 
-.invalido {
+.invalid {
   border-color: darkred;
 }
 .tmb-erro {
   display: none;
 }
 
-.tmb-erro.invalido {
+.tmb-erro.invalid {
   display: block;
 }
