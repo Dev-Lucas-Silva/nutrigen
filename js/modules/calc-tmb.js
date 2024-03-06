@@ -11,33 +11,33 @@ export function calcTmb(sexo) {
       return 1
     }
   };
-  function objeivo(objetivo) {
-    const imcMm = ((dadosForm.peso * dadosForm.bf) - dadosForm.peso) / (dadosForm.peso * dadosForm.peso);
+  function objetivo(objetivo) {
+    const imcMm = ((dadosForm.peso * dadosForm.bf) - dadosForm.peso) / (dadosForm.altura * dadosForm.altura);
 
-    if(objeivo === 'perder' && dadosForm.bf <= 22) {
+    if(objetivo === 'perder' && dadosForm.bf <= 22) {
       return 0.94
-    }else if(objeivo === 'perder' && dadosForm.bf >= 27 && dadosForm.bf < 39) {
+    }else if(objetivo === 'perder' && dadosForm.bf > 22 && dadosForm.bf < 39) {
       return 0.7
-    }else if(objeivo === 'perder' && dadosForm.bf >= 40 && imcMm <= 20) {
+    }else if(objetivo === 'perder' && dadosForm.bf >= 40 && imcMm <= 20) {
       return 0.6
-    }else if(objeivo === 'perder' && dadosForm.bf >= 40 && imcMm > 25) {
+    }else if(objetivo === 'perder' && dadosForm.bf >= 40 && imcMm > 25) {
       return 0.5
-    }else if(objeivo === 'manter') {
+    }else if(objetivo === 'manter') {
       return 1
-    }else if(objeivo === 'ganhar') {
+    }else if(objetivo === 'ganhar') {
       return 1.04
-    }else if(objeivo === 'performace') {
+    }else if(objetivo === 'performace') {
       return 1.14
     }
 
   };
   if (sexo === "masculino") {
     const resultadoTmbh =
-      ((66 + 13.7 * dadosForm.peso + 5 * dadosForm.altura - 6.8 * dadosForm.idade) * biotipo(dadosForm.biotipo)) * objeivo(dadosForm.objetivo);
+      ((66 + 13.7 * dadosForm.peso + 5 * dadosForm.altura - 6.8 * dadosForm.idade) * biotipo(dadosForm.biotipo)) * objetivo(dadosForm.objetivo);
     return resultadoTmbh;
   } else if (sexo === "feminino") {
     const resultadoTmbm =
-      ((655 + 9.6 * dadosForm.peso + 1.8 * dadosForm.altura - 4.7 * dadosForm.idade) * biotipo(dadosForm.biotipo)) * objeivo(dadosForm.objetivo);
+      ((655 + 9.6 * dadosForm.peso + 1.8 * dadosForm.altura - 4.7 * dadosForm.idade) * biotipo(dadosForm.biotipo)) * objetivo(dadosForm.objetivo);
     return resultadoTmbm;
   }
   printTmb();

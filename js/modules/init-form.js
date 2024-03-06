@@ -14,7 +14,7 @@ export const dadosForm = {
   intesidadeCardio: "6",
   intesidadeTreino: "7",
   length: 6,
-  objetivo: "1.2",
+  objetivo: "ganhar",
   peso: "74",
   sexo: "masculino",
   tempoCardio: "60",
@@ -61,7 +61,7 @@ const handleEvents = (event, calculadora) => {
   handleValidity(formBasal, event, erroTmb, calculadora);
 };
 
-const eventos = ["click", "touchstart", "change", "keyup"];
+const eventos = ["click", "touchstart", "change"];
 
 export function init() {
   eventos.forEach((evento) =>
