@@ -1,6 +1,8 @@
 import { calcTmb } from "./calc-tmb.js";
 import { dadosForm } from "./init-form.js";
-import { initMinhaDieta } from "./meus-macros.js";
+import { initMinhaDieta } from "./bild-dieta.js";
+
+let dadosMacros = {};
 
 export function initCalcMacros(
   dado,
@@ -167,8 +169,6 @@ export function initCalcMacros(
 
   const eventos = ["click", "touchmove"];
 
-  let dadosMacros = {};
-
   function calcProteinas(taxa) {
     let tipoDietaProteina = taxa;
     resultMacros.querySelector(".gkgProteina").innerHTML = tipoDietaProteina;
@@ -178,12 +178,6 @@ export function initCalcMacros(
     dadosMacros.proteina = +proteinas.toFixed(0);
   }
   calcProteinas(taxaCalcMacros.proteina);
-
-  eventos.forEach((evento) =>
-    formMacros.proteinaporkg.addEventListener(evento, () => {
-      calcProteinas(formMacros.proteinaporkg.value);
-    })
-  );
 
   function calcGordura(taxa) {
     let tipoDietaGordura = taxa;
@@ -197,12 +191,6 @@ export function initCalcMacros(
   }
   calcGordura(taxaCalcMacros.gordura);
 
-  eventos.forEach((evento) =>
-    formMacros.gorduraporkg.addEventListener(evento, () => {
-      calcGordura(formMacros.gorduraporkg.value);
-    })
-  );
-
   function calcCarbo(basal, taxaProteina, taxaGordura, novaTaxa) {
     const carboDescanso =
       ((basal - (taxaProteina * 4 + taxaGordura * 9)) / 4) * (novaTaxa / 100);
@@ -215,19 +203,88 @@ export function initCalcMacros(
     const carboTreinoCardio =
       ((resultKcalTreinoCardio - (taxaProteina * 4 + taxaGordura * 9)) / 4) *
       (novaTaxa / 100);
-    resultMacros.querySelector(".carbo-descanso").innerHTML =
-      carboDescanso.toFixed(0) + " g ";
-    resultMacros.querySelector(".carbo-treino").innerHTML =
-      carboTreino.toFixed(0) + " g ";
-    resultMacros.querySelector(".carbo-cardio").innerHTML =
-      carboCardio.toFixed(0) + " g ";
-    resultMacros.querySelector(".carbo-treino-cardio").innerHTML =
-      carboTreinoCardio.toFixed(0) + " g ";
-    dadosMacros.carboTreino = +carboTreino.toFixed(0);
-    dadosMacros.carboCardio = +carboCardio.toFixed(0);
-    dadosMacros.carboTreinoCardio = +carboTreinoCardio.toFixed(0);
+
+      if(carboDescanso > 0) {
+        resultMacros.querySelector(".carbo-descanso").innerHTML =
+        carboDescanso.toFixed(0) + " g ";
+      }else {
+        resultMacros.querySelector(".carbo-descanso").innerHTML =
+        0 + " g ";
+      }
+      if(carboTreino > 0) {
+        resultMacros.querySelector(".carbo-treino").innerHTML =
+        carboTreino.toFixed(0) + " g ";  
+      }else {
+        resultMacros.querySelector(".carbo-treino").innerHTML =
+        0; 
+      }
+      if(carboCardio > 0) {
+        resultMacros.querySelector(".carbo-cardio").innerHTML =
+        carboCardio.toFixed(0) + " g ";
+      } else {
+        resultMacros.querySelector(".carbo-cardio").innerHTML = 0;
+      }
+      if(carboTreinoCardio > 0) {
+        resultMacros.querySelector(".carbo-treino-cardio").innerHTML =
+        carboTreinoCardio.toFixed(0) + " g ";  
+      } else {
+        resultMacros.querySelector(".carbo-treino-cardio").innerHTML = 0;
+      }
+
+      if(carboDescanso > 0) {
+        dadosMacros.carboDescanso = +carboDescanso.toFixed(0);
+      } else {
+        dadosMacros.carboDescanso = 0;
+      }
+      if(carboTreino > 0) {
+        dadosMacros.carboTreino = +carboTreino.toFixed(0);
+      } else {
+        dadosMacros.carboTreino = 0;
+      }
+      if(carboCardio > 0) {
+        dadosMacros.carboCardio = +carboCardio.toFixed(0);
+      } else {
+        dadosMacros.carboCardio = 0;
+      }
+      if(carboTreinoCardio > 0) {
+        dadosMacros.carboTreinoCardio = +carboTreinoCardio.toFixed(0);
+      } else {
+        dadosMacros.carboTreinoCardio = 0;
+      }
   }
   calcCarbo(calcTmb(dado.sexo), dadosMacros.proteina, dadosMacros.gordura, 100);
+
+  eventos.forEach((evento) =>
+    formMacros.proteinaporkg.addEventListener(evento, () => {
+      calcProteinas(formMacros.proteinaporkg.value);
+
+      resultMacros.querySelector(".gkgCarbo").innerHTML =
+      formMacros.carboidratoporkg.value;
+
+    calcCarbo(
+      calcTmb(dado.sexo),
+      dadosMacros.proteina,
+      dadosMacros.gordura,
+      formMacros.carboidratoporkg.value
+    );
+    })
+  );
+
+  eventos.forEach((evento) =>
+    formMacros.gorduraporkg.addEventListener(evento, () => {
+      calcGordura(formMacros.gorduraporkg.value);
+      resultMacros.querySelector(".gkgCarbo").innerHTML =
+      formMacros.carboidratoporkg.value;
+
+    calcCarbo(
+      calcTmb(dado.sexo),
+      dadosMacros.proteina,
+      dadosMacros.gordura,
+      formMacros.carboidratoporkg.value
+    );
+    })
+    
+  );
 
   eventos.forEach((evento) =>
     formMacros.carboidratoporkg.addEventListener(evento, () => {
