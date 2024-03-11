@@ -23,8 +23,8 @@ export async function buscarAlimentoApi(seachAlimento) {
       const alimento = seachAlimento.toLowerCase();
 
       return (
-        alimentoApiLCase.startsWith(alimento) ||
-        tratamentoAlimentoApi.startsWith(alimento)
+        alimentoApiLCase.includes(alimento) ||
+        tratamentoAlimentoApi.includes(alimento)
       );
     });
 
@@ -34,3 +34,10 @@ export async function buscarAlimentoApi(seachAlimento) {
     return []; 
   }
 }
+/*
+buscarAlimentoApi('arroz').then((listaEncontrada) => {
+  listaEncontrada.forEach(alimento => {
+    console.log(alimento)
+  });
+});  
+*/

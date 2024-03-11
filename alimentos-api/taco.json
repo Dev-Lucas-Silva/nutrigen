@@ -31738,7 +31738,7 @@
   },
   {
     "id": 448,
-    "description": "Iogurte, natural",
+    "description": "Iogurte, natural, integral",
     "category": "Leite e derivados",
     "humidity_percents": 90.04,
     "energy_kcal": 51.4895333333333,
@@ -32803,7 +32803,7 @@
   },
   {
     "id": 463,
-    "description": "Queijo, mozarela",
+    "description": "Queijo, mussarela",
     "category": "Leite e derivados",
     "humidity_percents": 45.3383333333333,
     "energy_kcal": 329.870718420887,
