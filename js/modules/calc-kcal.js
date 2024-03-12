@@ -14,7 +14,7 @@ export default function initCalcKcal(dadoForm) {
     dadoForm.intesidadeCardio * 0.0175 * dadoForm.peso * dadoForm.tempoCardio;
   let gastoKcalDiaDia = 0;
   if (dadoForm.atvDiaDia > 0) {
-    gastoKcalDiaDia = 3.22 * 0.0175 * dadoForm.peso * dadoForm.DiaDia;
+    gastoKcalDiaDia = 3.5 * 0.0175 * dadoForm.peso * dadoForm.DiaDia;
   }
 
   function calcKcalTreino() {

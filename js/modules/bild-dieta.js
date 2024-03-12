@@ -33,13 +33,32 @@ export function initMinhaDieta(dadosMacros) {
       carboidratos.forEach((c) => {
         buscarAlimentoApi(c.description).then((listaEncontrada) => {
           listaEncontrada.forEach((a) => {
-            const percentCarbGramas =
+            const carbAlimPor100g = a.carbohydrate_g;
+
+            const percentCarbGramasDescanso =
               (dadosMacros.carboDescanso / 100) * c.percent;
-            const carbtAlimPor100g = a.carbohydrate_g;
-            const gramasDeAlimentoPRefe =
-              (percentCarbGramas / carbtAlimPor100g) * 100;
+              const percentCarbGramasTreino =
+              (dadosMacros.carboTreino / 100) * c.percent;
+              const percentCarbGramasCardio =
+              (dadosMacros.carboCardio / 100) * c.percent;
+              const percentCarbGramasCardioTreino =
+              (dadosMacros.carboTreinoCardio / 100) * c.percent;
+            const gramasDescando =
+              (percentCarbGramasDescanso / carbAlimPor100g) * 100;
+              const gramasTreino =
+              (percentCarbGramasTreino / carbAlimPor100g) * 100;
+              const gramasCardio =
+              (percentCarbGramasCardio / carbAlimPor100g) * 100;
+              const gramasCardioTreino =
+              (percentCarbGramasCardioTreino / carbAlimPor100g) * 100;
+
+
              refeMontada.push({
-              gramas: gramasDeAlimentoPRefe.toFixed(0),
+              gramasDescando: gramasDescando.toFixed(0),
+              gramasTreino: gramasTreino.toFixed(0),
+              gramasCardio: gramasCardio.toFixed(0),
+              gramasCardioTreino: gramasCardioTreino.toFixed(0),
+
               alimento: c.description
              }) 
           });

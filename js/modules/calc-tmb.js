@@ -15,7 +15,7 @@ export function calcTmb(sexo) {
     const imcMm = ((dadosForm.peso * dadosForm.bf) - dadosForm.peso) / (dadosForm.altura * dadosForm.altura);
 
     if(objetivo === 'perder' && dadosForm.bf <= 22) {
-      return 0.94
+      return 0.8
     }else if(objetivo === 'perder' && dadosForm.bf > 22 && dadosForm.bf < 39) {
       return 0.7
     }else if(objetivo === 'perder' && dadosForm.bf >= 40 && imcMm <= 20) {
@@ -25,9 +25,9 @@ export function calcTmb(sexo) {
     }else if(objetivo === 'manter') {
       return 1
     }else if(objetivo === 'ganhar') {
-      return 1.04
+      return 1.2
     }else if(objetivo === 'performace') {
-      return 1.14
+      return 1.05
     }
 
   };

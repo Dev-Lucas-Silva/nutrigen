@@ -6,15 +6,15 @@ const gridBfMulher = document.querySelector(".grid-bf-mulher");
 const erroTmb = formBasal.querySelector(".tmb-erro");
 
 export const dadosForm = {
-  DiaDia: "180",
+  DiaDia: "120",
   altura: "173",
   bf: "0.17",
   biotipo: "endomorfo",
   idade: "27",
-  intesidadeCardio: "6",
-  intesidadeTreino: "7",
+  intesidadeCardio: "8",
+  intesidadeTreino: "9",
   length: 6,
-  objetivo: "ganhar",
+  objetivo: "manter",
   peso: "74",
   sexo: "masculino",
   tempoCardio: "60",
