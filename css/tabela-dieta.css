@@ -3,17 +3,19 @@
   display: grid;
   justify-items: center;
   align-items: center;
-  border: solid 1px;
-  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);  padding: 20px 20px 40px 20px;
+  margin-bottom: 40px;
+  border-radius: 20px;
 }
 
 .descricoes {
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: 280px 500px;
+  grid-template-columns: 1fr 1fr;
   justify-items: center;
   align-items: center;
   border: solid 1px;
+
 }
 
 .descricoes div {
@@ -49,7 +51,7 @@
 
 .lista-alimentos {
   display: grid;
-  grid-template-columns: 280px 500px;
+  grid-template-columns: 1fr 1fr;
 }
 
 .lista-alimentos div {

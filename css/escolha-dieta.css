@@ -1,0 +1,28 @@
+.escolha-dieta {
+  margin-bottom: 40px;
+  margin-left: 20px;
+}
+
+.escolha-dieta h2 {
+  margin-bottom: 20px;
+}
+
+.lista-dietas {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 1);
+  width: 180px;
+  height: 120px;
+  border-radius: 20px;
+  text-align: center;
+  background: darkred url('../image/Sem_título-removebg-preview.png') ;
+  background-position: center;
+  background-size: cover;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
+  border: solid 2px rgba(255, 255, 255, 0.8);
+  color: darkorange;
+}
+
+.lista-dietas:hover {
+  border: solid 2px darkorange;
+  transform: scale(0.99);
+  transition: transform 0.2s ease 0s;
+}
