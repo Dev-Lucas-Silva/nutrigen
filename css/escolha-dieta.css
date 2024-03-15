@@ -23,6 +23,6 @@
 
 .lista-dietas:hover {
   border: solid 2px darkorange;
-  transform: scale(0.99);
+  transform: scale(1.01);
   transition: transform 0.2s ease 0s;
 }
