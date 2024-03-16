@@ -3,9 +3,6 @@ import { dietaGanharTwin } from "./dieta-ganhar-twin.js";
 const listaDietasImportadas = [dietaGanharTwin];
 
 export function initMinhaDieta(dadosMacros) {
-  //display bolck nas dietas ou montar sua dieta
-  //print a dieta
-
   const dietaMontada = [];
 
   function bildDieta() {
@@ -24,6 +21,7 @@ export function initMinhaDieta(dadosMacros) {
                 ref.gordura
               )
             );
+            printDieta(dietaMontada);
           });
         }
       });
@@ -33,7 +31,7 @@ export function initMinhaDieta(dadosMacros) {
 
   const calcRefeicoes = (descricao, proteinas, carboidratos, gorduras) => {
     const refeMontada = [];
-    refeMontada.push(descricao);
+    refeMontada.push({ descricao });
 
     if (proteinas) {
       proteinas.forEach((p) => {
@@ -44,7 +42,11 @@ export function initMinhaDieta(dadosMacros) {
             const gramasDeAlimentoPRefe =
               (percentProtGramas / protAlimPor100g) * 100;
             refeMontada.push({
-              gramas: gramasDeAlimentoPRefe.toFixed(0),
+              gramasDescando: gramasDeAlimentoPRefe.toFixed(0),
+              gramasTreino: gramasDeAlimentoPRefe.toFixed(0),
+              gramasCardio: gramasDeAlimentoPRefe.toFixed(0),
+              gramasCardioTreino: gramasDeAlimentoPRefe.toFixed(0),
+
               alimento: p.description,
             });
           });
@@ -97,7 +99,11 @@ export function initMinhaDieta(dadosMacros) {
             const gramasDeAlimentoPRefe =
               (percentGordGramas / gordAlimPor100g) * 100;
             refeMontada.push({
-              gramas: gramasDeAlimentoPRefe.toFixed(0),
+              gramasDescando: gramasDeAlimentoPRefe.toFixed(0),
+              gramasTreino: gramasDeAlimentoPRefe.toFixed(0),
+              gramasCardio: gramasDeAlimentoPRefe.toFixed(0),
+              gramasCardioTreino: gramasDeAlimentoPRefe.toFixed(0),
+
               alimento: g.description,
             });
           });
@@ -105,5 +111,29 @@ export function initMinhaDieta(dadosMacros) {
       });
     }
     return refeMontada;
+  };
+
+  const printDieta = function (dieta) {
+    const minhaDieta = document.querySelector(".dieta-montada");
+    dieta.forEach((refe) => {
+      refe.forEach(qqq => {
+
+        console.log(qqq);
+      });
+
+      let refeicoes = [];
+      let innerRefeicoes = `<div class='refeicao'>
+      <h3 class="titulo-refeicao">${refe.descricao}</h3>
+      </div>`;
+      let montarRefeicoes = `<div class="lista-alimentos">
+        <div>
+          <span class="gTreino">100g</span>
+          <span class="gCardio">100g</span>
+          <span class="gCardioTreino">100g</span>
+          <span class="gCardioTreino">100g</span>
+        </div>
+        <p class="descricao-alimento">Lorem ipsum dolor sit amet, conseLorem ipsum do</p>
+      </div>`;
+    });
   };
 }
