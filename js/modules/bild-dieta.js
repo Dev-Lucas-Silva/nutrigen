@@ -5,29 +5,30 @@ const listaDietasImportadas = [dietaGanharTwin];
 export function initMinhaDieta(dadosMacros) {
   const dietaMontada = [];
 
-  function bildDieta() {
-    const dietaEscolhida = document.querySelectorAll(".escolha-dieta button");
-    dietaEscolhida.forEach((dieta) => {
-      dieta.addEventListener("click", (event) => {
-        const escolhida = dieta.dataset.dieta;
-        const dietaImportada = listaDietasImportadas[escolhida];
-        if (dietaImportada) {
-          dietaImportada.forEach((ref, i) => {
-            dietaMontada.push(
-              calcRefeicoes(
-                ref.descricao,
-                ref.proteina,
-                ref.carboidrato,
-                ref.gordura
-              )
-            );
-            printDieta(dietaMontada);
-          });
-        }
-      });
+  const dietaEscolhida = document.querySelectorAll(".escolha-dieta button");
+
+  dietaEscolhida.forEach((dieta) => {
+    dieta.addEventListener("click", (event) => {
+      dieta.disabled = true;
+      const escolhida = dieta.dataset.dieta;
+      const dietaImportada = listaDietasImportadas[escolhida];
+      if (dietaImportada) {
+        dietaImportada.forEach((ref, i) => {
+          dietaMontada.push(
+            calcRefeicoes(
+              ref.descricao,
+              ref.proteina,
+              ref.carboidrato,
+              ref.gordura
+            )
+          );
+        });
+      }
+      setTimeout(() => {
+        printDieta(dietaMontada);
+      }, 600);
     });
-  }
-  bildDieta();
+  });
 
   const calcRefeicoes = (descricao, proteinas, carboidratos, gorduras) => {
     const refeMontada = [];
@@ -115,11 +116,9 @@ export function initMinhaDieta(dadosMacros) {
 
   const printDieta = function (dieta) {
     const minhaDieta = document.querySelector(".dieta-montada");
-    dieta.forEach((refe) => {
-      refe.forEach(qqq => {
 
-        console.log(qqq);
-      });
+    dieta.forEach((refe) => {
+      refe.forEach((ref) => {});
 
       let refeicoes = [];
       let innerRefeicoes = `<div class='refeicao'>
