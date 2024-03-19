@@ -115,24 +115,34 @@ export function initMinhaDieta(dadosMacros) {
   };
 
   const printDieta = function (dieta) {
-    const minhaDieta = document.querySelector(".dieta-montada");
+    const minhaDieta = document.querySelector(".refeicao");
 
+    let refeicoes = [];
+    
     dieta.forEach((refe) => {
-      refe.forEach((ref) => {});
 
-      let refeicoes = [];
-      let innerRefeicoes = `<div class='refeicao'>
-      <h3 class="titulo-refeicao">${refe.descricao}</h3>
-      </div>`;
-      let montarRefeicoes = `<div class="lista-alimentos">
-        <div>
-          <span class="gTreino">100g</span>
-          <span class="gCardio">100g</span>
-          <span class="gCardioTreino">100g</span>
-          <span class="gCardioTreino">100g</span>
-        </div>
-        <p class="descricao-alimento">Lorem ipsum dolor sit amet, conseLorem ipsum do</p>
-      </div>`;
+      console.log(refe)
+      refe.forEach((ref, i) => {
+        /*
+        let innerRefeicoes = `<div class='refeicoes'>
+        <h3 class="titulo-refeicao">${refe[i].descricao}</h3>`;*/
+        
+       // refeicoes.push(innerRefeicoes);
+          /*let montarRefeicoes = `<div class="lista-alimentos">
+            <div>
+              <span class="gDescanso">${ref[i].gramasDescando}</span>
+              <span class="gTreino">${ref[i].gramasTreino}</span>
+              <span class="gCardio">${ref[i].gramasCardio}</span>
+              <span class="gCardioTreino">${ref[i].gramasCardioTreino}</span>
+            </div>
+            <p class="descricao-alimento">${ref[i].alimento}</p>
+          </div>`;
+          refeicoes.push(montarRefeicoes);*/
+      });
+    
     });
+    //let joinRefeicoes = refeicoes.join(' ')
+    //minhaDieta.innerHTML = joinRefeicoes;
+    //console.log(refeicoes);
   };
 }
