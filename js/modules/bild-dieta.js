@@ -42,14 +42,13 @@ export function initMinhaDieta(dadosMacros) {
             const protAlimPor100g = a.protein_g;
             const gramasDeAlimentoPRefe =
               (percentProtGramas / protAlimPor100g) * 100;
-            refeMontada.push({
-              gramasDescando: gramasDeAlimentoPRefe.toFixed(0),
-              gramasTreino: gramasDeAlimentoPRefe.toFixed(0),
-              gramasCardio: gramasDeAlimentoPRefe.toFixed(0),
-              gramasCardioTreino: gramasDeAlimentoPRefe.toFixed(0),
-
-              alimento: p.description,
-            });
+            refeMontada.push([
+              gramasDeAlimentoPRefe.toFixed(0),
+              gramasDeAlimentoPRefe.toFixed(0),
+              gramasDeAlimentoPRefe.toFixed(0),
+              gramasDeAlimentoPRefe.toFixed(0),
+              p.description
+            ]);
           });
         });
       });
@@ -78,14 +77,13 @@ export function initMinhaDieta(dadosMacros) {
             const gramasCardioTreino =
               (percentCarbGramasCardioTreino / carbAlimPor100g) * 100;
 
-            refeMontada.push({
-              gramasDescando: gramasDescando.toFixed(0),
-              gramasTreino: gramasTreino.toFixed(0),
-              gramasCardio: gramasCardio.toFixed(0),
-              gramasCardioTreino: gramasCardioTreino.toFixed(0),
-
-              alimento: c.description,
-            });
+            refeMontada.push([
+              gramasDescando.toFixed(0),
+              gramasTreino.toFixed(0),
+              gramasCardio.toFixed(0),
+              gramasCardioTreino.toFixed(0),
+              c.description,
+            ]);
           });
         });
       });
@@ -99,14 +97,13 @@ export function initMinhaDieta(dadosMacros) {
             const gordAlimPor100g = a.lipid_g;
             const gramasDeAlimentoPRefe =
               (percentGordGramas / gordAlimPor100g) * 100;
-            refeMontada.push({
-              gramasDescando: gramasDeAlimentoPRefe.toFixed(0),
-              gramasTreino: gramasDeAlimentoPRefe.toFixed(0),
-              gramasCardio: gramasDeAlimentoPRefe.toFixed(0),
-              gramasCardioTreino: gramasDeAlimentoPRefe.toFixed(0),
-
-              alimento: g.description,
-            });
+            refeMontada.push([
+              gramasDeAlimentoPRefe.toFixed(0),
+              gramasDeAlimentoPRefe.toFixed(0),
+               gramasDeAlimentoPRefe.toFixed(0),
+               gramasDeAlimentoPRefe.toFixed(0),
+               g.description
+            ]);
           });
         });
       });
@@ -118,31 +115,30 @@ export function initMinhaDieta(dadosMacros) {
     const minhaDieta = document.querySelector(".refeicao");
 
     let refeicoes = [];
-    
     dieta.forEach((refe) => {
+      let innerRefeicoes = `<div class='refeicoes'>
+      <h3 class="titulo-refeicao">${refe[0].descricao}</h3>`;
+      refeicoes.push(innerRefeicoes);
 
-      console.log(refe)
-      refe.forEach((ref, i) => {
-        /*
-        let innerRefeicoes = `<div class='refeicoes'>
-        <h3 class="titulo-refeicao">${refe[i].descricao}</h3>`;*/
-        
-       // refeicoes.push(innerRefeicoes);
-          /*let montarRefeicoes = `<div class="lista-alimentos">
+      for (let i = 1; i < refe.length; i++) {
+        const ref = refe[i];
+          let montarRefeicoes = `<div class="lista-alimentos">
             <div>
-              <span class="gDescanso">${ref[i].gramasDescando}</span>
-              <span class="gTreino">${ref[i].gramasTreino}</span>
-              <span class="gCardio">${ref[i].gramasCardio}</span>
-              <span class="gCardioTreino">${ref[i].gramasCardioTreino}</span>
+              <span class="gDescanso">${ref[0]}g</span>
+              <span class="gTreino">${ref[1]}g</span>
+              <span class="gCardio">${ref[2]}g</span>
+              <span class="gCardioTreino">${ref[3]}g</span>
             </div>
-            <p class="descricao-alimento">${ref[i].alimento}</p>
+            <p class="descricao-alimento">${ref[4]}g</p>
           </div>`;
-          refeicoes.push(montarRefeicoes);*/
-      });
-    
+          minhaDieta.innerHTML = montarRefeicoes;
+
+          refeicoes.push(montarRefeicoes);
+          //console.log(montarRefeicoes);
+      }
     });
-    //let joinRefeicoes = refeicoes.join(' ')
-    //minhaDieta.innerHTML = joinRefeicoes;
+    let joinRefeicoes = refeicoes.join(" ");
+    minhaDieta.innerHTML = joinRefeicoes;
     //console.log(refeicoes);
   };
 }

@@ -1,9 +1,9 @@
 import { initCalcMacros } from "./calc-macros.js";
 import { calcTmb } from "./calc-tmb.js";
 
-export default function initCalcKcal(dadoForm) {
-  const calcBasal = calcTmb(dadoForm.sexo);
-
+export default function initCalcKcal(dadoForm, tmb) {
+  const calcBasal = tmb;
+console.log(calcBasal)
   const kcalTreino = document.querySelector(".kcal-treino");
   const kcalCardio = document.querySelector(".kcal-cardio");
   const kcalCardioTreino = document.querySelector(".kcal-cardio-treino");
@@ -61,5 +61,5 @@ export default function initCalcKcal(dadoForm) {
     }
   }
   printKcal(dadoForm);
-  initCalcMacros(dadoForm, resultKcalTreino, resultKcalCardio, resultKcalTreinoCardio);
+  initCalcMacros(dadoForm, resultKcalTreino, resultKcalCardio, resultKcalTreinoCardio, calcBasal);
 }

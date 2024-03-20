@@ -11,6 +11,7 @@ export function calcTmb(sexo) {
       return 1
     }
   };
+
   function objetivo(objetivo) {
     const imcMm = ((dadosForm.peso * dadosForm.bf) - dadosForm.peso) / (dadosForm.altura * dadosForm.altura);
 
@@ -29,21 +30,25 @@ export function calcTmb(sexo) {
     }else if(objetivo === 'performace') {
       return 1.05
     }
-
   };
+
+  let tmbCalculada = 0;
+  console.log(tmbCalculada)
+
   if (sexo === "masculino") {
-    const resultadoTmbh =
+    const resultadoTmbH =
       ((66 + 13.7 * dadosForm.peso + 5 * dadosForm.altura - 6.8 * dadosForm.idade) * biotipo(dadosForm.biotipo)) * objetivo(dadosForm.objetivo);
-    return resultadoTmbh;
+      tmbCalculada = resultadoTmbH;
   } else if (sexo === "feminino") {
-    const resultadoTmbm =
+    const resultadoTmbM =
       ((655 + 9.6 * dadosForm.peso + 1.8 * dadosForm.altura - 4.7 * dadosForm.idade) * biotipo(dadosForm.biotipo)) * objetivo(dadosForm.objetivo);
-    return resultadoTmbm;
+      tmbCalculada = resultadoTmbM;
   }
-  printTmb();
+  printTmb(tmbCalculada);
 }
 
-export function printTmb() {
+export function printTmb(tmb) {
+  console.log(tmb)
   const resultBf = dadosForm.bf * 100;
   const resultMm = dadosForm.peso - dadosForm.peso * dadosForm.bf;
   const resultMg = dadosForm.peso * dadosForm.bf;
@@ -56,7 +61,7 @@ export function printTmb() {
   resultBasalKcal.querySelector(".result-mg").innerHTML =
     resultMg.toFixed(2) + " Kg";
   resultBasalKcal.querySelector(".result-tmb").innerHTML =
-    calcTmb(dadosForm.sexo).toFixed(0) + " Kcal";
+    tmb.toFixed(0) + " Kcal";
 
-  initCalcKcal(dadosForm);
+  initCalcKcal(dadosForm, tmb);
 }

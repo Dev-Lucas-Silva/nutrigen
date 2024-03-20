@@ -13,14 +13,12 @@ export const dadosForm = {
   idade: "27",
   intesidadeCardio: "8",
   intesidadeTreino: "9",
-  length: 6,
   objetivo: "manter",
   peso: "74",
   sexo: "masculino",
   tempoCardio: "60",
   tempoTreino: "30",
 };
-dadosForm.length = 6;
 
 const handleValidity = (form, event, erro, calculadora) => {
   const target = event.target;
@@ -34,7 +32,7 @@ const handleValidity = (form, event, erro, calculadora) => {
   form.submit.addEventListener("click", (event) => {
     event.preventDefault();
 
-    if ((Object.values(dadosForm).length = dadosForm.length)) {
+    if ((Object.values(dadosForm).length = 12)) {
       erro.classList.remove("invalid");
       calculadora();
     } else {

@@ -8,8 +8,11 @@ export function initCalcMacros(
   dado,
   resultKcalTreino,
   resultKcalCardio,
-  resultKcalTreinoCardio
-) {
+  resultKcalTreinoCardio,
+  calcBasal
+) 
+{
+  console.log(calcBasal)
   class TipoDieta {
     constructor(objetivo, biotipo) {
       this.objetivo = objetivo;
@@ -167,7 +170,7 @@ export function initCalcMacros(
   const resultMacros = document.querySelector(".result-macros");
   const formMacros = document.getElementById("form-macros");
 
-  const eventos = ["click", "touchmove"];
+  const eventos = ["click"];
 
   function calcProteinas(taxa) {
     let tipoDietaProteina = taxa;
@@ -252,7 +255,7 @@ export function initCalcMacros(
         dadosMacros.carboTreinoCardio = 0;
       }
   }
-  calcCarbo(calcTmb(dado.sexo), dadosMacros.proteina, dadosMacros.gordura, 100);
+  calcCarbo(calcBasal, dadosMacros.proteina, dadosMacros.gordura, 100);
 
   eventos.forEach((evento) =>
     formMacros.proteinaporkg.addEventListener(evento, () => {
@@ -262,7 +265,7 @@ export function initCalcMacros(
       formMacros.carboidratoporkg.value;
 
     calcCarbo(
-      calcTmb(dado.sexo),
+      calcBasal,
       dadosMacros.proteina,
       dadosMacros.gordura,
       formMacros.carboidratoporkg.value
@@ -277,7 +280,7 @@ export function initCalcMacros(
       formMacros.carboidratoporkg.value;
 
     calcCarbo(
-      calcTmb(dado.sexo),
+      calcBasal,
       dadosMacros.proteina,
       dadosMacros.gordura,
       formMacros.carboidratoporkg.value
@@ -292,7 +295,7 @@ export function initCalcMacros(
         formMacros.carboidratoporkg.value;
 
       calcCarbo(
-        calcTmb(dado.sexo),
+        calcBasal,
         dadosMacros.proteina,
         dadosMacros.gordura,
         formMacros.carboidratoporkg.value
