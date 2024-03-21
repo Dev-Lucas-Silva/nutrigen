@@ -33,7 +33,6 @@ export function calcTmb(sexo) {
   };
 
   let tmbCalculada = 0;
-  console.log(tmbCalculada)
 
   if (sexo === "masculino") {
     const resultadoTmbH =
@@ -44,11 +43,11 @@ export function calcTmb(sexo) {
       ((655 + 9.6 * dadosForm.peso + 1.8 * dadosForm.altura - 4.7 * dadosForm.idade) * biotipo(dadosForm.biotipo)) * objetivo(dadosForm.objetivo);
       tmbCalculada = resultadoTmbM;
   }
+
   printTmb(tmbCalculada);
 }
 
 export function printTmb(tmb) {
-  console.log(tmb)
   const resultBf = dadosForm.bf * 100;
   const resultMm = dadosForm.peso - dadosForm.peso * dadosForm.bf;
   const resultMg = dadosForm.peso * dadosForm.bf;

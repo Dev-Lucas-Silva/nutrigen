@@ -9,7 +9,7 @@ export function initMinhaDieta(dadosMacros) {
 
   dietaEscolhida.forEach((dieta) => {
     dieta.addEventListener("click", (event) => {
-      dieta.disabled = true;
+      //dieta.disabled = true;
       const escolhida = dieta.dataset.dieta;
       const dietaImportada = listaDietasImportadas[escolhida];
       if (dietaImportada) {
@@ -113,6 +113,7 @@ export function initMinhaDieta(dadosMacros) {
 
   const printDieta = function (dieta) {
     const minhaDieta = document.querySelector(".refeicao");
+    const minhaDietaa = document.querySelectorAll(".refeicao");
 
     let refeicoes = [];
     dieta.forEach((refe) => {
@@ -130,15 +131,15 @@ export function initMinhaDieta(dadosMacros) {
               <span class="gCardioTreino">${ref[3]}g</span>
             </div>
             <p class="descricao-alimento">${ref[4]}g</p>
-          </div>`;
-          minhaDieta.innerHTML = montarRefeicoes;
-
+          </div>
+          `;
           refeicoes.push(montarRefeicoes);
-          //console.log(montarRefeicoes);
       }
     });
+    refeicoes.push('</div>');
+
     let joinRefeicoes = refeicoes.join(" ");
     minhaDieta.innerHTML = joinRefeicoes;
-    //console.log(refeicoes);
+    refeicoes = [];
   };
 }

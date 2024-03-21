@@ -29,16 +29,15 @@ const handleValidity = (form, event, erro, calculadora) => {
     target.classList.remove("invalid");
   }
 
-  form.submit.addEventListener("click", (event) => {
-    event.preventDefault();
-
-    if ((Object.values(dadosForm).length = 12)) {
-      erro.classList.remove("invalid");
-      calculadora();
-    } else {
-      erro.classList.add("invalid");
-    }
-  });
+  if ((Object.values(dadosForm).length === 12)) {
+    erro.classList.remove("invalid");
+    form.submit.addEventListener("click", (event) => {
+      event.preventDefault();
+      calculadora(dadosForm.sexo);
+    });
+  } else {
+    erro.classList.add("invalid");
+  }
 };
 
 const mostarFotosBf = () => {
@@ -62,9 +61,9 @@ const handleEvents = (event, calculadora) => {
 const eventos = ["click", "touchstart", "change"];
 
 export function init() {
-  eventos.forEach((evento) =>
-    formBasal.addEventListener(evento, () => {
-      handleEvents(event, calcTmb);
-    })
-  );
+  //eventos.forEach((evento) =>
+  formBasal.addEventListener("change", () => {
+    handleEvents(event, calcTmb);
+  })
+  //);
 }

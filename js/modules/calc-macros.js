@@ -12,7 +12,6 @@ export function initCalcMacros(
   calcBasal
 ) 
 {
-  console.log(calcBasal)
   class TipoDieta {
     constructor(objetivo, biotipo) {
       this.objetivo = objetivo;

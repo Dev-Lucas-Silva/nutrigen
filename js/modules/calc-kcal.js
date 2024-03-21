@@ -3,7 +3,6 @@ import { calcTmb } from "./calc-tmb.js";
 
 export default function initCalcKcal(dadoForm, tmb) {
   const calcBasal = tmb;
-console.log(calcBasal)
   const kcalTreino = document.querySelector(".kcal-treino");
   const kcalCardio = document.querySelector(".kcal-cardio");
   const kcalCardioTreino = document.querySelector(".kcal-cardio-treino");
