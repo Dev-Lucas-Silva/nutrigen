@@ -1,8 +1,8 @@
-import { calcTmb } from "./calc-tmb.js";
 import { dadosForm } from "./init-form.js";
 import { initMinhaDieta } from "./bild-dieta.js";
+import { dietaMontada, printDieta } from "./bild-dieta.js";
 
-let dadosMacros = {};
+export let dadosMacros = {};
 
 export function initCalcMacros(
   dado,
@@ -269,6 +269,11 @@ export function initCalcMacros(
       dadosMacros.gordura,
       formMacros.carboidratoporkg.value
     );
+    const dietaEscolhida = document.querySelectorAll(".escolha-dieta button");
+console.log(printDieta)
+    if(dietaMontada.length > 1) {
+      printDieta(dietaMontada)
+    }
     })
   );
 
