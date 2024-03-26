@@ -1,40 +1,47 @@
 import { dadosMacros } from "./calc-macros.js";
-
 import { buscarAlimentoApi } from "./search-alimento-api.js";
 import { dietaGanharTwin } from "./dieta-ganhar-twin.js";
-const listaDietasImportadas = [dietaGanharTwin];
 
-export let dietaMontada = [];
+export const listaDietasImportadas = [dietaGanharTwin];
 
 const dietaEscolhida = document.querySelectorAll(".escolha-dieta button");
 
-export function initMinhaDieta(dadosMacros) {
+let dietaMontada = [];
+
+export function initMinhaDieta() {
   dietaEscolhida.forEach((dieta) => {
     dieta.addEventListener("click", (event) => {
       dieta.disabled = true;
-
       const escolhida = dieta.dataset.dieta;
-      const dietaImportada = listaDietasImportadas[escolhida];
 
-      if (dietaImportada) {
-        dietaImportada.forEach((ref, i) => {
-          dietaMontada.push(
-            calcRefeicoes(
-              ref.descricao,
-              ref.proteina,
-              ref.carboidrato,
-              ref.gordura
-            )
-          );
-        });
-      }
+      localStorage.setItem("dietaImportada", escolhida);
 
-      setTimeout(() => {
-        printDieta(dietaMontada);
-      }, 600);
+      calcPrint(listaDietasImportadas[escolhida]);
+
     });
   });
 }
+
+
+export const calcPrint = function(dietaImportada) {
+  if (dietaImportada) {
+    dietaImportada.forEach((ref, i) => {
+      dietaMontada.push(
+        calcRefeicoes(
+          ref.descricao,
+          ref.proteina,
+          ref.carboidrato,
+          ref.gordura
+        )
+      );
+    });
+  }
+
+  setTimeout(() => {
+    printDieta(dietaMontada);
+  }, 600);
+
+};
 
 const calcRefeicoes = (descricao, proteinas, carboidratos, gorduras) => {
   const refeMontada = [];
@@ -119,7 +126,7 @@ const calcRefeicoes = (descricao, proteinas, carboidratos, gorduras) => {
 
 const minhaDieta = document.querySelector(".refeicao");
 
-export const printDieta = function (dieta) {
+const printDieta = function (dieta) {
   let refeicoes = [];
 
   dieta.forEach((refe) => {
@@ -151,12 +158,16 @@ export const printDieta = function (dieta) {
 const escolherOutraDieta = document.querySelector(".escolher-outra-dieta");
 
 escolherOutraDieta.addEventListener("click", () => {
+  dietaEscolhida.forEach((dieta) => {
+    zerarDietaMontada();
+    dieta.disabled = false;
+  });
+});
+
+export const zerarDietaMontada = function() {
   const refeicaoChidrens = minhaDieta.childNodes;
   refeicaoChidrens.forEach((Chidrens) => {
     Chidrens.remove();
   });
   dietaMontada = [];
-  dietaEscolhida.forEach((dieta) => {
-    dieta.disabled = false;
-  });
-});
+};

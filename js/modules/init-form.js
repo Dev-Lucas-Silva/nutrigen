@@ -6,18 +6,18 @@ const gridBfMulher = document.querySelector(".grid-bf-mulher");
 const erroTmb = formBasal.querySelector(".tmb-erro");
 
 export const dadosForm = {
-  DiaDia: "120",
+  DiaDia: "30",
   altura: "173",
   bf: "0.17",
   biotipo: "endomorfo",
   idade: "27",
-  intesidadeCardio: "8",
-  intesidadeTreino: "9",
-  objetivo: "manter",
+  intesidadeCardio: "leve",
+  intesidadeTreino: "leve",
+  objetivo: "ganhar",
   peso: "74",
   sexo: "masculino",
-  tempoCardio: "60",
-  tempoTreino: "30",
+  tempoCardio: "32",
+  tempoTreino: "32",
 };
 
 const handleValidity = (form, event, erro, calculadora) => {
@@ -52,18 +52,29 @@ const mostarFotosBf = () => {
 
 const handleEvents = (event, calculadora) => {
   if (event.target.value) {
-    dadosForm[event.target.name] = event.target.value;
-  }
+    const name = event.target.name;
+    const value = event.target.value;
+    dadosForm[name] = value;
+  
+    localStorage[name] = value;
+    }
   mostarFotosBf();
   handleValidity(formBasal, event, erroTmb, calculadora);
 };
+/*
+function setValues() {
+  const properties = Object.keys(localStorage);
+  properties.forEach(propertie => {
+    dadosForm[propertie] = localStorage[propertie]
+    formBasal.elements[propertie].value = localStorage[propertie];
+    mostarFotosBf();
 
-const eventos = ["click", "touchstart", "change"];
-
+  });
+}
+setValues();
+*/
 export function init() {
-  //eventos.forEach((evento) =>
   formBasal.addEventListener("change", () => {
     handleEvents(event, calcTmb);
   })
-  //);
 }
