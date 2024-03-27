@@ -1,4 +1,10 @@
 import { calcTmb } from "./calc-tmb.js";
+import {
+  calcPrint,
+  listaDietasImportadas,
+  zerarDietaMontada,
+} from "./bild-dieta.js";
+
 
 const formBasal = document.getElementById("form-basal");
 const gridBfHomem = document.querySelector(".grid-bf-homem");
@@ -6,20 +12,31 @@ const gridBfMulher = document.querySelector(".grid-bf-mulher");
 const erroTmb = formBasal.querySelector(".tmb-erro");
 
 export const dadosForm = {
-  DiaDia: "30",
-  altura: "173",
-  bf: "0.17",
-  biotipo: "endomorfo",
-  idade: "27",
-  intesidadeCardio: "leve",
-  intesidadeTreino: "leve",
-  objetivo: "ganhar",
-  peso: "74",
-  sexo: "masculino",
-  tempoCardio: "32",
-  tempoTreino: "32",
-};
-
+  DiaDia: "",
+  altura: "",
+  bf: "",
+  biotipo: "",
+  idade: "",
+  intesidadeCardio: "",
+  intesidadeTreino: "",
+  objetivo: "",
+  peso: "",
+  sexo: "",
+  tempoCardio: "",
+  tempoTreino: "",
+};/*
+DiaDia: "150",
+altura: "173",
+bf: "0.17",
+biotipo: "endomorfo",
+idade: "27",
+intesidadeCardio: "moderado",
+intesidadeTreino: "intenso",
+objetivo: "ganhar",
+peso: "74",
+sexo: "masculino",
+tempoCardio: "60",
+tempoTreino: "30",*/
 const handleValidity = (form, event, erro, calculadora) => {
   const target = event.target;
 
@@ -50,6 +67,35 @@ const mostarFotosBf = () => {
   }
 };
 
+function setValues() {
+  const properties = Object.keys(localStorage);
+  properties.forEach((propertie,i) => {
+
+      dadosForm[propertie] = localStorage[propertie];
+      if(i<=11) {
+      formBasal.elements[propertie].value = localStorage[propertie];
+      }      
+  });
+
+  mostarFotosBf();
+  
+  zerarDietaMontada();
+
+  const myValue = localStorage.getItem("dietaImportada");
+
+  calcPrint(listaDietasImportadas[myValue]);
+
+  calcTmb(dadosForm.sexo);
+
+  const dietaEscolhida = document.querySelectorAll(".escolha-dieta button");
+
+  dietaEscolhida.forEach((dieta) => {
+      dieta.disabled = true;
+  });
+
+}
+setValues();
+
 const handleEvents = (event, calculadora) => {
   if (event.target.value) {
     const name = event.target.name;
@@ -61,18 +107,7 @@ const handleEvents = (event, calculadora) => {
   mostarFotosBf();
   handleValidity(formBasal, event, erroTmb, calculadora);
 };
-/*
-function setValues() {
-  const properties = Object.keys(localStorage);
-  properties.forEach(propertie => {
-    dadosForm[propertie] = localStorage[propertie]
-    formBasal.elements[propertie].value = localStorage[propertie];
-    mostarFotosBf();
 
-  });
-}
-setValues();
-*/
 export function init() {
   formBasal.addEventListener("change", () => {
     handleEvents(event, calcTmb);

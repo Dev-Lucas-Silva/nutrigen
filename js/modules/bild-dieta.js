@@ -39,7 +39,7 @@ export const calcPrint = function(dietaImportada) {
 
   setTimeout(() => {
     printDieta(dietaMontada);
-  }, 600);
+  }, 700);
 
 };
 
