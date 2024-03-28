@@ -1,5 +1,6 @@
 @import "geral.css";
 @import "header.css";
-@import "gerar-dieta.css";
+@import "calculadora.css";
 @import 'tabela-dieta.css';
 @import 'escolha-dieta.css';
+@import 'footer.css'

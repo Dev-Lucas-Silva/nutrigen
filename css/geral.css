@@ -2,7 +2,7 @@ body {
   margin: 0;
   font-family: "Roboto", sans-serif;
   color: #141414;
-  background: rgba(0, 0, 0, 0.2);
+  background: #efe9cf;
 }
 
 a {
@@ -19,7 +19,8 @@ p {
   margin: 0px;
 }
 
-ul, a {
+ul,
+a {
   margin: 0px;
   padding: 0px;
   list-style: none;
@@ -29,4 +30,20 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+.main {
+  display: grid;
+  max-width: 1300px;
+  grid-template-columns: 900px 400px;
+  margin: 20px auto;
+}
+
+.main main {
+  padding: 0 calc((100% - 880px) / 2);
+}
+
+.main .aside-2 {
+  padding: 20px calc((100% - 300px) / 2);
+
 }
