@@ -1,0 +1,86 @@
+.introducao {
+  display: flex;
+  max-width: 800px;
+  padding: 10px;
+  margin-bottom: 120px;
+}
+
+.introducao h1 {
+  color: white;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+  max-width: 23ch;
+  padding: 60px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+
+.introducao a {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #0fd9a1, #1190ef);
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  margin-left: 60px;
+  transition: 0.3s;
+}
+
+.introducao a:hover {
+  transform: scale(1.05);
+  box-shadow: 1px 1px 8px white;
+
+}
+
+@media (max-width: 1100px) {
+  .introducao h1 {
+  padding: 40px;
+  }
+  .introducao a {
+    margin-left: 40px;
+
+  }
+}
+@media (max-width: 1000px) {
+  .introducao a {
+    font-size: 20px;
+    padding: 12px 20px;
+
+  }
+  .introducao h1 {
+    font-size: 24px;
+    padding-bottom: 40px;
+
+  }
+}
+@media (max-width: 800px) {
+  .introducao h1 {
+    padding: 20px;
+    padding-bottom: 40px;
+    }
+    .introducao a {
+      font-size: 16px;
+      padding: 8px 16px;
+      margin-left: 20px;
+
+    }
+}
+@media (max-width: 600px) {
+  .introducao .img img {
+    height: 200px;
+    object-fit: cover;
+  }
+}
+@media (max-width: 500px) {
+  .introducao .img img {
+    height: 150px;
+    object-fit: cover;
+  }  
+}
+@media (max-width: 450px) {
+  .introducao h1 {
+    padding:  20px;
+    }
+}

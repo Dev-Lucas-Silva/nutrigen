@@ -1,24 +1,23 @@
 header {
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
-  background: #0c5945;
 }
 
 .header {
-  max-width: 1400px;
-  padding: 20px 20px;
+  padding: 10px 20px;
   margin: 0 auto;
+  margin-bottom: 60px;
 }
 
 .header-logo {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 40px;
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
 }
 
 .logo a {
   display: flex;
   align-items: center;
+  padding: 10px;
 }
 
 .logo a h1 {
@@ -34,20 +33,32 @@ header .menu {
   font-weight: bold;
   font-size: 14px;
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 header .menu a {
   display: inline;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+  background: #aae7e0;
+
 }
 
-header .menu a::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 2px;
-  transition: 0.3s;
-  border-bottom: 2px solid;
+header .menu a:hover {
+  background: #77b7b2;
+  color: white;
 }
-header .menu a:hover::after {
-  width: 100%;
+
+@media (max-width: 700px) {
+  .header {
+    margin-bottom: 40px;
+    display: flex;
+  }
+}
+@media (max-width: 600px) {
+  .header {
+    margin-bottom: 20px;
+  }
 }

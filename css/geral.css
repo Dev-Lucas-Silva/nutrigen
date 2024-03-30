@@ -1,12 +1,15 @@
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
-  color: #141414;
-  background: #efe9cf;
+  color: #2e2e2e;
+  background: url("../image/backgroud-1.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: center;
 }
 
 a {
-  color: #141414;
+  color: #595959;
   text-decoration: none;
 }
 
@@ -18,6 +21,16 @@ h5,
 p {
   margin: 0px;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
 
 ul,
 a {
@@ -34,16 +47,44 @@ img {
 
 .main {
   display: grid;
-  max-width: 1300px;
-  grid-template-columns: 900px 400px;
+  max-width: 1200px;
+  grid-template-columns: 2fr 1fr;
   margin: 20px auto;
 }
 
 .main main {
-  padding: 0 calc((100% - 880px) / 2);
+  padding: 0 calc((100% - 800px) / 2);
+  padding-left: 10px;
 }
 
 .main .aside-2 {
   padding: 20px calc((100% - 300px) / 2);
+  margin-right: 10px;
+}
+
+@media (max-width: 1000px) {
+  body{
+    background: url("../image/backgroud-2.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: center;
+  }
+
+}
+@media (max-width: 600px) {
+  .main .aside-2 {
+    display: none;
+  }
+  .main {
+    grid-template-columns: 1fr;
+  }  
+}
+@media (max-width: 500px) {
+  body{
+    background: url("../image/backgroud-3.jfif");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: center;
+  }
 
 }

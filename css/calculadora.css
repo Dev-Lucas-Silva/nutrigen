@@ -3,6 +3,12 @@
   gap: 20px;
 }
 
+.calc-basal form {
+  color: white;
+
+}
+
+
 .calc-basal h5 {
   padding-bottom: 10px;
 }
