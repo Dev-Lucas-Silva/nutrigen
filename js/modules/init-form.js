@@ -70,7 +70,7 @@ const mostarFotosBf = () => {
 function setValues() {
   const properties = Object.keys(localStorage);
   properties.forEach((propertie,i) => {
-
+    console.log(formBasal.elements[propertie])
       dadosForm[propertie] = localStorage[propertie];
       if(i<=11) {
       formBasal.elements[propertie].value = localStorage[propertie];
