@@ -6,9 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NutriGen</title>
   <link rel="icon" href="" type="image/svg+xml">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <link rel="preload" href="./css/style.css" as="style">
   <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -43,7 +44,7 @@
         </div>
         <div class="titulo">
           <h1>Crie sua dieta personalizada para uma vida mais saudável!</h1>
-          <a href="#calc-basal">Comece Agora</a>
+          <a class="botao-1" href="#calc-basal">Comece Agora</a>
         </div>
         <aside class="aside-2">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, unde itaque modi, nulla non cupiditate omnis consectetur ratione dolorem amet illum quas culpa, rerum consequatur dolore odio natus dolores minus.</p>
@@ -59,38 +60,42 @@
           <form name="form-basal" id="form-basal">
             <div class="sexo">
               <input type="radio" name="sexo" id="masculino" value="masculino" required>
-              <label for="masculino">Masculino</label>
+              <label class="input-radio-label" for="masculino">Masculino</label>
               <input type="radio" name="sexo" id="feminino" value="feminino" required>
-              <label for="feminino">Feminino</label>
+              <label class="input-radio-label" for="feminino">Feminino</label>
             </div>
-            <div>
-              <label for="altura">Altura</label>
-              <input type="number" name="altura" id="altura" min="1" max="299" placeholder="(cm)*" required>
+            <div class="alt-peso-idade">
+              <div>
+                <label for="altura">Altura</label>
+                <input type="number" name="altura" id="altura" min="1" max="299" placeholder="(cm)*" required>
+              </div>
+              <div>
+                <label for="peso">Peso</label>
+                <input type="number" name="peso" id="peso" min="1" max="499" placeholder="(Kg)*" required>
+              </div>
+              <div>
+                <label for="idade">Idade</label>
+                <input type="number" name="idade" id="idade" min="1" max="199" placeholder="(anos)*" required>
+              </div>
             </div>
-            <div>
-              <label for="peso">Peso</label>
-              <input type="number" name="peso" id="peso" min="1" max="499" placeholder="(Kg)*" required>
-            </div>
-            <div>
-              <label for="idade">Idade</label>
-              <input type="number" name="idade" id="idade" min="1" max="199" placeholder="(anos)*" required>
-            </div>
-            <div>
-              <h4>Qual é o seu objetivo de peso?*</h4>
-              <input type="radio" name="objetivo" id="perder" value="perder">
-              <label for="perder">Perder</label>
-              <input type="radio" name="objetivo" id="manter" value="manter">
-              <label for="manter">Manter</label>
-              <input type="radio" name="objetivo" id="ganhar" value="ganhar">
-              <label for="ganhar">Ganhar</label>
-              <input type="radio" name="objetivo" id="performace" value="performance">
-              <label for="performace">Performance*</label>
+            <div class="objetivo">
+              <h3>Qual é o seu objetivo de peso?*</h3>
+              <div>
+                <input type="radio" name="objetivo" id="perder" value="perder">
+                <label class="input-radio-label" for="perder">Perder</label>
+                <input type="radio" name="objetivo" id="manter" value="manter">
+                <label class="input-radio-label" for="manter">Manter</label>
+                <input type="radio" name="objetivo" id="ganhar" value="ganhar">
+                <label class="input-radio-label" for="ganhar">Ganhar</label>
+                <input type="radio" name="objetivo" id="performace" value="performance">
+                <label class="input-radio-label" for="performace">Performance*</label>
+              </div>
               <p>*performance: Luta, corrida, ciclismo e outros.</p>
             </div>
             <div>
               <label for="treino">Tempo de Treino de musculação</label>
               <input type="number" name="tempoTreino" id="treino" min="0" max="999" placeholder="(min)*" required>
-              <h4>Intensidade do Treino*</h4>
+              <h3>Intensidade do Treino*</h3>
               <select name="intesidadeTreino">
                 <option value="">escolha uma opção</option>
                 <option value="5">Leve</option>
@@ -99,13 +104,13 @@
                 <option value="11">Alta performace</option>
 
               </select>
-              <h4>Gasto médio em Treino (kcal)*</h4>
+              <h3>Gasto médio em Treino (kcal)*</h3>
               <span></span>
             </div>
             <div>
               <label for="cardio">Tempo de treino de cardio</label>
               <input type="number" name="tempoCardio" id="cardio" min="0" max="999" placeholder="(min)*" required>
-              <h4>Intensidade do Cardio*</h4>
+              <h3>Intensidade do Cardio*</h3>
               <select name="intesidadeCardio">
                 <option value="">escolha uma opção</option>
                 <option value="5">Leve</option>
@@ -113,16 +118,16 @@
                 <option value="11">intenso</option>
                 <option value="14">Alta performace</option>
               </select>
-              <h4>Gasto médio em Cardio (kcal)</h4>
+              <h3>Gasto médio em Cardio (kcal)</h3>
               <span></span>
             </div>
             <div>
               <label for="atvDiaDia">Tempo de atividades do dia a dia</label>
               <input type="number" name="DiaDia" id="atvDiaDia" min="0" max="999" placeholder="(min)*" required>
-              <span>*trabalhar em pé, limpar a casa, brincar com crianças, subir e descer escadas, atividade sexual, etc.</span>
+              <p>*trabalhar em pé, limpar a casa, brincar com crianças, subir e descer escadas, atividade sexual, etc.</p>
             </div>
             <div>
-              <h4>Qual o seu nível de definição?</h4>
+              <h3>Qual o seu nível de definição?</h3>
               <div class="grid-bf-homem">
                 <div>
                   <input type="radio" name="bf" id="bf-homem" value="0.07">
@@ -180,14 +185,14 @@
                 </div>
               </div>
             </div>
-            <h4>Qual é o seu Biotipo?*</h4>
+            <h3>Qual é o seu Biotipo?*</h3>
             <div>
               <input type="radio" name="biotipo" id="ectomorfo" value="ectomorfo" required>
-              <label for="ectomorfo">Ectomorfo</label>
+              <label class="input-radio-label" for="ectomorfo">Ectomorfo</label>
               <input type="radio" name="biotipo" id="mesomorfo" value="mesomorfo" required>
-              <label for="mesomorfo">Mesomorfo</label>
+              <label class="input-radio-label" for="mesomorfo">Mesomorfo</label>
               <input type="radio" name="biotipo" id="endomorfo" value="endomorfo" required>
-              <label for="endomorfo">Endomorfo</label>
+              <label class="input-radio-label" for="endomorfo">Endomorfo</label>
               <div>
                 <span class="simbol-duvida">?</span>
                 <p>Descubra qual o seu Biotipo aqui.</p>
@@ -209,15 +214,15 @@
         <h3>Essa é a sua Taxa Metabólica Basal(TMB) e seu Percentual de Gordura Corporal(BF) estimado:</h3>
         <ul>
           <li>
-            <h4>Percentual de Gordura</h4>
+            <h3>Percentual de Gordura</h3>
             <span class="result-bf"></span>
           </li>
           <li>
-            <h4>Massa Magra</h4>
+            <h3>Massa Magra</h3>
             <span class="result-mm"></span>
           </li>
           <li>
-            <h4>Massa Gorda</h4>
+            <h3>Massa Gorda</h3>
             <span class="result-mg"></span>
           </li>
         </ul>
@@ -225,7 +230,7 @@
         <ul>
           <li>
             <span class="result-tmb"></span>
-            <h4>em dias de descanso</h4>
+            <h3>em dias de descanso</h3>
           </li>
           <li>
             <span class="kcal-treino"></span>

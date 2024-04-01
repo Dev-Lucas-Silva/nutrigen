@@ -3,6 +3,7 @@
   background-position-y: center;
   padding: 120px 10px;
   color: #224557;
+  font-weight: bold;
 }
 
 .calc-basal-contain {
@@ -17,10 +18,17 @@
 
 #form-basal {
   display: grid;
-  gap: 10px;
+  padding: 32px;
+  gap: 20px;
   background: #c6e4e4;
   border-radius: 15px;
   box-shadow: 1px 1px 20px 10px rgba(47, 92, 139, 0.3);
+}
+
+#form-basal label {
+  font: 400 1rem / 1.5 "Poppins", sans-serif;
+  margin-bottom: 4px;
+  display: block;
 }
 
 #form-basal .sexo {
@@ -29,39 +37,45 @@
   justify-content: center;
 }
 
-#form-basal .sexo input {
+#form-basal input[type='radio']{
   opacity: 0;
   position: absolute;
   pointer-events: none;
 }
 
-#form-basal .sexo label {
+.input-radio-label {
   font-weight: bold;
-  padding: 12px 32px;
-  border-radius: 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
   cursor: pointer;
-  background: linear-gradient(45deg, #64d5b5, #35a995);
+  background: linear-gradient(45deg,#64d5b5, #35a995);
   color: white;
-  display: inline-block;
   box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.1);
   border: 2px solid #64d5b5;
+}
+
+#form-basal .sexo label {
+  background: linear-gradient(45deg,  #1dc6ef, #1483ee);
+  border: 2px solid #1dc6ef;
+  padding: 12px 32px;
 }
 
 #form-basal .sexo label:last-child {
   background: linear-gradient(45deg, #fda077, #fd637c);
   border: 2px solid #fda077;
+  padding: 12px 32px;
 }
 
-#form-basal .sexo input:checked + label {
+#form-basal input[type='radio']:checked + label {
   border: 2px solid white;
 }
 
-#form-basal .sexo input + label:hover {
+#form-basal input[type='radio'] + label:hover {
   box-shadow: 0 0 10px 15px white;
   box-shadow: inset 0 0 0px 50px rgba(0, 0, 0, 0.1);
 }
 
-#form-basal .sexo label::before {
+#form-basal input[type='radio'] + label::before {
   content: "";
   display: inline-block;
   box-sizing: border-box;
@@ -72,14 +86,83 @@
   margin-right: 8px;
 }
 
-#form-basal .sexo input:checked + label::before {
+#form-basal input:checked[type='radio'] + label::before {
   box-shadow: inset 0 0 0 3px white, inset 0 0 0 6px white;
 }
 
-#form-basal .sexo input:focus + label {
+#form-basal input[type='radio']:focus + label {
   box-shadow: inset 0 0 0 1px white, inset 0 0 0 1px white;
   border: 2px solid white;
 }
+
+
+
+
+
+.alt-peso-idade {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.objetivo div {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+
+
+
+.calc-basal .aside-4 {
+  background: grey;
+  width: 300px;
+  height: 600px;
+  border-radius: 8px;
+  margin-top: 40px;
+}
+
+.invalid {
+  border-color: darkred;
+}
+.tmb-erro {
+  display: none;
+}
+
+.tmb-erro.invalid {
+  display: block;
+}
+
+@media (max-width: 1000px) {
+  .calc-basal .aside-4 {
+  display: none;
+  }
+  .calc-basal-contain {
+    grid-template-columns: 1fr;
+  }  
+}
+@media (max-width: 600px) {
+  #form-basal {
+  padding: 32px 12px;
+  }
+}
+@media (max-width: 400px) {
+  #form-basal {
+  padding: 32px 12px;
+  }
+  #form-basal .sexo label {
+    padding: 12px 20px;
+  }
+  
+  #form-basal .sexo label:last-child {
+    padding: 12px 20px;
+  }
+}
+
+
+
 
 .calc-basal h5 {
   padding-bottom: 10px;
@@ -125,21 +208,5 @@
   gap: 20px;
 }
 
-.invalid {
-  border-color: darkred;
-}
-.tmb-erro {
-  display: none;
-}
 
-.tmb-erro.invalid {
-  display: block;
-}
 
-.calc-basal .aside-4 {
-  background: grey;
-  width: 300px;
-  height: 600px;
-  border-radius: 10px;
-  margin-top: 40px;
-}
