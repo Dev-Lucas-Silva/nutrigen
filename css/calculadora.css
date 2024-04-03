@@ -1,16 +1,14 @@
 .calc-basal {
-  background: url("../image/backgroud-calc.jfif");
+  background: url("../image/backgroud-opcao.jfif");
   background-position-y: center;
   padding: 120px 10px;
   color: #224557;
-  font-weight: bold;
 }
 
 .calc-basal-contain {
   display: grid;
   grid-template-columns: 2fr 1fr;
   max-width: 1200px;
-  align-items: center;
   justify-items: center;
   text-align: center;
   margin: 0 auto;
@@ -19,25 +17,35 @@
 #form-basal {
   display: grid;
   padding: 32px;
-  gap: 20px;
-  background: #c6e4e4;
-  border-radius: 15px;
+  background: #fefde7;
+  border-radius: 12px;
   box-shadow: 1px 1px 20px 10px rgba(47, 92, 139, 0.3);
+}
+
+#form-basal h3 {
+  margin-bottom: 20px;
+}
+
+#form-basal p {
+  font-size: 0.875rem;
 }
 
 #form-basal label {
   font: 400 1rem / 1.5 "Poppins", sans-serif;
   margin-bottom: 4px;
   display: block;
+  font-weight: bold;
 }
 
 #form-basal .sexo {
   display: flex;
   gap: 20px;
   justify-content: center;
+  border-bottom: 2px solid #ededed;
+  margin-bottom: 16px;
 }
 
-#form-basal input[type='radio']{
+#form-basal input[type="radio"] {
   opacity: 0;
   position: absolute;
   pointer-events: none;
@@ -48,16 +56,17 @@
   padding: 8px 12px;
   border-radius: 8px;
   cursor: pointer;
-  background: linear-gradient(45deg,#64d5b5, #35a995);
+  background: linear-gradient(45deg, #64d5b5, #35a995);
   color: white;
-  box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 15px 2px rgba(0, 0, 0, 0.1);
   border: 2px solid #64d5b5;
 }
 
 #form-basal .sexo label {
-  background: linear-gradient(45deg,  #1dc6ef, #1483ee);
+  background: linear-gradient(45deg, #1dc6ef, #1483ee);
   border: 2px solid #1dc6ef;
   padding: 12px 32px;
+  margin-bottom: 14px;
 }
 
 #form-basal .sexo label:last-child {
@@ -66,16 +75,16 @@
   padding: 12px 32px;
 }
 
-#form-basal input[type='radio']:checked + label {
-  border: 2px solid white;
+#form-basal input[type="radio"]:checked + label {
+  border-color:  white;
 }
 
-#form-basal input[type='radio'] + label:hover {
+#form-basal input[type="radio"] + label:hover {
   box-shadow: 0 0 10px 15px white;
   box-shadow: inset 0 0 0px 50px rgba(0, 0, 0, 0.1);
 }
 
-#form-basal input[type='radio'] + label::before {
+#form-basal input[type="radio"] + label::before {
   content: "";
   display: inline-block;
   box-sizing: border-box;
@@ -86,23 +95,57 @@
   margin-right: 8px;
 }
 
-#form-basal input:checked[type='radio'] + label::before {
+#form-basal input:checked[type="radio"] + label::before {
   box-shadow: inset 0 0 0 3px white, inset 0 0 0 6px white;
 }
 
-#form-basal input[type='radio']:focus + label {
+#form-basal input[type="radio"]:focus + label {
   box-shadow: inset 0 0 0 1px white, inset 0 0 0 1px white;
-  border: 2px solid white;
+  border-color:  white;
 }
 
+#form-basal input[type="number"] {
+  padding: 8px 16px;
+  border: solid 2px #cccccc;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #f7fdfc, #e0e5e8);
+  box-shadow: 1px 1px 15px 2px rgba(0, 0, 0, 0.1);
+}
 
+#form-basal select {
+  padding: 8px 16px;
+  border: solid 2px #cccccc;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #f7fdfc, #e0e5e8);
+  box-shadow: 1px 1px 15px 2px rgba(0, 0, 0, 0.1);
+}
 
-
-
-.alt-peso-idade {
+.alt-peso-idade div{
   display: flex;
   justify-content: center;
   gap: 20px;
+  position: relative;
+  border-bottom: 2px solid #ededed;
+  padding-top:5px;
+}
+
+
+.alt-peso-idade label {
+  position: absolute;
+  top: -14px;
+  left: 0;
+}
+.alt-peso-idade input {
+  margin-bottom: 14px;
+}
+
+.objetivo {
+  border-bottom: 2px solid #ededed;
+  margin-top: 16px;
+}
+
+.objetivo p {
+  margin-bottom: 14px;
 }
 
 .objetivo div {
@@ -112,16 +155,124 @@
   justify-content: center;
 }
 
+.tempo-treino div,
+.tempo-cardio div {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  margin-top: 18px;
+  border-bottom: 2px solid #ededed;
+}
 
+.tempo-treino {
+  margin-top: 16px;
+}
 
+.atvDiaDia div {
+  margin-bottom: 4px;
+}
 
+.tempo-treino label,
+.tempo-cardio label,
+.atvDiaDia label {
+  position: absolute;
+  top: -19px;
+  left: 0px;
+}
+
+.tempo-treino div,
+.tempo-cardio div {
+  margin-bottom: 14px;
+}
+
+.tempo-cardio,
+.atvDiaDia {
+  margin-top: 2px;
+}
+
+.atvDiaDia p {
+  padding-bottom: 16px;
+  border-bottom: 2px solid #ededed;
+}
+
+.definicao div {
+  display: grid;
+  justify-items: center;
+  border-bottom: 2px solid #ededed;
+}
+
+.definicao h3 {
+  margin-top: 16px;
+}
+
+.grid-bf-homem {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 615px;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #64d5b5, #35a995);
+  margin-bottom: 14px;
+  border-bottom: 2px solid #ededed;
+}
+
+.grid-bf-mulher {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  max-width: 615px;
+  display: none;
+  align-items: center;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #64d5b5, #35a995);
+  border-bottom: 2px solid #ededed;
+}
+
+.qual-biotipo div {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.qual-biotipo h3 {
+  margin-top: 16px;
+}
+
+.qual-biotipo {
+  border-bottom: 2px solid #ededed;
+}
+
+.qual-biotipo p {
+  margin-bottom: 14px;
+}
+#form-basal input[type="submit"] {
+  color: white;
+  padding: 16px 32px;
+  font: 600 1.125rem / 1.35 "Poppins", sans-serif;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #0fd9a1, #1190ef);
+  text-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  margin-bottom: 8px;
+  margin-top: 16px;
+}
+
+#form-basal input[type="submit"]:hover {
+  box-shadow: 0 0 8px 12px white;
+  box-shadow: inset 0 0 0px 50px rgba(0, 0, 0, 0.1);
+}
 
 .calc-basal .aside-4 {
   background: grey;
   width: 300px;
   height: 600px;
   border-radius: 8px;
-  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.tmb-erro {
+  color: darkred;
 }
 
 .invalid {
@@ -137,48 +288,28 @@
 
 @media (max-width: 1000px) {
   .calc-basal .aside-4 {
-  display: none;
+    display: none;
   }
   .calc-basal-contain {
     grid-template-columns: 1fr;
-  }  
+  }
 }
 @media (max-width: 600px) {
   #form-basal {
-  padding: 32px 12px;
+    padding: 32px 12px;
   }
 }
 @media (max-width: 400px) {
   #form-basal {
-  padding: 32px 12px;
+    padding: 32px 12px;
   }
   #form-basal .sexo label {
     padding: 12px 20px;
   }
-  
+
   #form-basal .sexo label:last-child {
     padding: 12px 20px;
   }
-}
-
-
-
-
-.calc-basal h5 {
-  padding-bottom: 10px;
-}
-
-.grid-bf-homem {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  max-width: 400px;
-}
-
-.grid-bf-mulher {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  max-width: 400px;
-  display: none;
 }
 
 .result-basal ul {
@@ -207,6 +338,3 @@
   display: grid;
   gap: 20px;
 }
-
-
-

@@ -1,9 +1,9 @@
 .introducao {
-  background: url("../image/backgroud-introducao.jfif");
+  background: url("../image/backgroud-header.jfif");
   background-repeat: no-repeat;
   background-size: cover;
   background-position-y: center;
-  box-shadow: inset 1px 1px 20px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 1px 1px 15px 1px rgba(0, 0, 0, 0.3);
 }
 
 .introducao .aside-1 {

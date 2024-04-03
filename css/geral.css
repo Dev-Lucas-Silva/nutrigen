@@ -30,3 +30,7 @@ img {
   height: auto;
   display: block;
 }
+
+input[type="submit"] {
+  border: none;
+}
