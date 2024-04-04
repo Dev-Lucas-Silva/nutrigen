@@ -66,7 +66,7 @@
   background: linear-gradient(45deg, #1dc6ef, #1483ee);
   border: 2px solid #1dc6ef;
   padding: 12px 32px;
-  margin-bottom: 14px;
+  margin: 14px;
 }
 
 #form-basal .sexo label:last-child {
@@ -196,10 +196,14 @@
   border-bottom: 2px solid #ededed;
 }
 
+.definicao  {
+  border-bottom: 2px solid #ededed;
+
+
+}
 .definicao div {
   display: grid;
   justify-items: center;
-  border-bottom: 2px solid #ededed;
 }
 
 .definicao h3 {
@@ -209,11 +213,10 @@
 .grid-bf-homem {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  max-width: 615px;
+  width: 100%;
   border-radius: 8px;
   background: linear-gradient(45deg, #64d5b5, #35a995);
   margin-bottom: 14px;
-  border-bottom: 2px solid #ededed;
 }
 
 .grid-bf-mulher {
@@ -224,7 +227,17 @@
   align-items: center;
   border-radius: 8px;
   background: linear-gradient(45deg, #64d5b5, #35a995);
-  border-bottom: 2px solid #ededed;
+  margin-bottom: 14px;
+}
+
+.grid-bf-homem img{
+  width:  106.5px;
+  height: auto;
+}
+
+.grid-bf-mulher img {
+  width: 200px;
+  height: auto;
 }
 
 .qual-biotipo div {
