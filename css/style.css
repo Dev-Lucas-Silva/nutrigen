@@ -3,6 +3,7 @@
 @import "header.css";
 @import 'introducao.css';
 @import "calculadora.css";
-@import 'tabela-dieta.css';
+@import 'resultados.css';
 @import 'escolha-dieta.css';
+@import 'tabela-dieta.css';
 @import 'footer.css'

@@ -169,7 +169,7 @@ export function initCalcMacros(
     dadosForm.biotipo
   ).init();
 
-  const resultMacros = document.querySelector(".result-macros");
+  const resultMacros = document.querySelector(".result-basal-contain");
   const formMacros = document.getElementById("form-macros");
 
   const eventos = ["click"];

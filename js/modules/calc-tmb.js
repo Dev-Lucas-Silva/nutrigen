@@ -51,7 +51,7 @@ export function printTmb(tmb) {
   const resultBf = dadosForm.bf * 100;
   const resultMm = dadosForm.peso - dadosForm.peso * dadosForm.bf;
   const resultMg = dadosForm.peso * dadosForm.bf;
-  const resultBasalKcal = document.querySelector(".result-basal-kcal");
+  const resultBasalKcal = document.querySelector(".result-basal-contain");
 
   resultBasalKcal.querySelector(".result-bf").innerHTML =
     resultBf.toFixed(1) + "%";

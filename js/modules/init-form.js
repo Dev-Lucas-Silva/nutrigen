@@ -92,8 +92,11 @@ function setValues() {
     mostarFotosBf();
   }
 
-  if (properties.includes("dietaImportada")) {
+  if(!Object.values(dadosForm).includes("")) {
     calcTmb(dadosForm.sexo);
+
+  }
+  if (properties.includes("dietaImportada")) {
 
     zerarDietaMontada();
 
