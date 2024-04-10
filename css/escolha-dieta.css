@@ -7,7 +7,7 @@
   margin-bottom: 20px;
 }
 
-.lista-dietas {
+#lista-dietas {
   box-shadow: 0 0 15px rgba(255, 255, 255, 1);
   width: 180px;
   height: 100px;
@@ -22,7 +22,7 @@
   color: darkorange;
 }
 
-.lista-dietas:hover {
+#lista-dietas:hover {
   border: solid 2px darkorange;
   transform: scale(1.01);
   transition: transform 0.2s ease 0s;

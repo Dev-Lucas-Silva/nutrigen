@@ -5,6 +5,7 @@ import {
   zerarDietaMontada,
 } from "./bild-dieta.js";
 
+
 const formBasal = document.getElementById("form-basal");
 const gridBfHomem = document.querySelector(".grid-bf-homem");
 const gridBfMulher = document.querySelector(".grid-bf-mulher");
@@ -53,6 +54,20 @@ const handleValidity = (form, event, erro, calculadora) => {
     form.submit.addEventListener("click", (event) => {
       event.preventDefault();
       calculadora(dadosForm.sexo);
+      if (properties.includes("dietaImportada")) {
+
+        zerarDietaMontada();
+    
+        const myValue = localStorage.getItem("dietaImportada");
+    
+        calcPrint(listaDietasImportadas[myValue]);
+    
+        const dietaEscolhida = document.querySelectorAll(".escolha-dieta button");
+    
+        dietaEscolhida.forEach((dieta) => {
+          dieta.disabled = true;
+        });
+      }
     });
     form.submit.setAttribute("class", "event");
   } else {
@@ -71,6 +86,7 @@ const mostarFotosBf = () => {
 };
 
 const properties = Object.keys(localStorage);
+
 function setValues() {
   properties.forEach((propertie, i) => {
     dadosForm[propertie] = localStorage[propertie];
@@ -127,5 +143,6 @@ const handleEvents = (event, calculadora) => {
 export function init() {
   formBasal.addEventListener("change", () => {
     handleEvents(event, calcTmb);
+    
   });
 }

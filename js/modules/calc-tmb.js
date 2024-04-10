@@ -56,9 +56,9 @@ export function printTmb(tmb) {
   resultBasalKcal.querySelector(".result-bf").innerHTML =
     resultBf.toFixed(1) + "%";
   resultBasalKcal.querySelector(".result-mm").innerHTML =
-    resultMm.toFixed(2) + " Kg";
+    resultMm.toFixed(2) + "Kg";
   resultBasalKcal.querySelector(".result-mg").innerHTML =
-    resultMg.toFixed(2) + " Kg";
+    resultMg.toFixed(2) + "Kg";
   resultBasalKcal.querySelector(".result-tmb").innerHTML =
     tmb.toFixed(0) + " Kcal";
 

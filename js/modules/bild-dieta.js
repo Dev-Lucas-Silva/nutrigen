@@ -10,29 +10,25 @@ let dietaMontada = [];
 
 export function initMinhaDieta() {
   dietaEscolhida.forEach((dieta) => {
-    dieta.addEventListener("click", (event) => {
-      dieta.disabled = true;
-      const escolhida = dieta.dataset.dieta;
+    if (!dieta.classList.contains("event")) {
+      dieta.addEventListener("click", (event) => {
+        dieta.disabled = true;
+        const escolhida = dieta.dataset.dieta;
 
-      localStorage.setItem("dietaImportada", escolhida);
+        localStorage.setItem("dietaImportada", escolhida);
 
-      calcPrint(listaDietasImportadas[escolhida]);
-
-    });
+        calcPrint(listaDietasImportadas[escolhida]);
+      });
+    }
+    dieta.setAttribute("class", "event");
   });
 }
 
-
-export const calcPrint = function(dietaImportada) {
+export const calcPrint = function (dietaImportada) {
   if (dietaImportada) {
     dietaImportada.forEach((ref, i) => {
       dietaMontada.push(
-        calcRefeicoes(
-          ref.descricao,
-          ref.proteina,
-          ref.carboidrato,
-          ref.gordura
-        )
+        calcRefeicoes(ref.descricao, ref.proteina, ref.carboidrato, ref.gordura)
       );
     });
   }
@@ -40,7 +36,6 @@ export const calcPrint = function(dietaImportada) {
   setTimeout(() => {
     printDieta(dietaMontada);
   }, 700);
-
 };
 
 const calcRefeicoes = (descricao, proteinas, carboidratos, gorduras) => {
@@ -164,7 +159,7 @@ escolherOutraDieta.addEventListener("click", () => {
   });
 });
 
-export const zerarDietaMontada = function() {
+export const zerarDietaMontada = function () {
   const refeicaoChidrens = minhaDieta.childNodes;
   refeicaoChidrens.forEach((Chidrens) => {
     Chidrens.remove();

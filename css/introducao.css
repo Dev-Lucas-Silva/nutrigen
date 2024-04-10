@@ -61,7 +61,7 @@
   margin-top: 40px;
   grid-column: 1/ -1;
   position: absolute;
-  top: 633px;
+  top: 654px;
 }
 
 @media (max-width: 1000px) {
@@ -79,7 +79,7 @@
   .introducao .aside-3 {
     width: 728px;
     height: 90px;
-    top: 587px;
+    top: 609px;
   }
 }
 @media (max-width: 800px) {
@@ -97,7 +97,7 @@
     height: 200px;
   }
   .introducao .aside-3 {
-    top: 503px;
+    top: 529px;
   }
 }
 @media (max-width: 700px) {
@@ -140,5 +140,11 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+  }
+}
+
+@media (max-width: 550px) {
+  .introducao .aside-3 {
+    top: 421px;
   }
 }

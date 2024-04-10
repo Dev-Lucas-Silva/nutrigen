@@ -176,25 +176,27 @@ export function initCalcMacros(
 
   function calcProteinas(taxa) {
     let tipoDietaProteina = taxa;
-    resultMacros.querySelector(".gkgProteina").innerHTML = tipoDietaProteina;
+    resultMacros.querySelector(".gkgProteina").innerHTML =
+      tipoDietaProteina + "g";
     const proteinas = dado.peso * tipoDietaProteina;
     resultMacros.querySelector(".proteina").innerHTML =
-      proteinas.toFixed(0) + " g ";
+      proteinas.toFixed(0) + "g";
     dadosMacros.proteina = +proteinas.toFixed(0);
   }
   calcProteinas(taxaCalcMacros.proteina);
 
   function calcGordura(taxa) {
     let tipoDietaGordura = taxa;
-    resultMacros.querySelector(".gkgGordura").innerHTML = tipoDietaGordura;
-    resultMacros.querySelector(".gkgCarbo").innerHTML = 100;
+    resultMacros.querySelector(".gkgGordura").innerHTML =
+      tipoDietaGordura + "g";
     formMacros.carboidratoporkg.value = 100;
     const gordura = dado.peso * tipoDietaGordura;
-    resultMacros.querySelector(".gordura").innerHTML =
-      gordura.toFixed(0) + " g ";
+    resultMacros.querySelector(".gordura").innerHTML = gordura.toFixed(0) + "g";
     dadosMacros.gordura = +gordura.toFixed(0);
   }
   calcGordura(taxaCalcMacros.gordura);
+
+  resultMacros.querySelector(".gkgCarbo").innerHTML = 100 + "%";
 
   function calcCarbo(basal, taxaProteina, taxaGordura, novaTaxa) {
     const carboDescanso =
@@ -211,25 +213,25 @@ export function initCalcMacros(
 
     if (carboDescanso > 0) {
       resultMacros.querySelector(".carbo-descanso").innerHTML =
-        carboDescanso.toFixed(0) + " g ";
+        carboDescanso.toFixed(0) + "g";
     } else {
-      resultMacros.querySelector(".carbo-descanso").innerHTML = 0 + " g ";
+      resultMacros.querySelector(".carbo-descanso").innerHTML = 0 + "g";
     }
     if (carboTreino > 0) {
       resultMacros.querySelector(".carbo-treino").innerHTML =
-        carboTreino.toFixed(0) + " g ";
+        carboTreino.toFixed(0) + "g";
     } else {
       resultMacros.querySelector(".carbo-treino").innerHTML = 0;
     }
     if (carboCardio > 0) {
       resultMacros.querySelector(".carbo-cardio").innerHTML =
-        carboCardio.toFixed(0) + " g ";
+        carboCardio.toFixed(0) + "g";
     } else {
       resultMacros.querySelector(".carbo-cardio").innerHTML = 0;
     }
     if (carboTreinoCardio > 0) {
       resultMacros.querySelector(".carbo-treino-cardio").innerHTML =
-        carboTreinoCardio.toFixed(0) + " g ";
+        carboTreinoCardio.toFixed(0) + "g";
     } else {
       resultMacros.querySelector(".carbo-treino-cardio").innerHTML = 0;
     }
@@ -264,7 +266,7 @@ export function initCalcMacros(
       calcProteinas(formMacros.proteinaporkg.value);
 
       resultMacros.querySelector(".gkgCarbo").innerHTML =
-        formMacros.carboidratoporkg.value;
+        formMacros.carboidratoporkg.value + "%";
 
       calcCarbo(
         calcBasal,
@@ -282,8 +284,9 @@ export function initCalcMacros(
   eventos.forEach((evento) =>
     formMacros.gorduraporkg.addEventListener(evento, () => {
       calcGordura(formMacros.gorduraporkg.value);
+
       resultMacros.querySelector(".gkgCarbo").innerHTML =
-        formMacros.carboidratoporkg.value;
+        formMacros.carboidratoporkg.value + "%";
 
       calcCarbo(
         calcBasal,
@@ -299,15 +302,14 @@ export function initCalcMacros(
 
   eventos.forEach((evento) =>
     formMacros.carboidratoporkg.addEventListener(evento, () => {
-      resultMacros.querySelector(".gkgCarbo").innerHTML =
-        formMacros.carboidratoporkg.value;
-
       calcCarbo(
         calcBasal,
         dadosMacros.proteina,
         dadosMacros.gordura,
         formMacros.carboidratoporkg.value
       );
+      resultMacros.querySelector(".gkgCarbo").innerHTML =
+        formMacros.carboidratoporkg.value + "%";
       zerarDietaMontada();
       const myValue = localStorage.getItem("dietaImportada");
       calcPrint(listaDietasImportadas[myValue]);
