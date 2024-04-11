@@ -1,16 +1,35 @@
-.result-basal {
+.result-basal-bg {
   background: url("../image/backgroud-opcao.jfif");
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
-  padding: 60px 10px;
+  padding: 0px 10px 60px 10px;
   font-family: "Poppins", sans-serif;
+}
+
+.result-basal-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  max-width: 1200px;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.result-basal-container .aside-6 {
+  background: grey;
+  width: 970px;
+  height: 90px;
+  border-radius: 8px;
+  margin: 40px 0;
+  grid-column: 1/ -1;
 }
 
 .result-basal-contain {
   display: grid;
   grid-template-columns: 1fr;
-  max-width: 700px;
+  max-width: 765px;
   justify-items: center;
   text-align: center;
   margin: 0 auto;
@@ -127,6 +146,33 @@ position: relative;
 font-size: 1.15rem;
 }
 
+.result-basal-container .aside-7, .result-basal-container .aside-8 {
+  background: grey;
+  width: 300px;
+  height: 300px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 1000px) {
+  .result-basal-container .aside-7, .result-basal-container .aside-8 {
+display: none;
+  }
+ .result-basal-container {
+  grid-template-columns: 1fr;
+ }
+ .result-basal-container .aside-6 {
+  width: 728px;
+  height: 90px;
+}
+}
+@media (max-width: 800px) {
+  .result-basal-container .aside-6 {
+    width: 468px;
+    height: 60px;
+    margin: 20px 0;
+  }
+}
 @media (max-width: 600px) {
   .result-basal-contain {
     padding: 20px 12px;
@@ -138,9 +184,6 @@ font-size: 1.15rem;
   .result-basal-contain h2 {
     padding: 0px;
   }
-  .result-basal {
-    padding: 60px 0px;
-  }
   .result-basal-contain .titulo {
     border-radius: 8px;
     width: initial;
@@ -150,7 +193,14 @@ font-size: 1.15rem;
   }
   .result-macros-contain-2 {
     gap: 20px;
-  }  
+  } 
+  .result-basal-container .aside-6 {
+    width: 300px;
+    height: 100px;
+  }
+  .result-basal-bg {
+    padding:0 0 60px 0;
+  } 
 }
 @media (max-width: 400px) {
   .result-kcal-contain {
@@ -160,5 +210,9 @@ font-size: 1.15rem;
   .result-macros-contain-2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+  }
+  .result-basal-container .aside-6 {
+    width: 300px;
+    height: 100px;
   }
 }

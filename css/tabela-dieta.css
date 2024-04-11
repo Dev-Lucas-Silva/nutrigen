@@ -1,21 +1,61 @@
-.dieta-montada {
-  max-width: 800px;
+.dieta-montada-bg {
+  background: url("../image/backgroud-opcao.jfif");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0 10px 60px 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.dieta-montada-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  max-width: 1200px;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  color: white;
+}
+
+.dieta-montada-contain {
+  background: #095d8c;
+  max-width: 765px;
+  padding: 32px;
   display: grid;
   justify-items: center;
   align-items: center;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);  padding: 20px 20px 40px 20px;
-  margin-bottom: 40px;
-  border-radius: 20px;
+  border-radius: 12px;
+  box-shadow: 1px 1px 20px 10px rgba(47, 92, 139, 0.3);
+}
+
+.dieta-montada-contain h2 {
+  border-radius: 12px 12px 0 0;
+  margin-bottom: 16px;
+  padding: 12px 0;
+  background: #093450;
+  margin-bottom: 20px;
+  color: white;
+  width: 100%;
+}
+
+.dieta-montada-container .aside-12 {
+  background: grey;
+  width: 970px;
+  height: 90px;
+  border-radius: 8px;
+  margin: 40px 0;
+  grid-column: 1/ -1;
 }
 
 .descricoes {
-  grid-column: 1 / -1;
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
   align-items: center;
-  border: solid 1px;
-
+  border: solid 1px #b2b2b2;
+  border-radius: 4px 4px 0 0;
+  width: 100%;
 }
 
 .descricoes div {
@@ -23,35 +63,45 @@
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
   align-items: center;
-  border-right: SOLID 1px;
+  width: 100%;
+  border-right: solid 1px #b2b2b2;
+  border-left: solid 1px #b2b2b2;
 }
 
-.descricoes div p {
+.descricoes div h4 {
+  background: #0a4061;
   grid-column: 1 / -1;
-  border-bottom: solid 1px;
+  border-bottom: solid 1px #b2b2b2;
   width: 100%;
   text-align: center;
+  padding: 8px 0;
+}
+
+.descricoes div span {
+  padding: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
 .refeicao {
   display: grid;
   justify-items: center;
   align-items: center;
-  border-bottom: solid 1px;
-  border-left: solid 1px;
-  border-right: solid 1px;
+  border-bottom: solid 1px #b2b2b2;
+  border-left: solid 1px #b2b2b2;
+  border-right: solid 1px #b2b2b2;
 }
 
-.refeicao h2 {
-  grid-column: 1 / -1;
-  border-bottom: solid 1px;
-  width: 100%;
-  text-align: center;
+.titulo-refeicao {
+  background: #52bedd;
+  padding: 12px;
+  border-bottom: solid 1px #b2b2b2;
 }
 
 .lista-alimentos {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  border-bottom: solid 1px #b2b2b2;
 }
 
 .lista-alimentos div {
@@ -59,9 +109,92 @@
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
   align-items: center;
-  border-right: solid 1px;
+  border-left: solid 1px #b2b2b2;
+}
+
+.lista-alimentos span {
+  padding: 8px;
 }
 
 .lista-alimentos p {
   text-align: center;
+  padding: 8px;
+}
+
+.dieta-montada-container .aside-13,
+.dieta-montada-container .aside-14 {
+  background: grey;
+  width: 300px;
+  height: 300px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 1000px) {
+  .dieta-montada-container {
+    grid-template-columns: 1fr;
+  }
+  .dieta-montada-container .aside-13,
+  .dieta-montada-container .aside-14 {
+    display: none;
+  }
+  .dieta-montada-container .aside-12 {
+    width: 728px;
+    height: 90px;
+  }
+}
+@media (max-width: 800px) {
+  .dieta-montada-container .aside-12 {
+    width: 468px;
+    height: 60px;
+    margin: 20px 0;
+  }
+}
+@media (max-width: 600px) {
+  .dieta-montada-container .aside-12 {
+    width: 300px;
+    height: 100px;
+  }
+  .dieta-montada-bg {
+    padding:0 0 60px 0;
+  }
+  .dieta-montada-contain {
+    border-radius: 0;
+    padding: 20px 10px;
+    width: 100%;
+  }
+  .dieta-montada-contain h2 {
+    border-radius: 8px;
+  }
+  .descricoes {
+  grid-template-columns: 1fr;
+  }
+  .descricoes h3 {
+    display: none;
+  }
+  .lista-alimentos {
+    grid-template-columns: 1fr;
+  }
+  .lista-alimentos div {
+  border: none;
+  }
+  .lista-alimentos p {
+    padding-bottom: 0;
+  }
+  .descricoes  {
+    border-left: none;
+    max-width: 389px;
+}
+.lista-alimentos:last-child {
+  border-bottom: none;
+}
+.titulo-refeicao {
+  padding: 4px;
+}
+}
+@media (max-width: 400px) {
+  .dieta-montada-container .aside-12 {
+    width: 300px;
+    height: 100px;
+  }
 }

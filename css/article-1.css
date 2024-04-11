@@ -1,0 +1,9 @@
+.article-1-bg .aside-15 {
+  background: grey;
+  width: 970px;
+  height: 90px;
+  border-radius: 8px;
+  margin: 40px 0;
+  grid-column: 1/ -1;
+
+}

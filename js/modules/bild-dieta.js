@@ -132,13 +132,14 @@ const printDieta = function (dieta) {
     for (let i = 1; i < refe.length; i++) {
       const ref = refe[i];
       let montarRefeicoes = `<div class="lista-alimentos">
+      <p class="descricao-alimento">${ref[4]}</p>
             <div>
               <span class="gDescanso">${ref[0]}g</span>
               <span class="gTreino">${ref[1]}g</span>
               <span class="gCardio">${ref[2]}g</span>
               <span class="gCardioTreino">${ref[3]}g</span>
             </div>
-            <p class="descricao-alimento">${ref[4]}</p>
+
           </div>
           `;
       refeicoes.push(montarRefeicoes);

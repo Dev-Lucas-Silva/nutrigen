@@ -1,29 +1,144 @@
-.escolha-dieta {
-  margin-bottom: 40px;
-  margin-left: 20px;
+.lista-dietas-bg {
+  background: url("../image/backgroud-opcao.jfif");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0 10px 60px 10px;
+  font-family: "Poppins", sans-serif;
 }
 
-.escolha-dieta h2 {
+.lista-dietas-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  max-width: 1200px;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.lista-dietas-container .aside-9 {
+  background: grey;
+  width: 970px;
+  height: 90px;
+  border-radius: 8px;
+  margin: 40px 0;
+  grid-column: 1/ -1;
+}
+
+.lista-dietas-contain {
+  max-width: 765px;
+  display: grid;
+  padding: 32px;
+  background: #095d8c;
+  border-radius: 12px;
+  box-shadow: 1px 1px 20px 10px rgba(47, 92, 139, 0.3);
+}
+
+.lista-dietas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+}
+
+.lista-dietas-contain h2 {
+  border-radius: 12px 12px 0 0;
+  margin-bottom: 16px;
+  padding: 12px;
+  background: #093450;
   margin-bottom: 20px;
+  color: white;
 }
 
-#lista-dietas {
-  box-shadow: 0 0 15px rgba(255, 255, 255, 1);
-  width: 180px;
+#opcao-dieta {
+  box-shadow: 0 0 5px rgba(255, 255, 255, 1);
+  width: 160px;
   height: 100px;
   border-radius: 16px;
   text-align: center;
-  background: #005CC8 url('../image/Sem_título-removebg-preview.png') ;
+  background: #005cc8;
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
+  text-shadow: 1px 1px 15px rgba(0, 0, 0, 1);
   border: solid 2px rgba(255, 255, 255, 0.8);
   color: darkorange;
 }
 
-#lista-dietas:hover {
+#opcao-dieta:hover {
   border: solid 2px darkorange;
   transform: scale(1.01);
   transition: transform 0.2s ease 0s;
+}
+
+.lista-dietas-container .aside-10,
+.lista-dietas-container .aside-11 {
+  background: grey;
+  width: 300px;
+  height: 300px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 1000px) {
+  .lista-dietas-container {
+    grid-template-columns: 1fr;
+  }
+  .lista-dietas-container .aside-10,
+  .lista-dietas-container .aside-11 {
+    display: none;
+  }
+  .lista-dietas-container .aside-9 {
+    width: 728px;
+    height: 90px;
+  }
+}
+@media (max-width: 800px) {
+  .lista-dietas-container .aside-9 {
+    width: 468px;
+    height: 60px;
+    margin: 20px 0;
+  }
+}
+@media (max-width: 600px) {
+  .lista-dietas-contain {
+    padding: 20px 12px;
+    border-radius: 0;
+  }
+  .lista-dietas-container .aside-9 {
+    width: 300px;
+    height: 100px;
+  }
+  .lista-dietas-bg {
+    padding: 0 0 60px 0;
+  }
+  .lista-dietas-contain h2 {
+    border-radius: 4px;
+    padding: 8px;
+  }
+  .lista-dietas {
+    gap: 20px;
+  }
+  .lista-dietas-contain h2 {
+    border-radius: 8px;
+  }  
+}
+@media (max-width: 400px) {
+  .lista-dietas-container .aside-9 {
+    width: 300px;
+    height: 100px;
+  }
+  .lista-dietas {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  #opcao-dieta {
+    width: 100%;
+    height: initial;
+    padding: 16px 10px;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 1);
+
+  }
 }
