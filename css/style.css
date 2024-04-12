@@ -1,9 +1,12 @@
 @import "geral.css";
 @import 'utilitarios.css';
 @import "header.css";
+/*estilos pagina gerar minha dieta*/
 @import 'introducao.css';
 @import "calculadora.css";
 @import 'resultados.css';
 @import 'escolha-dieta.css';
 @import 'tabela-dieta.css';
-@import 'footer.css'
+@import 'article-1.css';
+/**/
+@import 'footer.css';
