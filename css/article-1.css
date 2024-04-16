@@ -1,5 +1,5 @@
 .article-1-bg {
-  background: #f4f2ee;
+  background: #ebeef0;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -27,16 +27,18 @@
   box-shadow: 1px 1px 15px 5px rgba(47, 92, 139, 0.1);
 }
 
+.article-1-contain h1, .article-1-contain h2,.article-1-contain h3 {
+  color: #1066a5;
+}
+
 .article-1-container .aside-15 {
   background: grey;
   width: 970px;
   height: 90px;
   border-radius: 8px;
-  margin: 40px 0;
+  margin: 20px 0;
   grid-column: 1/ -1;
 }
-
-
 
 .article-1-container .aside-16,
 .article-1-container .aside-17 {
@@ -64,13 +66,13 @@
   .article-1-container .aside-15 {
     width: 468px;
     height: 60px;
-    margin: 20px 0;
   }
 }
 @media (max-width: 600px) {
   .article-1-container .aside-15 {
     width: 300px;
     height: 100px;
+    margin: 12px 0;
   }
   .article-1-bg {
     padding:0 0 60px 0;
