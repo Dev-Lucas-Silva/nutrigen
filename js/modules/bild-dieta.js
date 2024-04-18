@@ -1,6 +1,6 @@
 import { dadosMacros } from "./calc-macros.js";
 import { buscarAlimentoApi } from "./search-alimento-api.js";
-import { dietaGanharTwin } from "./dieta-ganhar-twin.js";
+import { observacao, dietaGanharTwin } from "./dietas-modelos/dieta-ganhar-twin.js";
 
 export const listaDietasImportadas = [dietaGanharTwin];
 
@@ -145,10 +145,11 @@ const printDieta = function (dieta) {
       refeicoes.push(montarRefeicoes);
     }
   });
-  refeicoes.push("</div>");
 
   let joinRefeicoes = refeicoes.join(" ");
   minhaDieta.innerHTML = joinRefeicoes;
+  const observaoDieta = document.querySelector('.observacao-tabela-dieta');
+  observaoDieta.innerHTML = observacao;
 };
 
 const escolherOutraDieta = document.querySelector(".escolher-outra-dieta");

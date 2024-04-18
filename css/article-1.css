@@ -1,8 +1,5 @@
 .article-1-bg {
   background: #ebeef0;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
   padding: 0 10px 60px 10px;
   font-family: "Poppins", sans-serif;
 }
@@ -13,22 +10,40 @@
   max-width: 1200px;
   justify-items: center;
   align-items: center;
-  text-align: center;
   margin: 0 auto;
 }
 
 .article-1-contain {
+  display: grid;
   max-width: 765px;
   padding: 32px;
-  display: grid;
-  justify-items: center;
-  align-items: center;
   border-radius: 8px;
   box-shadow: 1px 1px 15px 5px rgba(47, 92, 139, 0.1);
 }
 
+.article-1-contain ul {
+  display: grid;
+  gap: 4px;
+  list-style: decimal;
+  padding: 0 0 0 24px;
+}
+
+.article-1-contain h1 {
+  font-size: 2rem;
+}
+
 .article-1-contain h1, .article-1-contain h2,.article-1-contain h3 {
   color: #1066a5;
+  margin-top: 16px;
+}
+
+.article-1-contain p {
+  margin-top: 8px;
+}
+
+.article-1-contain a {
+  justify-self: center;
+  margin: 32px 0;
 }
 
 .article-1-container .aside-15 {

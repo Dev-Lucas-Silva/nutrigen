@@ -1,3 +1,4 @@
+export const observacao = 'Observação: A ultima refeição pode ser substituida por suplementos como Albumina, Whey Protein com Maltodextrina e também pode ser consumida no pós treino.'
 
 export const dietaGanharTwin = [
   {
@@ -36,5 +37,5 @@ export const dietaGanharTwin = [
     proteina: [{description: 'Iogurte, natural, integral', percent: 4}],
     carboidrato: [{description: 'Aveia, flocos, crua', percent: 10}],
     //gordura: [{description: '', percent: 2}]
-  }
+  },  
 ];

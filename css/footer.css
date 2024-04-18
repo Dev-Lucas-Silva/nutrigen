@@ -1,4 +1,39 @@
 footer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
   color: white;
-  background: #093450;
+  background: #292827;
+  font-size: 14px;
+  padding: 32px;
+}
+.aviso-footer {
+color: #b2b2b2;
+}
+footer ul li {
+  margin-bottom: 8px;
+}
+
+footer ul a{
+  margin-bottom: 8px;
+  color: white;
+  text-decoration-line: underline;
+}
+
+footer ul a:hover {
+  color: #b2b2b2;
+}
+.copyright {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 800px) {
+  footer {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  footer {
+    grid-template-columns: 3fr 1fr;
+  }
 }

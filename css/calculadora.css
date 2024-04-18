@@ -168,7 +168,7 @@
   margin-top: 16px;
 }
 
-.objetivo p {
+.objetivo p:last-child {
   margin-bottom: 14px;
 }
 
@@ -319,12 +319,12 @@ left: 10px;
   margin-bottom: 14px;
 }
 
-.qual-biotipo a {
+.saiba-como {
 color: white;
 border-bottom: 2px solid #ededed;
 font-weight: 700;
 }
-.qual-biotipo a:hover {
+.saiba-como:hover {
 color: #111111;
 border-color: #111111;
 }
@@ -377,6 +377,10 @@ border-color: #111111;
   font-weight: 700;
 }
 
+.observacao-tabela-dieta {
+ font-size: 14px;
+ margin-top: 8px;
+}
 @media (max-width: 1000px) {
   .calc-basal-container .aside-4, .calc-basal-container .aside-5 {
     display: none;
