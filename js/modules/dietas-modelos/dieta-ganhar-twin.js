@@ -1,4 +1,4 @@
-export const observacao = 'Observação: A ultima refeição pode ser substituida por suplementos como Albumina, Whey Protein com Maltodextrina e também pode ser consumida no pós treino.'
+export const observacao = 'Observaçôes: *A ultima refeição pode ser substituida por suplementos como Albumina, Whey Protein com Maltodextrina e também pode ser consumida no pós treino. *Saladas e legunmas a vontade para consumir os micronutrientes'
 
 export const dietaGanharTwin = [
   {

@@ -24,19 +24,8 @@ export const dadosForm = {
   sexo: "",
   tempoCardio: "",
   tempoTreino: "",
-}; /*
-DiaDia: "150",
-altura: "173",
-bf: "0.17",
-biotipo: "endomorfo",
-idade: "27",
-intesidadeCardio: "moderado",
-intesidadeTreino: "intenso",
-objetivo: "ganhar",
-peso: "74",
-sexo: "masculino",
-tempoCardio: "60",
-tempoTreino: "30",*/
+};
+
 const handleValidity = (form, event, erro, calculadora) => {
   const target = event.target;
 
@@ -138,11 +127,25 @@ const handleEvents = (event, calculadora) => {
   }
   mostarFotosBf();
   handleValidity(formBasal, event, erroTmb, calculadora);
+  if(formBasal.submit.classList.contains("event") && properties.includes("dietaImportada")) {
+    calcTmb(dadosForm.sexo);
+    zerarDietaMontada();
+  
+    const myValue = localStorage.getItem("dietaImportada");
+
+    calcPrint(listaDietasImportadas[myValue]);
+
+    const dietaEscolhida = document.querySelectorAll(".escolha-dieta button");
+
+    dietaEscolhida.forEach((dieta) => {
+      dieta.disabled = true;
+    });
+  }
+
 };
 
 export function init() {
   formBasal.addEventListener("change", () => {
     handleEvents(event, calcTmb);
-    
   });
 }
