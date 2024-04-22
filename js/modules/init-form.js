@@ -4,6 +4,7 @@ import {
   listaDietasImportadas,
   zerarDietaMontada,
 } from "./bild-dieta.js";
+import { dadosMacros, calcProteinas, calcGordura, calcCarbo, dados } from "./calc-macros.js";
 
 
 const formBasal = document.getElementById("form-basal");
@@ -74,6 +75,8 @@ const mostarFotosBf = () => {
   }
 };
 
+const formMacros = document.getElementById("form-macros");
+
 const properties = Object.keys(localStorage);
 
 function setValues() {
@@ -99,8 +102,53 @@ function setValues() {
 
   if(!Object.values(dadosForm).includes("")) {
     calcTmb(dadosForm.sexo);
-
   }
+
+ 
+
+  if(properties.includes("gkgProteina")) {
+    formMacros.proteinaporkg.value = localStorage.gkgProteina;
+    formMacros.querySelector(".gkgProteina").innerHTML =
+    localStorage.gkgProteina + "g";
+    
+    calcProteinas(formMacros.proteinaporkg.value);
+
+    calcCarbo(
+      dados.calcBasal,
+      dadosMacros.proteina,
+      dadosMacros.gordura,
+      formMacros.carboidratoporkg.value
+    );
+  }
+
+  if(properties.includes("gkgGordura")) {
+    formMacros.gorduraporkg.value = localStorage.gkgGordura;
+    formMacros.querySelector(".gkgGordura").innerHTML =
+    localStorage.gkgGordura + "g";
+    
+    calcGordura(formMacros.gorduraporkg.value);
+
+    calcCarbo(
+      dados.calcBasal,
+      dadosMacros.proteina,
+      dadosMacros.gordura,
+      formMacros.carboidratoporkg.value
+    );
+  }
+
+  if(properties.includes("gkgCarbo")) {
+    formMacros.carboidratoporkg.value = localStorage.gkgCarbo;
+    formMacros.querySelector(".gkgCarbo").innerHTML =
+    localStorage.gkgCarbo + "g";
+    
+    calcCarbo(
+      dados.calcBasal,
+      dadosMacros.proteina,
+      dadosMacros.gordura,
+      formMacros.carboidratoporkg.value
+    );
+  }
+
   if (properties.includes("dietaImportada")) {
 
     zerarDietaMontada();

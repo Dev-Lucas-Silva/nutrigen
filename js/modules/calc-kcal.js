@@ -1,5 +1,4 @@
 import { initCalcMacros } from "./calc-macros.js";
-import { calcTmb } from "./calc-tmb.js";
 
 export default function initCalcKcal(dadoForm, tmb) {
   const calcBasal = tmb;

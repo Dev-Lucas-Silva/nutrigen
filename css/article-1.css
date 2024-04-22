@@ -30,6 +30,8 @@
 
 .article-1-contain h1 {
   font-size: 2rem;
+  line-height: 2.25rem;
+  text-align: center;
 }
 
 .article-1-contain h1, .article-1-contain h2,.article-1-contain h3 {
@@ -94,8 +96,7 @@
   }
   .article-1-contain {
     border-radius: 0;
-    padding: 20px 10px;
-    width: 100%;
+    padding: 20px 12px;
   }
   .article-1-contain h2 {
     border-radius: 8px;
