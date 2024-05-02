@@ -43,7 +43,7 @@ export const calcPrint = function (dietaImportada) {
   let timeControl = 0;
   switch (window.navigator.connection.effectiveType) {
     case "5g":
-      timeControl = 350;
+      timeControl = 700;
       break;
     case "4g":
       timeControl = 700;
