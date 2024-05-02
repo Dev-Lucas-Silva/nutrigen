@@ -8,7 +8,7 @@ export default class MenuMobile {
 
     // define touchstart e click como argumento padrão
     // de events caso o usuário não define
-    if (events === undefined) this.events = ['touchstart', 'click'];
+    if (events === undefined) this.events = ['click'];
     else this.events = events;
 
     this.openMenu = this.openMenu.bind(this);
