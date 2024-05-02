@@ -1,8 +1,6 @@
 .dieta-montada-bg {
   background: url("../image/backgroud-opcao.jfif");
   background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
   padding: 0 10px 60px 10px;
   font-family: "Poppins", sans-serif;
 }
@@ -19,7 +17,7 @@
 }
 
 .dieta-montada-contain {
-  background: rgba(9, 93, 140, 0.9);
+  background: rgba(9, 93, 140, 0.7);
   max-width: 765px;
   padding: 32px;
   display: grid;
@@ -159,8 +157,7 @@
   }
   .dieta-montada-contain {
     border-radius: 0;
-    padding: 20px 0px;
-    width: 100%;
+    padding: 20px 12px;
   }
   .dieta-montada-contain h2 {
     border-radius: 8px;

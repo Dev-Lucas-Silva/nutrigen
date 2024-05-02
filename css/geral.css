@@ -34,3 +34,18 @@ img {
 input[type="submit"] {
   border: none;
 }
+
+main, .introducao {
+  animation: entrar 0.3s forwards;
+}
+
+@keyframes entrar {
+  from {
+    opacity: 0;
+    transform: translate3d(-20px,0,0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}

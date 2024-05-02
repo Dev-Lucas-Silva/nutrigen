@@ -1,10 +1,14 @@
 import { dadosMacros } from "./calc-macros.js";
 import { buscarAlimentoApi } from "./search-alimento-api.js";
-import { observacao, dietaGanharTwin } from "./dietas-modelos/dieta-ganhar-twin.js";
+import {
+  observacao,
+  dietaGanharTwin,
+} from "./dietas-modelos/dieta-ganhar-twin.js";
 
 export const listaDietasImportadas = [dietaGanharTwin];
 
-const dietaEscolhida = document.querySelectorAll(".escolha-dieta button");
+const dietaEscolhida = document.querySelectorAll(".lista-dietas button");
+const minhaDieta = document.querySelector(".refeicao");
 
 let dietaMontada = [];
 
@@ -12,6 +16,10 @@ export function initMinhaDieta() {
   dietaEscolhida.forEach((dieta) => {
     if (!dieta.classList.contains("event")) {
       dieta.addEventListener("click", (event) => {
+        minhaDieta.nextElementSibling.innerHTML = `<div class="loading-container">
+        <div class="loading"></div>
+      </div>`;
+
         dieta.disabled = true;
         const escolhida = dieta.dataset.dieta;
 
@@ -32,10 +40,23 @@ export const calcPrint = function (dietaImportada) {
       );
     });
   }
-
-  setTimeout(() => {
-    printDieta(dietaMontada);
-  }, 700);
+  let timeControl = 0;
+  switch (window.navigator.connection.effectiveType) {
+    case "5g":
+      timeControl = 350;
+      break;
+    case "4g":
+      timeControl = 700;
+      break;
+    case "3g":
+      timeControl = 9000;
+      break;
+  }
+  if (dietaMontada.length === dietaImportada.length) {
+    setTimeout(() => {
+      printDieta(dietaMontada);
+    }, timeControl);
+  }
 };
 
 const calcRefeicoes = (descricao, proteinas, carboidratos, gorduras) => {
@@ -119,7 +140,7 @@ const calcRefeicoes = (descricao, proteinas, carboidratos, gorduras) => {
   return refeMontada;
 };
 
-const minhaDieta = document.querySelector(".refeicao");
+const observaoDieta = document.querySelector(".observacao-tabela-dieta");
 
 const printDieta = function (dieta) {
   let refeicoes = [];
@@ -145,10 +166,8 @@ const printDieta = function (dieta) {
       refeicoes.push(montarRefeicoes);
     }
   });
-
   let joinRefeicoes = refeicoes.join(" ");
   minhaDieta.innerHTML = joinRefeicoes;
-  const observaoDieta = document.querySelector('.observacao-tabela-dieta');
   observaoDieta.innerHTML = observacao;
 };
 
@@ -166,5 +185,6 @@ export const zerarDietaMontada = function () {
   refeicaoChidrens.forEach((Chidrens) => {
     Chidrens.remove();
   });
+  observaoDieta.innerHTML = "";
   dietaMontada = [];
 };

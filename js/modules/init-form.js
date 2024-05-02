@@ -52,7 +52,7 @@ const handleValidity = (form, event, erro, calculadora) => {
     
         calcPrint(listaDietasImportadas[myValue]);
     
-        const dietaEscolhida = document.querySelectorAll(".escolha-dieta button");
+        const dietaEscolhida = document.querySelectorAll(".lista-dietas button");
     
         dietaEscolhida.forEach((dieta) => {
           dieta.disabled = true;
@@ -157,7 +157,7 @@ function setValues() {
 
     calcPrint(listaDietasImportadas[myValue]);
 
-    const dietaEscolhida = document.querySelectorAll(".escolha-dieta button");
+    const dietaEscolhida = document.querySelectorAll(".lista-dietas button");
 
     dietaEscolhida.forEach((dieta) => {
       dieta.disabled = true;
@@ -183,7 +183,7 @@ const handleEvents = (event, calculadora) => {
 
     calcPrint(listaDietasImportadas[myValue]);
 
-    const dietaEscolhida = document.querySelectorAll(".escolha-dieta button");
+    const dietaEscolhida = document.querySelectorAll(".lista-dietas button");
 
     dietaEscolhida.forEach((dieta) => {
       dieta.disabled = true;
