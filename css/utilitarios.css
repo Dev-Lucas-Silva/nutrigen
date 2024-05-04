@@ -70,6 +70,50 @@
   }
 }
 
+
+
+
+
+
+
+.progress{
+  margin: 160px 0 400px 0;
+  position: relative;
+  height: 10px;
+  width: 1110%;
+  border: 10px solid #f4a261;
+  border-radius: 15px;
+}
+.progress .color{
+  position: absolute;
+  background-color: #ffffff;
+  width: 0px;
+  height: 10px;
+  border-radius: 15px;
+  animation: progres 10s infinite linear;    
+}
+@keyframes progres{
+  0%{
+    width: 0%;
+  }
+  25%{
+      width: 50%;
+  }
+  50%{
+      width: 75%;
+  }
+  75%{
+      width: 85%;
+  }
+  100%{
+      width: 100%;
+  }
+};
+
+
+
+
+
 @media (max-width: 600px) {
   .loading {
     margin: 220px 0 450px 0;

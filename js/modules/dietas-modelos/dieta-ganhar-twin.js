@@ -37,5 +37,5 @@ export const dietaGanharTwin = [
     proteina: [{description: 'Iogurte, natural, integral', percent: 4}],
     carboidrato: [{description: 'Aveia, flocos, crua', percent: 10}],
     //gordura: [{description: '', percent: 2}]
-  },  
+  },
 ];
