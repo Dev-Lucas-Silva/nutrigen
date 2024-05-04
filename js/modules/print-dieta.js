@@ -7,24 +7,16 @@ const objeto = { a: 1, b: 2, c: 3 };
 Object.entries(objeto).forEach(([chave, valor]) => {
   console.log(chave + ': ' + valor);
 });
-export const printDieta = function (dieta) {
-  dieta.forEach((refeicao) => {
-    refeicao.forEach((alimentos) => {
-      teste.push(alimentos)
-    });
-  });
-  console.log(teste)
-}
+
 */
 export const printDieta = function (dieta) {
   let refeicoes = [];
-
-  console.log(dieta)
-
+console.log(dieta)
   dieta.forEach((refe, index) => {
     let innerRefeicoes = `<div class='refeicoes'>
       <h3 class="titulo-refeicao">${refe[0].descricao}</h3>`;
         refeicoes.push(innerRefeicoes);
+        console.log('1')
 
     for (let i = 1; i < refe.length; i++) {
       const ref = refe[i];

@@ -38,7 +38,7 @@ export function initMinhaDieta() {
 
 export const calcPrint = function (dietaImportada) {
   if (dietaImportada) {
-    dietaImportada.forEach((ref) => {
+    dietaImportada.forEach((ref, i) => {
       dietaMontada.push(
         calcRefeicoes(ref.descricao, ref.proteina, ref.carboidrato, ref.gordura)
       );
@@ -62,7 +62,7 @@ export const calcPrint = function (dietaImportada) {
     setTimeout(() => {
       printDieta(dietaMontada);
 
-    }, 0);
+    }, timeControl);
 };
 
 const calcRefeicoes = (descricao, proteinas, carboidratos, gorduras) => {
@@ -77,13 +77,13 @@ const calcRefeicoes = (descricao, proteinas, carboidratos, gorduras) => {
           const protAlimPor100g = a.protein_g;
           const gramasDeAlimentoPRefe =
             (percentProtGramas / protAlimPor100g) * 100;
-          refeMontada.push({alimento:[
+          refeMontada.push([
             gramasDeAlimentoPRefe.toFixed(0),
             gramasDeAlimentoPRefe.toFixed(0),
             gramasDeAlimentoPRefe.toFixed(0),
             gramasDeAlimentoPRefe.toFixed(0),
             p.description,
-        ]});
+          ]);
         });
       });
     });
@@ -112,13 +112,13 @@ const calcRefeicoes = (descricao, proteinas, carboidratos, gorduras) => {
           const gramasCardioTreino =
             (percentCarbGramasCardioTreino / carbAlimPor100g) * 100;
 
-          refeMontada.push({alimento:[
+          refeMontada.push([
             gramasDescando.toFixed(0),
             gramasTreino.toFixed(0),
             gramasCardio.toFixed(0),
             gramasCardioTreino.toFixed(0),
             c.description,
-          ]});
+          ]);
         });
       });
     });
@@ -132,13 +132,13 @@ const calcRefeicoes = (descricao, proteinas, carboidratos, gorduras) => {
           const gordAlimPor100g = a.lipid_g;
           const gramasDeAlimentoPRefe =
             (percentGordGramas / gordAlimPor100g) * 100;
-          refeMontada.push({alimento:[
+          refeMontada.push([
             gramasDeAlimentoPRefe.toFixed(0),
             gramasDeAlimentoPRefe.toFixed(0),
             gramasDeAlimentoPRefe.toFixed(0),
             gramasDeAlimentoPRefe.toFixed(0),
             g.description,
-          ]});
+          ]);
         });
       });
     });
@@ -146,7 +146,6 @@ const calcRefeicoes = (descricao, proteinas, carboidratos, gorduras) => {
   return refeMontada;
 };
 
-//console.log(dietaMontada)
 
 const observaoDieta = document.querySelector(".observacao-tabela-dieta");
 
