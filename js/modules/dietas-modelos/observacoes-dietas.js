@@ -1,0 +1,1 @@
+export const listaObservacoes = ['Observaçôes: *A ultima refeição pode ser substituida por suplementos como Albumina, Whey Protein com Maltodextrina e também pode ser consumida no pós treino. *Saladas e legumes a vontade para complementar a ingestão de micronutrientes e ajudar na saciedade.'];

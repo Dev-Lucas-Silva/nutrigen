@@ -2,7 +2,7 @@ const links = document.querySelectorAll('a');
 
 export function handleClickHistoryApi(event) {
   event.preventDefault();
-  fetchPage(event.target.href);
+  fetchPage(event.target.href, event.target.attributes.href.value);
   window.history.pushState(null, null, event.target.href);
 }
 
@@ -12,7 +12,7 @@ async function fetchPage(url) {
 </div>`;
   const pageResponse = await fetch(url);
   const pageText = await pageResponse.text();
-  replaceContent(pageText);
+  replaceContent(pageText, toSetValues);
 }
 
 function replaceContent(newText) {

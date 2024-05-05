@@ -1,7 +1,6 @@
 import { dadosMacros } from "./calc-macros.js";
 import { buscarAlimentoApi } from "./search-alimento-api.js";
 import {
-  observacao,
   dietaGanharTwin,
 } from "./dietas-modelos/dieta-ganhar-twin.js";
 import { printDieta } from "./print-dieta.js";
@@ -17,12 +16,6 @@ export function initMinhaDieta() {
   dietaEscolhida.forEach((dieta) => {
     if (!dieta.classList.contains("event")) {
       dieta.addEventListener("click", (event) => {
-        minhaDieta.innerHTML = `<div class="progress">
-        <div class="color"></div>
-      </div><style>
-      .refeicao {
-        border: none;
-      }</style>`;
 
         dieta.disabled = true;
         const escolhida = dieta.dataset.dieta;
@@ -37,8 +30,16 @@ export function initMinhaDieta() {
 }
 
 export const calcPrint = function (dietaImportada) {
+          minhaDieta.innerHTML = `<div class="progress">
+        <div class="color"></div>
+      </div><style>
+      .refeicao {
+        border: none;
+      }</style>`;
+
   if (dietaImportada) {
     dietaImportada.forEach((ref, i) => {
+
       dietaMontada.push(
         calcRefeicoes(ref.descricao, ref.proteina, ref.carboidrato, ref.gordura)
       );
@@ -67,7 +68,7 @@ export const calcPrint = function (dietaImportada) {
 
 const calcRefeicoes = (descricao, proteinas, carboidratos, gorduras) => {
   const refeMontada = [];
-  refeMontada.push({ descricao });
+  refeMontada.push({descricao});
 
   if (proteinas) {
     proteinas.forEach((p) => {
@@ -144,6 +145,7 @@ const calcRefeicoes = (descricao, proteinas, carboidratos, gorduras) => {
     });
   }
   return refeMontada;
+  
 };
 
 

@@ -32,6 +32,7 @@
   background: rgba(9, 93, 140, 0.7);
   border-radius: 4px;
   box-shadow: 1px 1px 20px 10px rgba(47, 92, 139, 0.3);
+  justify-items: center;
 }
 
 #form-basal h2 {
@@ -125,7 +126,9 @@
 }
 
 #form-basal input[type="number"] {
-  padding: 8px 16px;
+  padding: 4px 12px;
+  font: 500 1rem / 1.5 "Poppins", sans-serif;
+  color: #404040;
   border: solid 2px #cccccc;
   border-radius: 8px;
   background: linear-gradient(45deg, #f7fdfc, #e0e5e8);
@@ -133,7 +136,9 @@
 }
 
 #form-basal select {
-  padding: 8px 16px;
+  padding: 4px 12px;
+  font: 500 1rem / 1.5 "Poppins", sans-serif;
+  color: #404040;
   border: solid 2px #cccccc;
   border-radius: 8px;
   background: linear-gradient(45deg, #f7fdfc, #e0e5e8);
@@ -232,10 +237,6 @@
 
 .definicao {
   border-bottom: 1px solid #b2b2b2;
-}
-.definicao div {
-  display: grid;
-  justify-items: center;
 }
 
 .definicao h3 {

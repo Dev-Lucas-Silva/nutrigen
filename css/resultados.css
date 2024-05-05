@@ -130,14 +130,18 @@ margin: 16px;
 justify-content: center;
 }
 
-#form-macros div {
-position: relative;
-}
-
 #form-macros label {
- position: absolute;
- top: -22px;
- left: 12px;
+  display: block;
+  margin-bottom: 4px;
+}
+#form-macros input[type="number"] {
+  padding: 4px 12px;
+  font: 500 1rem / 1.5 "Poppins", sans-serif;
+  color: #2e2e2e;
+  border: solid 2px #cccccc;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #f7fdfc, #e0e5e8);
+  box-shadow: 1px 1px 15px 2px rgba(0, 0, 0, 0.1);
 }
 
 #form-macros p {
@@ -199,6 +203,11 @@ display: none;
   .result-basal-bg {
     padding:0 0 60px 0;
   } 
+}
+@media (max-width: 500px) {
+  #form-macros {
+    gap: 16px;
+}
 }
 @media (max-width: 400px) {
   .result-kcal-contain {

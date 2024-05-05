@@ -79,7 +79,7 @@ const formMacros = document.getElementById("form-macros");
 
 const properties = Object.keys(localStorage);
 
-function setValues() {
+export function setValues() {
   properties.forEach((propertie, i) => {
     dadosForm[propertie] = localStorage[propertie];
     formBasal.DiaDia.value = localStorage.DiaDia;
@@ -108,8 +108,6 @@ function setValues() {
 
   if(properties.includes("gkgProteina")) {
     formMacros.proteinaporkg.value = localStorage.gkgProteina;
-    formMacros.querySelector(".gkgProteina").innerHTML =
-    localStorage.gkgProteina + "g";
     
     calcProteinas(formMacros.proteinaporkg.value);
 
@@ -123,8 +121,6 @@ function setValues() {
 
   if(properties.includes("gkgGordura")) {
     formMacros.gorduraporkg.value = localStorage.gkgGordura;
-    formMacros.querySelector(".gkgGordura").innerHTML =
-    localStorage.gkgGordura + "g";
     
     calcGordura(formMacros.gorduraporkg.value);
 
@@ -138,8 +134,6 @@ function setValues() {
 
   if(properties.includes("gkgCarbo")) {
     formMacros.carboidratoporkg.value = localStorage.gkgCarbo;
-    formMacros.querySelector(".gkgCarbo").innerHTML =
-    localStorage.gkgCarbo + "g";
     
     calcCarbo(
       dados.calcBasal,

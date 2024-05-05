@@ -185,8 +185,6 @@ const resultMacros = document.querySelector(".result-basal-contain");
 
 export function calcProteinas(taxa) {
   let tipoDietaProteina = taxa;
-  resultMacros.querySelector(".gkgProteina").innerHTML =
-    tipoDietaProteina + "g";
   const proteinas = dadosForm.peso * tipoDietaProteina;
   resultMacros.querySelector(".proteina").innerHTML =
     proteinas.toFixed(0) + "g";
@@ -195,8 +193,6 @@ export function calcProteinas(taxa) {
 
 export function calcGordura(taxa) {
   let tipoDietaGordura = taxa;
-  resultMacros.querySelector(".gkgGordura").innerHTML =
-    tipoDietaGordura + "g";
   const gordura = dadosForm.peso * tipoDietaGordura;
   resultMacros.querySelector(".gordura").innerHTML = gordura.toFixed(0) + "g";
   dadosMacros.gordura = +gordura.toFixed(0);
@@ -297,12 +293,11 @@ export function initCalcMacros(
 
   const formMacros = document.getElementById("form-macros");
 
-  resultMacros.querySelector(".gkgCarbo").innerHTML = 100 + "%";
   formMacros.carboidratoporkg.value = 100;
 
   calcCarbo(calcBasal, dadosMacros.proteina, dadosMacros.gordura, 100);
 
-  const eventos = ["click"];
+  const eventos = ["change"];
 
   eventos.forEach((evento) =>
     formMacros.proteinaporkg.addEventListener(evento, () => {
@@ -350,8 +345,6 @@ export function initCalcMacros(
         dadosMacros.gordura,
         formMacros.carboidratoporkg.value
       );
-      resultMacros.querySelector(".gkgCarbo").innerHTML =
-        formMacros.carboidratoporkg.value + "%";
       localStorage.gkgCarbo = carboidratoporkg.value;
 
       zerarDietaMontada();
