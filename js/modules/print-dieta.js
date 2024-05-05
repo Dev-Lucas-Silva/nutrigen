@@ -4,14 +4,13 @@ const myValue = localStorage.getItem("dietaImportada");
 const minhaDieta = document.querySelector(".refeicao");
 const observaoDieta = document.querySelector(".observacao-tabela-dieta");
 
+let refeicoes = [];
 
 export const printDieta = function (dieta) {
-    let refeicoes = [];
-
-    dieta.forEach((refe, index) => {
+  dieta.forEach((refe, index) => {
     let innerRefeicoes = `<div class='refeicoes'>
       <h3 class="titulo-refeicao">${refe[0].descricao}</h3>`;
-        refeicoes.push(innerRefeicoes);
+    refeicoes.push(innerRefeicoes);
 
     for (let i = 1; i < refe.length; i++) {
       const ref = refe[i];
@@ -29,9 +28,8 @@ export const printDieta = function (dieta) {
       refeicoes.push(montarRefeicoes);
     }
   });
-    setTimeout(() => {      
-      let joinRefeicoes = refeicoes.join(" ");
-      minhaDieta.innerHTML = joinRefeicoes;
-      observaoDieta.innerHTML = listaObservacoes[myValue];
-    }, 50);
+  let joinRefeicoes = refeicoes.join(" ");
+  minhaDieta.innerHTML = joinRefeicoes;
+  observaoDieta.innerHTML = listaObservacoes[myValue];
+
 };

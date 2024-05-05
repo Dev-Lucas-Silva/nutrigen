@@ -29,7 +29,7 @@ export function initMinhaDieta() {
   });
 }
 
-export const calcPrint = function (dietaImportada) {
+export const calcPrint = async function (dietaImportada) {
           minhaDieta.innerHTML = `<div class="progress">
         <div class="color"></div>
       </div><style>
@@ -45,30 +45,17 @@ export const calcPrint = function (dietaImportada) {
       );
     });
   }
-  let timeControl = 0;
-  switch (window.navigator.connection.effectiveType) {
-    case "5g":
-      timeControl = 500;
-      break;
-    case "4g":
-      timeControl = 950;
-      break;
-      case "3g":
-        timeControl = 950;
-        break;
-    case "2g":
-      timeControl = 9000;
-      break;
-  }
     setTimeout(() => {
       printDieta(dietaMontada);
-
-    }, timeControl);
+    }, navigator.connection.rtt * 17);
 };
 
 const calcRefeicoes = (descricao, proteinas, carboidratos, gorduras) => {
   const refeMontada = [];
-  refeMontada.push({descricao});
+
+  if ({descricao}) {
+    refeMontada.push({descricao});
+  }
 
   if (proteinas) {
     proteinas.forEach((p) => {
