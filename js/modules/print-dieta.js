@@ -1,13 +1,14 @@
 import { listaObservacoes } from "./dietas-modelos/observacoes-dietas.js";
-const myValue = localStorage.getItem("dietaImportada");
 
+const myValue = localStorage.getItem("dietaImportada");
 const minhaDieta = document.querySelector(".refeicao");
 const observaoDieta = document.querySelector(".observacao-tabela-dieta");
 
-let refeicoes = [];
 
 export const printDieta = function (dieta) {
-  dieta.forEach((refe, index) => {
+  let refeicoes = [];
+
+  dieta.forEach((refe) => {
     let innerRefeicoes = `<div class='refeicoes'>
       <h3 class="titulo-refeicao">${refe[0].descricao}</h3>`;
     refeicoes.push(innerRefeicoes);
@@ -28,8 +29,10 @@ export const printDieta = function (dieta) {
       refeicoes.push(montarRefeicoes);
     }
   });
-  let joinRefeicoes = refeicoes.join(" ");
-  minhaDieta.innerHTML = joinRefeicoes;
-  observaoDieta.innerHTML = listaObservacoes[myValue];
+  setTimeout(() => {    
+    let joinRefeicoes = refeicoes.join(" ");
+    minhaDieta.innerHTML = joinRefeicoes;
+    observaoDieta.innerHTML = listaObservacoes[myValue];
+  }, 20);
 
 };

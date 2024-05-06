@@ -29,7 +29,7 @@ export function initMinhaDieta() {
   });
 }
 
-export const calcPrint = async function (dietaImportada) {
+export const calcPrint = function (dietaImportada) {
           minhaDieta.innerHTML = `<div class="progress">
         <div class="color"></div>
       </div><style>
@@ -53,9 +53,7 @@ export const calcPrint = async function (dietaImportada) {
 const calcRefeicoes = (descricao, proteinas, carboidratos, gorduras) => {
   const refeMontada = [];
 
-  if ({descricao}) {
     refeMontada.push({descricao});
-  }
 
   if (proteinas) {
     proteinas.forEach((p) => {
