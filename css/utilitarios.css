@@ -70,12 +70,6 @@
   }
 }
 
-
-
-
-
-
-
 .progress{
   margin: 160px 0 400px 0;
   position: relative;
@@ -109,10 +103,6 @@
       width: 100%;
   }
 };
-
-
-
-
 
 @media (max-width: 600px) {
   .loading {

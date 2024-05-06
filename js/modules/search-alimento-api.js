@@ -1,6 +1,6 @@
 export async function buscarAlimentoApi(seachAlimento) {
   try {
-    const response = await fetch("../nutrigen/alimentos-api/taco.json");
+    const response = await fetch("../../alimentos-api/taco.json");
     const json = await response.json();
 
     const listaEncontrada = json.filter((alimentoApi) => {

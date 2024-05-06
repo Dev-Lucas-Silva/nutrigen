@@ -12,7 +12,7 @@ async function fetchPage(url) {
 </div>`;
   const pageResponse = await fetch(url);
   const pageText = await pageResponse.text();
-  replaceContent(pageText, toSetValues);
+  replaceContent(pageText);
 }
 
 function replaceContent(newText) {
