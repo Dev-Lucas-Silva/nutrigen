@@ -24,7 +24,7 @@
 .article-1-contain ul {
   display: grid;
   gap: 4px;
-  list-style: decimal;
+  list-style: disc;
   padding: 0 0 0 24px;
 }
 

@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NutriGen</title>
+  <link rel="icon" href="./image/incone-gerar-dieta.png" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="preload" href="./css/style.css" as="style">
+  <script>document.documentElement.className += ' js';</script>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <header>
+    <div class="header">
+      <div class="header-logo">
+        <div class="logo">
+          <a href="./index.html"><img src="./image/kisspng-dietary.png" alt="logo" width="65" height="42">
+            <h1>Nutri</h1>
+            <h1>Gen</h1>
+            </a>
+        </div>
+      </div>
+      <nav class="menu" data-menu="suave">
+        <button data-menu="button" aria-expanded="false" aria-controls="menu">Menu</button>
+        <ul data-menu="list" id="menu">
+          <li>
+          <li>
+            <a href="./minha-dieta.html">Minha dieta</a>
+          </li>
+          <li>
+            <a class="history-api" href="./index.html">Home</a>
+          </li>
+          <li>
+            <a href="">Nossa loja</a>
+          </li>
+<!--         
+          <li>
+            <a class="history-api" href="#gerar-dieta">Blog</a>
+          </li>
+--> 
+          <li>
+            <a class="history-api" href="">Sobre nós</a>
+          </li>
+          <li>
+            <a class="history-api" href="">Contato</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="main">
+    <main>
+      <div class="calc-basal-bg" id="calc-basal">
+        <div class="calc-basal-container">
+          <aside class="aside-3">
+          </aside>
+          <form name="form-basal" id="form-basal">
+            <div class="menu-dieta">
+              <button class="calculadora-de-dieta">Calculadora de dieta</button>
+              <button class="minhas-informações">Minhas informações</button>
+              <button class="escolher-outra-dieta">Escolher uma dieta</button>
+              <button class="minha-dieta">Minha dieta</button>
+            </div>
+            <h2>Calculadora de Calorias e macronutrientes</h2>
+            <div class="sexo">
+              <input type="radio" name="sexo" id="masculino" value="masculino" required>
+              <label class="input-radio-label" for="masculino">Masculino</label>
+              <input type="radio" name="sexo" id="feminino" value="feminino" required>
+              <label class="input-radio-label" for="feminino">Feminino</label>
+            </div>
+            <div class="alt-peso-idade">
+              <h3>Medidas*</h3>
+              <div>
+                <div>
+                  <label for="altura">Altura</label>
+                  <input type="number" name="altura" id="altura" min="1" max="299" placeholder="(cm)*" required>
+                </div>
+                <div>
+                  <label for="peso">Peso</label>
+                  <input type="number" name="peso" id="peso" min="1" max="499" placeholder="(Kg)*" required>
+                </div>
+                <div>
+                  <label for="idade">Idade</label>
+                  <input type="number" name="idade" id="idade" min="1" max="199" placeholder="(anos)*" required>
+                </div>
+              </div>
+            </div>
+            <div class="objetivo">
+              <h3>Qual é o seu objetivo de peso?*</h3>
+              <div>
+                <input type="radio" name="objetivo" id="perder" value="perder">
+                <label class="input-radio-label" for="perder">Perder</label>
+                <input type="radio" name="objetivo" id="manter" value="manter">
+                <label class="input-radio-label" for="manter">Manter/Transição*</label>
+                <input type="radio" name="objetivo" id="ganhar" value="ganhar">
+                <label class="input-radio-label" for="ganhar">Ganhar</label>
+                <input type="radio" name="objetivo" id="performace" value="performance">
+                <label class="input-radio-label" for="performace">Performance*</label>
+              </div>
+              <p>*performance: Luta, corrida, ciclismo e outros.</p>
+              <p>*transição: período de 2 semanas quando mudar de objetivo de [perder] para [ganhar] ou vice versa. Siba como <a class="saiba-como" target="_blank" href="https://www.youtube.com/watch?v=8vii7g4f_6U&t=7s">aqui.</a></p>
+
+            </div>
+            <div class="tempo-treino">
+              <h3>Tempo/Intensidade: Treino de musculação*</h3>
+              <div>
+                <div>
+                  <label for="treino">Tempo</label>
+                  <input type="number" name="tempoTreino" id="treino" min="0" max="999" placeholder="(min)*" required>
+                </div>
+                <div>
+                  <label for="intesidadeTreino">Intensidade</label>
+                  <select name="intesidadeTreino">
+                    <option value="">escolha uma opção</option>
+                    <option value="5">Leve</option>
+                    <option value="7">Moderado</option>
+                    <option value="9">intenso</option>
+                    <option value="11">Alta performace</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="tempo-cardio">
+              <h3>Tempo/Intensidade: Treinos cardiovascular*</h3>
+              <div>
+                <div>
+                  <label for="cardio">Tempo</label>
+                  <input type="number" name="tempoCardio" id="cardio" min="0" max="999" placeholder="(min)*" required>
+                </div>
+                <div>
+                  <label for="intesidadeCardio">Intensidade</label>
+                  <select name="intesidadeCardio">
+                    <option value="">escolha uma opção</option>
+                    <option value="5">Leve</option>
+                    <option value="8">Moderado</option>
+                    <option value="11">intenso</option>
+                    <option value="14">Alta performace</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="atvDiaDia">
+              <h3>Tempo de atividades do dia a dia*</h3>
+              <div>
+                <div>
+                  <label for="atvDiaDia">Tempo </label>
+                  <input type="number" name="DiaDia" id="atvDiaDia" min="0" max="999" placeholder="(min)*" required>
+                </div>
+              </div>
+              <p>*trabalhar em pé, limpar a casa, brincar com crianças, subir e descer escadas, atividade sexual, etc.</p>
+            </div>
+            <div class="definicao">
+              <h3>Qual o seu nível de definição?*</h3>
+              <div>
+                <div class="grid-bf-homem">
+                  <div>
+                    <input type="radio" name="bf" id="bf-homem" value="0.07">
+                    <label for="bf-homem"><img src="./image/bf-homem/bf-homem-7.png" alt="" width="180" height="180"></label>
+                  </div>
+                  <div>
+                    <input type="radio" name="bf" id="bf-homem2" value="0.12">
+                    <label for="bf-homem2"><img src="./image/bf-homem/bf-homem-12.png" alt="" width="180" height="180"></label>
+                  </div>
+                  <div>
+                    <input type="radio" name="bf" id="bf-homem3" value="0.17">
+                    <label for="bf-homem3"><img src="./image/bf-homem/bf-homem-17.png" alt="" width="180" height="180"></label>
+                  </div>
+                  <div>
+                    <input type="radio" name="bf" id="bf-homem4" value="0.22">
+                    <label for="bf-homem4"><img src="./image/bf-homem/bf-homem-22.png" alt="" width="180" height="180"></label>
+                  </div>
+                  <div>
+                    <input type="radio" name="bf" id="bf-homem5" value="0.27">
+                    <label for="bf-homem5"><img src="./image/bf-homem/bf-homem-27.png" alt="" width="180" height="180"></label>
+                  </div>
+                  <div>
+                    <input type="radio" name="bf" id="bf-homem6" value="0.32">
+                    <label for="bf-homem6"><img src="./image/bf-homem/bf-homem-32.png" alt="" width="180" height="180"></label>
+                  </div>
+                  <div>
+                    <input type="radio" name="bf" id="bf-homem7" value="0.37">
+                    <label for="bf-homem7"><img src="./image/bf-homem/bf-homem-37.png" alt="" width="180" height="180"></label>
+                  </div>
+                  <div>
+                    <input type="radio" name="bf" id="bf-homem8" value="0.40">
+                    <label for="bf-homem8"><img src="./image/bf-homem/bf-homem-40.png" alt="" width="180" height="180"></label>
+                  </div>
+                </div>
+                <div class="grid-bf-mulher">
+                  <div>
+                    <input type="radio" name="bf" id="bf-mulher" value="0.19" required>
+                    <label for="bf-mulher"><img src="./image/bf-mulher/bf-mulher-19.png" alt="" width="110" height="360"></label>
+                  </div>
+                  <div>
+                    <input type="radio" name="bf" id="bf-mulher2" value="0.25" required>
+                    <label for="bf-mulher2"><img src="./image/bf-mulher/bf-mulher-25.png" alt="" width="126" height="360"></label>
+                  </div>
+                  <div>
+                    <input type="radio" name="bf" id="bf-mulher3" value="0.30" required>
+                    <label for="bf-mulher3"><img src="./image/bf-mulher/bf-mulher-30.png" alt="" width="128" height="360"></label>
+                  </div>
+                  <div>
+                    <input type="radio" name="bf" id="bf-mulher4" value="0.35" required>
+                    <label for="bf-mulher4"><img src="./image/bf-mulher/bf-mulher-35.png" alt="" width="136" height="360"></label>
+                  </div>
+                  <div>
+                    <input type="radio" name="bf" id="bf-mulher5" value="0.40" required>
+                    <label for="bf-mulher5"><img src="./image/bf-mulher/bf-mulher-40.png" alt="" width="169" height="360"></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="qual-biotipo">
+              <h3>Qual é o seu Biotipo?*</h3>
+              <div>
+                <input type="radio" name="biotipo" id="ectomorfo" value="ectomorfo" required>
+                <label class="input-radio-label" for="ectomorfo">Ectomorfo</label>
+                <input type="radio" name="biotipo" id="mesomorfo" value="mesomorfo" required>
+                <label class="input-radio-label" for="mesomorfo">Mesomorfo</label>
+                <input type="radio" name="biotipo" id="endomorfo" value="endomorfo" required>
+                <label class="input-radio-label" for="endomorfo">Endomorfo</label>
+              </div>
+              <div>
+                <p class="symbol-duvida">?</p>
+                <p>Descubra qual o seu Biotipo <a class="saiba-como" target="_blank" href="https://www.youtube.com/watch?v=zbyY6d9wjOA">aqui.</a></p>
+              </div>
+            </div>
+            <div>
+              <input type="submit" name="submit" value="Calcular">
+              <span class="tmb-erro">*Preencha todos os campos acima para vizualizar os resultados!</span>
+            </div>
+          </form>
+          <aside>
+            <div class="aside-4">
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere exercitationem cupiditate nemo ratione voluptatem vero error autem fugiat veritatis assumenda fugit sint explicabo porro excepturi iusto placeat laudantium, atque quae.</p>
+            </div>
+            <div class="aside-5">
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere exercitationem cupiditate nemo ratione voluptatem vero error autem fugiat veritatis assumenda fugit sint explicabo porro excepturi iusto placeat laudantium, atque quae.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <div class="result-basal-bg" id="result-basal">
+        <div class="result-basal-container">
+          <aside class="aside-6">
+          </aside>
+          <div class="result-basal-contain">
+            <div class="menu-dieta">
+              <button class="calculadora-de-dieta">Calculadora de dieta</button>
+              <button class="minhas-informações">Minhas informações</button>
+              <button class="escolher-outra-dieta">Escolher uma dieta</button>
+              <button class="minha-dieta">Minha dieta</button>            </div>
+            <div class="titulo">
+              <h2>Sua (TMB) e seus macronutrientes estimado:</h2>
+            </div>
+            <ul class="result-bf-contain">
+              <li>
+                <h4>Gordura Corporal</h4>
+                <span class="result-bf"></span>
+              </li>
+              <li>
+                <h4>Massa Magra</h4>
+                <span class="result-mm"></span>
+              </li>
+              <li>
+                <h4>Massa Gorda</h4>
+                <span class="result-mg"></span>
+              </li>
+            </ul>
+            <h3>Taxa Metabólica Basal em Dias de:</h3>
+            <ul class="result-kcal-contain">
+              <li>
+                <h4>Descanso</h4>
+                <span class="result-tmb"></span>
+              </li>
+              <li>
+                <h4>Treino</h4>
+                <span class="kcal-treino"></span>
+              </li>
+              <li>
+                <h4>Cardio</h4>
+                <span class="kcal-cardio"></span>
+              </li>
+              <li>
+                <h4>Treino + Cardio</h4>
+                <span class="kcal-cardio-treino"></span>
+              </li>
+            </ul>
+            <h3>Macronutrientes que você deve consumir por dia em sua dieta</h3>
+            <ul class="result-macros-contain">
+              <li>
+                <h4>Proteína</h4>
+                <span class="proteina"></span>
+              </li>
+              <li>
+                <h4>Gordura</h4>
+                <span class="gordura"></span>
+              </li>
+            </ul>
+            <h3>Carboidratos em Dias de:</h3>
+            <ul class="result-macros-contain-2">
+              <li>
+                <h4>Descanso</h4>
+                <span class="carbo-descanso"></span>
+              </li>
+              <li>
+                <h4>Treino</h4>
+                <span class="carbo-treino"></span>
+              </li>
+              <li>
+                <h4>Cardio</h4>
+                <span class="carbo-cardio"></span>
+              </li>
+              <li>
+                <h4>Treino + Cardio</h4>
+                <span class="carbo-treino-cardio"></span>
+              </li>
+            </ul>
+            <h3>Modificar taxas dos macros</h3>
+            <form id="form-macros">
+              <div>
+                <label for="proteinaporkg">Proteína g/Kg</label>
+                <input type="number" name="proteinaporkg" id="proteinaporkg" value="" min="0" max="5" step="0.1">
+                <p>g</p>
+              </div>
+              <div>
+                <label for="gorduraporkg">Gordura g/Kg</label>
+                <input type="number" name="gorduraporkg" id="gorduraporkg" value="" min="0" max="5" step="0.1">
+                <p>g</p>
+              </div>
+              <div>
+                <label for="carboidratoporkg">Carboidrato</label>
+                <input type="number" name="carboidratoporkg" id="carboidratoporkg" value="100" min="70" max="200" step="0.1">
+                <p>%</p>
+              </div>
+            </form>
+            <div>
+              <p class="symbol-duvida">?</p>
+              <p>*Essa é a taxa de proteína e gordura por Kg corporal ideal para você! Mas se desejar, Você pode modificar essa taxa conforme sua evolução ou necessidade.</p>
+            </div>
+          </div>
+          <aside>
+            <div class="aside-7">
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere exercitationem cupiditate nemo ratione voluptatem vero error autem fugiat veritatis assumenda fugit sint explicabo porro excepturi iusto placeat laudantium, atque quae.</p>
+            </div>
+            <div class="aside-8">
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere exercitationem cupiditate nemo ratione voluptatem vero error autem fugiat veritatis assumenda fugit sint explicabo porro excepturi iusto placeat laudantium, atque quae.</p>
+            </div>
+          </aside>
+        </div>
+
+      </div>
+      <div class="lista-dietas-bg" id="lista-dietas">
+        <div class="lista-dietas-container">
+          <aside class="aside-9">
+          </aside>
+          <div class="lista-dietas-contain">
+            <div class="menu-dieta">
+              <button class="calculadora-de-dieta">Calculadora de dieta</button>
+              <button class="minhas-informações">Minhas informações</button>
+              <button class="escolher-outra-dieta">Escolher uma dieta</button>
+              <button class="minha-dieta">Minha dieta</button>
+            </div>
+
+            <h2>Escolha uma dieta e será gerada de acordo com a sua necessidade diaria</h2>
+            <ul class="lista-dietas">
+              <li>
+                <button id="opcao-dieta" data-dieta="0">
+                  <h3>Dieta para ganho de massa magra</h3>
+                </button>
+              </li>
+              <li>
+                <button id="opcao-dieta" data-dieta="1">
+                  <h3>adsdf qerw taqerg</h3>
+                </button>
+              </li>
+              <li>
+                <button id="opcao-dieta" data-dieta="2">
+                  <h3>adsdf qerw taqerg</h3>
+                </button>
+              </li>
+              <li>
+                <button id="opcao-dieta" data-dieta="3">
+                  <h3>adsdf qerw taqerg</h3>
+                </button>
+              </li>
+              <li>
+                <button id="opcao-dieta" data-dieta="4">
+                  <h3>adsdf qerw taqerg</h3>
+                </button>
+              </li>
+              <li>
+                <button id="opcao-dieta" data-dieta="5">
+                  <h3>adsdf qerw taqerg</h3>
+                </button>
+              </li>
+              <li>
+                <button id="opcao-dieta" data-dieta="6">
+                  <h3>adsdf qerw taqerg</h3>
+                </button>
+              </li>
+              <li>
+                <button id="opcao-dieta" data-dieta="7">
+                  <h3>adsdf qerw taqerg</h3>
+                </button>
+              </li>
+              <li>
+                <button id="opcao-dieta" data-dieta="8">
+                  <h3>adsdf qerw taqerg</h3>
+                </button>
+              </li>
+              <li>
+                <button id="opcao-dieta" data-dieta="9">
+                  <h3>adsdf qerw taqerg</h3>
+                </button>
+              </li>
+              <li>
+                <button id="opcao-dieta" data-dieta="10">
+                  <h3>adsdf qerw taqerg</h3>
+                </button>
+              </li>
+              <li>
+                <button id="opcao-dieta" data-dieta="11">
+                  <h3>adsdf qerw taqerg</h3>
+                </button>
+              </li>
+              <li>
+                <button id="opcao-dieta" data-dieta="12">
+                  <h3>adsdf qerw taqerg</h3>
+                </button>
+              </li>
+              <li>
+                <button id="opcao-dieta" data-dieta="13">
+                  <h3>adsdf qerw taqerg</h3>
+                </button>
+              </li>
+              <li>
+                <button id="opcao-dieta" data-dieta="14">
+                  <h3>adsdf qerw taqerg</h3>
+                </button>
+              </li>
+              <li>
+                <button id="opcao-dieta" data-dieta="15">
+                  <h3>adsdf qerw taqerg</h3>
+                </button>
+              </li>
+              <li>
+                <button id="opcao-dieta" data-dieta="16">
+                  <h3>adsdf qerw taqerg</h3>
+                </button>
+              </li>
+              <li>
+                <button id="opcao-dieta" data-dieta="17">
+                  <h3>adsdf qerw taqerg</h3>
+                </button>
+              </li>
+              <li>
+                <button id="opcao-dieta" data-dieta="18">
+                  <h3>adsdf qerw taqerg</h3>
+                </button>
+              </li>
+              <li>
+                <button id="opcao-dieta" data-dieta="19">
+                  <h3>adsdf qerw taqerg</h3>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <aside>
+            <div class="aside-10">
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere exercitationem cupiditate nemo ratione voluptatem vero error autem fugiat veritatis assumenda fugit sint explicabo porro excepturi iusto placeat laudantium, atque quae.</p>
+            </div>
+            <div class="aside-11">
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere exercitationem cupiditate nemo ratione voluptatem vero error autem fugiat veritatis assumenda fugit sint explicabo porro excepturi iusto placeat laudantium, atque quae.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <div class="dieta-montada-bg" id="dieta-montada">
+        <div class="dieta-montada-container">
+          <aside class="aside-12">
+          </aside>
+          <div class="dieta-montada-contain">
+            <div class="menu-dieta">
+              <button class="calculadora-de-dieta">Calculadora de dieta</button>
+              <button class="minhas-informações">Minhas informações</button>
+              <button class="escolher-outra-dieta">Escolher uma dieta</button>
+              <button class="minha-dieta">Minha dieta</button>
+            </div>
+            <h2>Minha Dieta</h2>
+            <div class="descricoes">
+              <h3 class="titulo">Descrição</h3>
+              <div>
+                <h4>Gramas em dias de:</h4>
+                <span>Descanso</span>
+                <span>Treino</span>
+                <span>Cardio</span>
+                <span>Treino + Cardio</span>
+              </div>
+            </div>
+            <div class='refeicao'>
+            </div>
+            <p class="observacao-tabela-dieta">
+            </p>
+          </div>
+          <aside>
+            <div class="aside-13">
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere exercitationem cupiditate nemo ratione voluptatem vero error autem fugiat veritatis assumenda fugit sint explicabo porro excepturi iusto placeat laudantium, atque quae.</p>
+            </div>
+            <div class="aside-14">
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere exercitationem cupiditate nemo ratione voluptatem vero error autem fugiat veritatis assumenda fugit sint explicabo porro excepturi iusto placeat laudantium, atque quae.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+      
+    </main>
+
+    <article class="article-1-bg">
+      <div class="article-1-container">
+        <aside class="aside-15">
+        </aside>
+        <div class="article-1-contain">
+          <h1><strong>Dietas: O Que Você Precisa Saber</strong></h1>
+          <h2>Introdução?</h2>
+          <p>As dietas desempenham um papel crucial em nossa saúde e bem-estar. No entanto, com tantas opções disponíveis, pode ser difícil saber qual é a melhor para você. Neste artigo, exploraremos os fundamentos das dietas e forneceremos informações úteis para ajudá-lo a tomar decisões informadas.</p>
+          <h2>1. O Que É Uma Dieta?</h2>
+          <p>Uma dieta é simplesmente o conjunto de alimentos que uma pessoa consome regularmente. Ela pode variar amplamente com base em fatores como cultura, preferências pessoais, objetivos de saúde e restrições alimentares.</p>
+          <h2>2. Tipos Comuns de Dietas</h2>
+          <ul>
+            <h3>a. Mediterrânea</h3>
+            <li>Baseada em alimentos tradicionalmente consumidos em países mediterrâneos.</li>
+            <li>Rica em azeite de oliva, frutas, vegetais, peixes e grãos integrais.</li>
+            <li>Benefícios: Redução do risco de doenças cardíacas e melhoria da saúde cerebral.</li>
+          <h3>b. Low Carb (Baixo Carboidrato)</h3>
+            <li>CReduz a ingestão de carboidratos, como pão, massas e açúcares.</li>
+            <li>
+              Pode ajudar na perda de peso e no controle da glicemia.
+            </li>
+            <li>
+              Exemplos: Dieta cetogênica, Atkins.
+            </li>
+          <h3>c. Vegetariana/Vegana</h3>
+            <li>Elimina ou reduz o consumo de carne e produtos de origem animal.</li>
+            <li>Benefícios: Menor risco de doenças crônicas e impacto ambiental 
+            </li>
+            <h3>d. Jejum Intermitente</h3>
+            <li>Alterna períodos de jejum com períodos de alimentação.</li>
+            <li>Pode ajudar na perda de peso e melhorar a sensibilidade à insulina.</li>
+          </ul>
+          <h2>3. Dicas para uma Dieta Saudável</h2>
+          <ul>
+            <li>Variedade: Consuma uma variedade de alimentos para obter todos os nutrientes essenciais.</li>
+            <li>Hidratação: Beba água regularmente para manter-se hidratado.</li>
+            <li>Porções Controladas: Evite porções excessivas.</li>
+            <li>Evite Alimentos Processados: Opte por alimentos frescos e minimamente processados.</li>
+
+          </ul>
+          <h2>4. Consulte um Profissional de Saúde</h2>
+          <p>Lembre-se de que cada pessoa é única. Antes de iniciar qualquer dieta, consulte um nutricionista ou médico. Eles podem ajudá-lo a escolher a melhor abordagem com base em suas necessidades individuais.</p>
+          <h2>Conclusão</h2>
+          <p>Uma dieta equilibrada é essencial para uma vida saudável. Escolha alimentos que nutram seu corpo e se alinhem aos seus objetivos. Cuide de si mesmo(a) e aproveite os benefícios de uma alimentação consciente!</p>
+          <p>Lembre-se de que este artigo é apenas informativo. Sempre consulte um profissional de saúde antes de fazer mudanças significativas em sua alimentação. 🌱🥗</p>
+        </div>
+        <aside>
+          <div class="aside-16">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere exercitationem cupiditate nemo ratione voluptatem vero error autem fugiat veritatis assumenda fugit sint explicabo porro excepturi iusto placeat laudantium, atque quae.</p>
+          </div>
+          <div class="aside-17">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere exercitationem cupiditate nemo ratione voluptatem vero error autem fugiat veritatis assumenda fugit sint explicabo porro excepturi iusto placeat laudantium, atque quae.</p>
+          </div>
+          <div class="aside-17">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere exercitationem cupiditate nemo ratione voluptatem vero error autem fugiat veritatis assumenda fugit sint explicabo porro excepturi iusto placeat laudantium, atque quae.</p>
+          </div>
+
+        </aside>
+      </div>
+    </article>
+  </div>
+
+  <footer>
+    <div class="aviso-footer">
+      <p>Aviso de Conteúdo Sensível: As informações fornecidas neste site são destinadas a fins educativos e não substituem o aconselhamento, diagnóstico ou tratamento médico profissional. Antes de iniciar qualquer nova dieta ou programa de nutrição, consulte um profissional de saúde qualificado. As dietas e informações nutricionais podem variar de acordo com as condições de saúde individuais. Se você tem alguma condição médica ou preocupações relacionadas à saúde, siga as orientações do seu médico ou nutricionista.</p>
+    </div>
+    <ul>
+      <li>
+        <a href="./minha-dieta.html"><img src="./image/incone-gerar-dieta.png" alt="gerar-dieta" width="48.6" height="41.58">Minha dieta
+        </a>
+      </li>
+      <li>
+        <a class="history-api" href="./index.html">Home</a>
+      </li>
+      <li>
+        <a class="history-api" href="">Nossa loja</a>
+      </li>
+      <li>
+        <a class="history-api" href="">Blog</a>
+      </li>
+      <li>
+        <a class="history-api" href="">Sobre nós</a>
+      </li>
+      <li>
+        <a class="history-api" href="">Contato</a>
+      </li>
+      <li>
+        <a class="history-api" href="">Politicas de privacidade e transparencia</a>
+      </li>
+    </ul>
+
+    <p class="copyright">Todos os direitos resevardo © 2024. Desenvolvido por </p>
+  </footer>
+
+  <script type="module" src="./js/script.js"></script>
+
+</body>
+
+</html>
