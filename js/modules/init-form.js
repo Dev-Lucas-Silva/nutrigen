@@ -5,6 +5,9 @@ import {
   zerarDietaMontada,
 } from "./bild-dieta.js";
 import { dadosMacros, calcProteinas, calcGordura, calcCarbo, dados } from "./calc-macros.js";
+import NavDieta from "./nav-app-dieta.js"
+
+const navDieta = NavDieta('.menu-dieta button', '.calculadora-container .navDiv');
 
 
 const formBasal = document.getElementById("form-basal");
@@ -44,6 +47,12 @@ const handleValidity = (form, event, erro, calculadora) => {
     form.submit.addEventListener("click", (event) => {
       event.preventDefault();
       calculadora(dadosForm.sexo);
+      window.scrollTo({
+        top: 125,
+        behavior: 'smooth',
+    });  navDieta.clearSection();
+         navDieta.activeSection(1);
+    
       if (properties.includes("dietaImportada")) {
 
         zerarDietaMontada();
