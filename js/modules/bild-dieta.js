@@ -4,18 +4,33 @@ import {
   dietaGanharTwin,
 } from "./dietas-modelos/dieta-ganhar-twin.js";
 import { printDieta } from "./print-dieta.js";
+import NavDieta from "./nav-app-dieta.js"
 
 export const listaDietasImportadas = [dietaGanharTwin];
 
 const dietaEscolhida = document.querySelectorAll(".lista-dietas button");
 const minhaDieta = document.querySelector(".refeicao");
+const avisoEscolherDieta = document.querySelector(".avisoEscolherDieta");
+const resultMacrosButton = document.querySelector(".result-basal-contain button");
 
 let dietaMontada = [];
+
+const navDieta = NavDieta('.menu-dieta button', '.calculadora-container .navDiv');
+
+resultMacrosButton.addEventListener('click', () => {
+  window.scrollTo({
+    top: 125,
+    behavior: 'smooth',
+});  navDieta.clearSection();
+  navDieta.activeSection(2);
+});
 
 export function initMinhaDieta() {
   dietaEscolhida.forEach((dieta) => {
     if (!dieta.classList.contains("event")) {
       dieta.addEventListener("click", (event) => {
+        navDieta.clearSection();
+        navDieta.activeSection(3);
 
         dieta.disabled = true;
         const escolhida = dieta.dataset.dieta;
@@ -46,6 +61,8 @@ export const calcPrint = function (dietaImportada) {
     });
   }
     setTimeout(() => {
+      avisoEscolherDieta.classList.add('remove');
+
       printDieta(dietaMontada);
     }, navigator.connection.rtt * 17);
 };
@@ -133,16 +150,15 @@ const calcRefeicoes = (descricao, proteinas, carboidratos, gorduras) => {
   
 };
 
-
 const observaoDieta = document.querySelector(".observacao-tabela-dieta");
 
+const escolherUma = document.querySelector(".escolher-uma-dieta");
 
-const escolherOutraDieta = document.querySelector(".escolher-outra-dieta");
-
-escolherOutraDieta.addEventListener("click", () => {
+escolherUma.addEventListener("click", () => {
+  zerarDietaMontada();
   dietaEscolhida.forEach((dieta) => {
-    zerarDietaMontada();
     dieta.disabled = false;
+    avisoEscolherDieta.classList.remove('remove');
   });
 });
 

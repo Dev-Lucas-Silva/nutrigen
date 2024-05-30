@@ -43,19 +43,19 @@ export default function initCalcKcal(dadoForm, tmb) {
     if (dadoForm.tempoTreino) {
       kcalTreino.innerHTML = resultKcalTreino + " Kcal ";
     } else {
-      kcalTreino.innerHTML = "Voçê ainda não adicionou treino";
+      kcalTreino.innerHTML = "N/A";
     }
 
     if (dadoForm.tempoCardio) {
       kcalCardio.innerHTML = resultKcalCardio + " Kcal ";
     } else {
-      kcalCardio.innerHTML = "Voçê ainda não adicionou cardio";
+      kcalCardio.innerHTML = "N/A";
     }
 
     if (dadoForm.tempoTreino && dadoForm.tempoCardio) {
       kcalCardioTreino.innerHTML = resultKcalTreinoCardio + " Kcal ";
     } else {
-      kcalCardioTreino.innerHTML = "Voçê ainda não adicionou treino e cardio";
+      kcalCardioTreino.innerHTML = "N/A";
     }
   }
   printKcal(dadoForm);

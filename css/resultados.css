@@ -1,41 +1,30 @@
-.result-basal-bg {
-  background: url("../image/backgroud-opcao.jfif");
-  background-position: center;
-  padding: 0px 10px 60px 10px;
-  font-family: "Poppins", sans-serif;
-}
-
-.result-basal-container {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  max-width: 1200px;
-  justify-items: center;
-  align-items: center;
-  text-align: center;
-  margin: 0 auto;
-}
-
-.result-basal-container .aside-6 {
-  background: grey;
-  width: 970px;
-  height: 90px;
-  border-radius: 8px;
-  margin: 20px 0;
-  grid-column: 1/ -1;
-}
-
 .result-basal-contain {
-  display: grid;
   grid-template-columns: 1fr;
   max-width: 765px;
   justify-items: center;
   text-align: center;
   margin: 0 auto;
   padding: 32px;
-  background: rgba(9, 93, 140, 0.7);
-  border-radius: 8px;
+  background: rgba(9, 93, 140, 0.8);
+  border-radius: 4px;
   box-shadow: 1px 1px 20px 10px rgba(47, 92, 139, 0.3);
   color: white;
+  display: none;
+}
+
+.result-basal-contain.active {
+  display: grid;
+  animation: show-right 0.2s forwards;
+}
+@keyframes show-right {
+  from {
+    opacity: 0;
+    transform: translate3d(-20px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 .result-basal-contain .titulo {
@@ -122,6 +111,10 @@
   min-width: 51px;
 }
 
+.result-basal-contain .botao-1 {
+  margin-top: 20px;
+}
+
 #form-macros {
 display: flex;
 flex-wrap: wrap;
@@ -148,31 +141,10 @@ justify-content: center;
 font-size: 1.15rem;
 }
 
-.result-basal-container .aside-7, .result-basal-container .aside-8 {
-  background: grey;
-  width: 300px;
-  height: 300px;
-  border-radius: 8px;
-  margin-bottom: 40px;
-}
-
 @media (max-width: 1000px) {
-  .result-basal-container .aside-7, .result-basal-container .aside-8 {
-display: none;
-  }
  .result-basal-container {
   grid-template-columns: 1fr;
  }
- .result-basal-container .aside-6 {
-  width: 728px;
-  height: 90px;
-}
-}
-@media (max-width: 800px) {
-  .result-basal-container .aside-6 {
-    width: 468px;
-    height: 60px;
-  }
 }
 @media (max-width: 600px) {
   .result-basal-contain {
@@ -217,9 +189,5 @@ display: none;
   .result-macros-contain-2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-  }
-  .result-basal-container .aside-6 {
-    width: 300px;
-    height: 100px;
   }
 }

@@ -1,30 +1,27 @@
-.dieta-montada-bg {
-  background: url("../image/backgroud-opcao.jfif");
-  background-position: center;
-  padding: 0 10px 60px 10px;
-  font-family: "Poppins", sans-serif;
-}
-
-.dieta-montada-container {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  max-width: 1200px;
-  justify-items: center;
-  align-items: center;
-  text-align: center;
-  margin: 0 auto;
-  color: white;
-}
-
 .dieta-montada-contain {
-  background: rgba(9, 93, 140, 0.7);
+  background: rgba(9, 93, 140, 0.8);
   max-width: 765px;
   padding: 32px;
-  display: grid;
   justify-items: center;
   align-items: center;
-  border-radius: 8px;
+  border-radius: 4px;
   box-shadow: 1px 1px 20px 10px rgba(47, 92, 139, 0.3);
+  display: none;
+}
+.dieta-montada-contain.active {
+  display: grid;
+  animation: show-right 0.2s forwards;
+}
+
+@keyframes show-right {
+  from {
+    opacity: 0;
+    transform: translate3d(-20px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 .dieta-montada-contain h2 {
@@ -35,15 +32,6 @@
   margin-bottom: 20px;
   color: white;
   width: 100%;
-}
-
-.dieta-montada-container .aside-12 {
-  background: grey;
-  width: 970px;
-  height: 90px;
-  border-radius: 8px;
-  margin: 20px 0;
-  grid-column: 1/ -1;
 }
 
 .descricoes {
@@ -118,42 +106,25 @@
   padding: 8px;
 }
 
-.dieta-montada-container .aside-13,
-.dieta-montada-container .aside-14 {
-  background: grey;
-  width: 300px;
-  height: 300px;
-  border-radius: 8px;
-  margin-bottom: 40px;
+.avisoEscolherDieta {
+  margin-top: 20px;
+  display: block;
 }
+
+.avisoEscolherDieta.remove {
+  display: none;
+}
+
+
 
 @media (max-width: 1000px) {
   .dieta-montada-container {
     grid-template-columns: 1fr;
   }
-  .dieta-montada-container .aside-13,
-  .dieta-montada-container .aside-14 {
-    display: none;
-  }
-  .dieta-montada-container .aside-12 {
-    width: 728px;
-    height: 90px;
-  }
-}
-@media (max-width: 800px) {
-  .dieta-montada-container .aside-12 {
-    width: 468px;
-    height: 60px;
-  }
 }
 @media (max-width: 600px) {
-  .dieta-montada-container .aside-12 {
-    width: 300px;
-    height: 100px;
-    margin: 12px 0;
-  }
   .dieta-montada-bg {
-    padding:0 0 60px 0;
+    padding: 0 0 60px 0;
   }
   .dieta-montada-contain {
     border-radius: 0;
@@ -163,7 +134,7 @@
     border-radius: 8px;
   }
   .descricoes {
-  grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
   .descricoes h3 {
     display: none;
@@ -172,25 +143,19 @@
     grid-template-columns: 1fr;
   }
   .lista-alimentos div {
-  border: none;
+    border: none;
   }
   .lista-alimentos p {
     padding-bottom: 0;
   }
-  .descricoes  {
+  .descricoes {
     border-left: none;
     max-width: 389px;
-}
-.lista-alimentos:last-child {
-  border-bottom: none;
-}
-.titulo-refeicao {
-  padding: 4px;
-}
-}
-@media (max-width: 400px) {
-  .dieta-montada-container .aside-12 {
-    width: 300px;
-    height: 100px;
+  }
+  .lista-alimentos:last-child {
+    border-bottom: none;
+  }
+  .titulo-refeicao {
+    padding: 4px;
   }
 }

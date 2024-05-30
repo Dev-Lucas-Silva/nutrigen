@@ -182,6 +182,8 @@ export class TipoDieta {
   }
 }
 const resultMacros = document.querySelector(".result-basal-contain");
+const formMacros = document.getElementById("form-macros");
+
 
 export function calcProteinas(taxa) {
   let tipoDietaProteina = taxa;
@@ -189,6 +191,7 @@ export function calcProteinas(taxa) {
   resultMacros.querySelector(".proteina").innerHTML =
     proteinas.toFixed(0) + "g";
   dadosMacros.proteina = +proteinas.toFixed(0);
+  formMacros.proteinaporkg.value = taxa;
 }
 
 export function calcGordura(taxa) {
@@ -196,6 +199,8 @@ export function calcGordura(taxa) {
   const gordura = dadosForm.peso * tipoDietaGordura;
   resultMacros.querySelector(".gordura").innerHTML = gordura.toFixed(0) + "g";
   dadosMacros.gordura = +gordura.toFixed(0);
+  formMacros.gorduraporkg.value = taxa;
+
 }
 
 export function calcCarbo(basal, taxaProteina, taxaGordura, novaTaxa) {
@@ -215,25 +220,25 @@ export function calcCarbo(basal, taxaProteina, taxaGordura, novaTaxa) {
     resultMacros.querySelector(".carbo-descanso").innerHTML =
       carboDescanso.toFixed(0) + "g";
   } else {
-    resultMacros.querySelector(".carbo-descanso").innerHTML = 0 + "g";
+    resultMacros.querySelector(".carbo-descanso").innerHTML = "N/A";
   }
   if (carboTreino > 0) {
     resultMacros.querySelector(".carbo-treino").innerHTML =
       carboTreino.toFixed(0) + "g";
   } else {
-    resultMacros.querySelector(".carbo-treino").innerHTML = 0 + "g";
+    resultMacros.querySelector(".carbo-treino").innerHTML =  "N/A";
   }
   if (carboCardio > 0) {
     resultMacros.querySelector(".carbo-cardio").innerHTML =
       carboCardio.toFixed(0) + "g";
   } else {
-    resultMacros.querySelector(".carbo-cardio").innerHTML = 0 + "g";
+    resultMacros.querySelector(".carbo-cardio").innerHTML =  "N/A";
   }
   if (carboTreinoCardio > 0) {
     resultMacros.querySelector(".carbo-treino-cardio").innerHTML =
       carboTreinoCardio.toFixed(0) + "g";
   } else {
-    resultMacros.querySelector(".carbo-treino-cardio").innerHTML = 0 + "g";
+    resultMacros.querySelector(".carbo-treino-cardio").innerHTML =  "N/A";
   }
 
   if (carboDescanso > 0) {
@@ -257,14 +262,6 @@ export function calcCarbo(basal, taxaProteina, taxaGordura, novaTaxa) {
     dadosMacros.carboTreinoCardio = 0;
   }
 }
-
-function setValues() {
-
-}
-setValues();
-
-
-
 
 export function initCalcMacros(
   dado,
@@ -290,8 +287,6 @@ export function initCalcMacros(
   calcProteinas(taxaCalcMacros.proteina);
 
   calcGordura(taxaCalcMacros.gordura);
-
-  const formMacros = document.getElementById("form-macros");
 
   formMacros.carboidratoporkg.value = 100;
 

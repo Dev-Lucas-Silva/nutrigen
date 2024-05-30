@@ -13,7 +13,7 @@ const gridBfMulher = document.querySelector(".grid-bf-mulher");
 const erroTmb = formBasal.querySelector(".tmb-erro");
 
 export const dadosForm = {
-  DiaDia: "",
+//  DiaDia: "1",
   altura: "",
   bf: "",
   biotipo: "",
@@ -23,8 +23,8 @@ export const dadosForm = {
   objetivo: "",
   peso: "",
   sexo: "",
-  tempoCardio: "",
-  tempoTreino: "",
+//  tempoCardio: "1",
+//  tempoTreino: "1",
 };
 
 const handleValidity = (form, event, erro, calculadora) => {
@@ -37,7 +37,7 @@ const handleValidity = (form, event, erro, calculadora) => {
   }
 
   if (
-    !Object.values(dadosForm).includes("") &&
+    //!Object.values(dadosForm).includes("") &&
     !form.submit.classList.contains("event")
   ) {
     erro.classList.remove("invalid");
@@ -100,9 +100,9 @@ export function setValues() {
     mostarFotosBf();
   }
 
-  if(!Object.values(dadosForm).includes("")) {
+  //if(!Object.values(dadosForm).includes("")) {
     calcTmb(dadosForm.sexo);
-  }
+  //}
 
  
 
